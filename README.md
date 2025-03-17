@@ -97,5 +97,3 @@ Gegroepeerd op quality attribute uit het software guidebook:
 
 <hr>
 
-![trip-top-splash-screen](https://github.com/user-attachments/assets/5c76f731-3c67-4865-a92f-6dfb2af5e736)
-
