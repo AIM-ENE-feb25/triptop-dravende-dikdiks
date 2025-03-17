@@ -3,8 +3,6 @@
 
 Casusbeschrijving voor SOEX: Solution Exploration
 
-<img src="https://github.com/user-attachments/assets/fd8d1008-fcce-4545-8103-9aa66c6b7d26" align="right">
-
 ## Vakantieplan app: Triptop
 
 Ontwerp een online applicatie waarmee een vakantietrip gepland kan worden, een site waarop je zelf alles bij elkaar klikt. Waar je nu als reiziger naar een (virtueel) reisbureau gaat die alle opties/mogelijkheden voor je uitzoekt en op elkaar afstemt, verschuift die rol van reisagent nu naar de reiziger. De reisagent is daarmee tweedelijns support geworden die je zou kunnen raadplegen als je er zelf niet uitkomt of iemand waarmee je het uiteindelijke reisplan kunt bespreken i.v.m. risico's. Ondanks de [voordelen](https://fd.nl/samenleving/1548189/in-opkomst-het-fysieke-reisbureau?gift=wqenk) van een fysiek reisbureau is de trend dat reizigers steeds meer zelf hun reis samenstellen.
@@ -98,6 +96,4 @@ Gegroepeerd op quality attribute uit het software guidebook:
 * Hoe zorg je ervoor dat authenticatie en autorisatie consistent worden toegepast bij het communiceren met verschillende externe APIs?
 
 <hr>
-
-![trip-top-splash-screen](https://github.com/user-attachments/assets/5c76f731-3c67-4865-a92f-6dfb2af5e736)
 
