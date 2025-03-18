@@ -1,0 +1,32 @@
+@startuml
+
+!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+SHOW_PERSON_OUTLINE()
+
+Person("r", "Reiziger", "Stelt reis samen en boekt deze")
+Person("ra", "Reisagent", "Helpt reiziger wanneer dat nodig is")
+
+System("tt", "Triptop", "Systeem om een reis en alles wat daarbij hoort te boeken")
+
+System_Ext("vvp", "Vervoerproviders", "Bouwstenen om het vervoer voor de reis te kunnen regelen")
+System_Ext("emv", "Eetmogelijkheidverzamelaar", "Biedt eetmogelijkheden aan")
+System_Ext("av", "Acitiviteitenverzamelaar", "Biedt activiteiten aan")
+System_Ext("vvd", "Vervoersdienst", "Biedt reismogelijkheden aan")
+System_Ext("ona", "Overnachtingsaanbieder", "Biedt overnachtingen aan")
+System_Ext("ip", "Identity-provider", "Laat reizigers inloggen")
+System_Ext("bop", "Betaaloptieprovider", "Laat reizigers betalen")
+
+Rel("r", "tt", "Gebruikt het systeem")
+Rel("ra", "tt", "Assisteert bij gebruik systeem")
+Rel("tt", "vvp", "Geeft door welke reis voor de reiziger geboekt moet worden")
+Rel("tt", "emv", "a")
+Rel("tt", "av", "a")
+Rel("tt", "vvd", "a")
+Rel("tt", "ona", "a")
+Rel("tt", "ip", "a")
+Rel("tt", "bop", "a")
+
+
+
+@enduml
