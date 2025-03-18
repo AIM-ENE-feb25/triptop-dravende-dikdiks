@@ -13,9 +13,9 @@ Person("Reisagent", "Reisagent", "Helpt reizigers bij het samenstellen van hun r
 System("TripTop", "TripTop", "Main applicatie")
 
 System_Ext("VervoerAPIs", "VervoerAPI's", "API's zoals: ")
-System_Ext("AirBNB", "AirBNB's", "API's zoals: NS, KLM.")
-System_Ext("PaymentProviders", "PaymentProviders's", "PaymentProviders zoals: paypal.")
-System_Ext("IdentityServices", "IdentityServices's", "IdentityServices zoals: google, microsoft.")
+System_Ext("AirBNB", "AirBNB", "API's zoals: NS, KLM.")
+System_Ext("PaymentProviders", "PaymentProviders", "PaymentProviders zoals: paypal.")
+System_Ext("IdentityServices", "IdentityServices", "IdentityServices zoals: google, microsoft.")
 System_Ext("FoodServices", "FoodServices", "FoodServices zoals: Takeaway, Eet.nu.")
 System_Ext("ExcursiesAPIs", "ExcursiesAPIs", "ExcursiesAPIs zoals: GetYourGuide, Tripadvisor.")
 
