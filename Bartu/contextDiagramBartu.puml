@@ -1,0 +1,33 @@
+@startuml
+
+!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title Context diagram voor het Triptop systeem
+
+SHOW_PERSON_OUTLINE()
+
+Person("reiziger", "reiziger", "Stelt reis samen en boekt deze")
+Person("Reisagent", "Reisagent", "Tweede lijn support")
+
+System("Triptop", "Triptop", "Systeem om een reis samen te stellen en te boeken")
+
+System_Ext("Overnachtingsystemen", "Overnachtingsystemen", "(Airbnb, booking.com) Systeem om overnachting te boeken")
+System_Ext("Vervoerservices", "Vervoerservices", "(NS, Deutsche Bahn, KLM) Systeem voor vervoer")
+System_Ext("Autoverhuurdiensten", "Autoverhuurdiensten", "(Sixt, Hertz) Systeem voor autoverhuur")
+System_Ext("Excursieservices", "Excursieservices", "(GetYourGuide, Tripadvisor) Systeem voor activiteiten en excursies")
+System_Ext("Eten_en_drinken_services", "Eten en drinken services", "(Takeaway, Eet.nu) Systeem voor restaurants en bezorgdiensten")
+System_Ext("Betaalsystemen", "Betaalsystemen", "(iDEAL, PayPal, Creditcard) Betaalsystemen voor transacties")
+System_Ext("Identity_Providers", "Identity Providers", "(Google, Microsoft, AirBnb) Authenticatie via externe logins")
+
+Rel("reiziger", "Triptop", "Gebruikt systeem om reis samen te stellen, boeken en te betalen")
+Rel("Reisagent", "Triptop", "Adviseert reiziger waar nodig")
+
+Rel("Triptop", "Overnachtingsystemen", "Boekt overnachtingen via externe systemen")
+Rel("Triptop", "Vervoerservices", "Regelt vervoer tussen locaties")
+Rel("Triptop", "Autoverhuurdiensten", "Boekt huurauto's voor de reiziger")
+Rel("Triptop", "Excursieservices", "Boekt excursies en activiteiten")
+Rel("Triptop", "Eten_en_drinken_services", "Biedt suggesties en reserveringen voor eten en drinken")
+Rel("Triptop", "Betaalsystemen", "Handelt betalingen af voor boekingen")
+Rel("Triptop", "Identity_Providers", "Verifieert gebruikers via externe logins")
+
+@enduml
