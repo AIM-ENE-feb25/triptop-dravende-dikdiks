@@ -1,0 +1,32 @@
+@startuml
+
+!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title Context diagram voor TripTop
+
+SHOW_PERSON_OUTLINE()
+
+Person("Reiziger", "Reiziger", "Stelt reis samen en boekt deze.")
+
+Person("Reisagent", "Reisagent", "Helpt reizigers bij het samenstellen van hun reis wanneer ze er niet uitkomen.")
+
+System("TripTop", "TripTop", "Main applicatie")
+
+System_Ext("VervoerAPIs", "VervoerAPI's", "API's zoals: ")
+System_Ext("AirBNB", "AirBNB's", "API's zoals: NS, KLM.")
+System_Ext("PaymentProviders", "PaymentProviders's", "PaymentProviders zoals: paypal.")
+System_Ext("IdentityServices", "IdentityServices's", "IdentityServices zoals: google, microsoft.")
+System_Ext("FoodServices", "FoodServices", "FoodServices zoals: Takeaway, Eet.nu.")
+System_Ext("ExcursiesAPIs", "ExcursiesAPIs", "ExcursiesAPIs zoals: GetYourGuide, Tripadvisor.")
+
+Rel("Reiziger", "TripTop", "Gebruikt het systeem om reis mee samen te stellen.")
+Rel("Reisagent", "TripTop", "Gebruikt het systeem om te helpen met plannen reis.")
+
+Rel("TripTop", "VervoerAPIs", "Gebruikt het systeem om te helpen met plannen reis.")
+Rel("TripTop", "AirBNB", "Haalt beschikbare plekken op.")
+Rel("TripTop", "PaymentProviders", "Handelt betaling af.")
+Rel("TripTop", "IdentityServices", "Authenticeert gegevens van gebruiker.")
+Rel("TripTop", "FoodServices", "Haalt beschikbare eten op.")
+Rel("TripTop", "ExcursiesAPIs", "Haalt beschikbare excursies op.")
+
+@enduml
