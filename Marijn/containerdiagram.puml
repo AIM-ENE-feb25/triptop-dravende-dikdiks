@@ -1,0 +1,35 @@
+@startuml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title Container diagram voor TripTop
+
+Person("Reiziger", "Reiziger", "Stelt reis samen en boekt deze.")
+Person("ReisAgent", "ReisAgent", "Helpt reizigers met samenstellen van reizen.")
+
+System_Ext("BookinCOM", "BookinCOM", "Zoekt hotelprijzen, autohuur prijzen, vluchtprijzen, taxiprijzen en attractieprijzen op.")
+System_Ext("WireMock", "WireMock", "Identificeert gebruiker.")
+System_Ext("AirBNB", "AirBNB", "Zoekt beschikbare AirBNB's op.")
+System_Ext("TripAdviser", "TripAdviser", "Zoekt vervoer op.")
+System_Ext("Eurail", "Eurail", "Zoekt vervoer met trein op.")
+System_Ext("TripAdviser", "TripAdviser", "Zoekt vervoer op.")
+System_Ext("Adyen", "Adyen", "Paymentservice(bv: paypal).")
+
+System_Boundary("TripTop", "TripTop Systeem") {
+    System("WebApplicatie", "WebApplicatie", "Web applicatie")
+    System("ReisAgentApplicatie", "ReisAgentApplicatie", "Web applicatie voor reisagenten.")
+    System("BackEnd", "BackEnd", "Verbind frontend met API's")
+}
+
+Rel("Reiziger", "WebApplicatie", "Biedt de interface voor het samenstellen en plannen van reizen.")
+Rel("ReisAgent", "ReisAgentApplicatie", "Biedt de interface voor het helpen inplannen van reizen")
+Rel("WebApplicatie", "BackEnd", "Haalt prijzen op.")
+Rel("ReisAgentApplicatie", "BackEnd", "Haalt prijzen op.")
+Rel("BackEnd", "BookinCOM", "Haalt prijzen op.")
+Rel("BackEnd", "WireMock", "Verstuurt authenticatiegegevens van gebruiker.")
+Rel("BackEnd", "AirBNB", "Haalt beschikbare AirBNB's op.")
+Rel("BackEnd", "TripAdviser", "Haalt mogelijk vervoer op.")
+Rel("BackEnd", "Eurail", "Haalt mogelijk vervoer op via trein.")
+Rel("BackEnd", "Adyen", "Handelt betaling af.")
+
+@enduml
