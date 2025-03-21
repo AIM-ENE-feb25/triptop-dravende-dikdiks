@@ -1,4 +1,4 @@
-# Software Guidebook Triptop
+Software Guidebook Triptop
 
 ## 1. Introduction
 Dit software guidebook geeft een overzicht van de Triptop-applicatie. Het bevat een samenvatting van het volgende: 

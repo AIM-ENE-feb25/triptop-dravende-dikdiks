@@ -79,6 +79,10 @@ Voordat deze casusomschrijving tot stand kwam, heeft de opdrachtgever de volgend
 
 ###     7.1. Containers
 
+![container_diagram-0.svg](../Mike/Diagrammen/container_diagram-0.svg)
+
+![containerDiagramBartu-0.svg](../Bartu/containerDiagramBartu-0.svg)
+
 > [!IMPORTANT]
 > Voeg toe: Container Diagram plus een Dynamic Diagram van een aantal scenario's inclusief begeleidende tekst.
 
