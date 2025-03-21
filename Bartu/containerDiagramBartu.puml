@@ -7,15 +7,15 @@ Person("reiziger", "reiziger", "Stelt reis samen en boekt deze")
 Person("Reisagent", "Reisagent", "Tweede lijn support")
 
 System_Boundary(c1, "Sample System", "") {
-    Container(Web_Applicatie, "Triptop applicatie", "Webapplicatie waarin gebruikers reizen samenstellen en boeken")
-    Container(Backend, "Backend", "Verwerkt boekingen en communiceert met externe systemen")
+    Container(Web_Applicatie, "Triptop applicatie","", "Webapplicatie waarin gebruikers reizen samenstellen en boeken")
+    Container(Backend, "Backend","", "Verwerkt boekingen en communiceert met externe systemen")
 }
 
-Container_Ext("Airbnb", "Airbnb", "Systeem om overnachting te boeken")
-Container_Ext("booking.com", "booking.com", "Systeem om overnachtingen en taxi te boeken")
-Container_Ext("Tripadvisor", "Tripadvisor", "Systeem om overnachtingen, reizen, excursies te boeken")
-Container_Ext("Flightscraper", "Flightscraper", "Systeem voor boeken van vluchten")
-Container_Ext("WireMock", "WireMock", "Systeem voor login")
+Container_Ext("Airbnb", "Airbnb", "","Systeem om overnachting te boeken")
+Container_Ext("booking.com", "booking.com", "", "Systeem om overnachtingen en taxi te boeken")
+Container_Ext("Tripadvisor", "Tripadvisor", "","Systeem om overnachtingen, reizen, excursies te boeken")
+Container_Ext("Flightscraper", "Flightscraper","", "Systeem voor boeken van vluchten")
+Container_Ext("WireMock", "WireMock","", "Systeem voor login")
 
 Rel("reiziger", "Web_Applicatie", "Gebruikt systeem om reis samen te stellen, boeken en te betalen")
 Rel("Reisagent", "Web_Applicatie", "Adviseert reiziger waar nodig")
