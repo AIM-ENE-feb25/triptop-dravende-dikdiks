@@ -9,7 +9,7 @@ Dit software guidebook geeft een overzicht van de Triptop-applicatie. Het bevat 
 
 ## 2. Context
 
-![contextDiagram.svg](../opdracht-diagrammen/Diagrammen%20studenten/Week%201/contextDiagram.svg)  
+![contextDiagram.svg](../opdracht-diagrammen/Diagrammen%20studenten/Week%201/ContextDiagram/contextDiagram.svg)  
 <sub> Context diagram
 
 
@@ -79,7 +79,7 @@ Voordat deze casusomschrijving tot stand kwam, heeft de opdrachtgever de volgend
 ## 7. Software Architecture
 
 ###     7.1. Containers
-![container_diagram-0.svg](../opdracht-diagrammen/Diagrammen%20studenten/Week%201/container_diagram-0.svg)  
+![container_diagram-0.svg](../opdracht-diagrammen/Diagrammen%20studenten/Week%201/ContainerDiagram/container_diagram-0.svg)  
 <sub> Container diagram 
 
 

@@ -5,7 +5,7 @@ Container(c1, "Triptop", "Frontend-applicatie")
 Container(c2, "Backend", "Backend-applicatie")
 Container(c3, "Wiremock", "Identity provider")
 Container(c6, "Adyen", "Zorgt ervoor dat gebruikers veilig kunnen betalen")
-Container(c4, "Externe APIs", "Geven informatie van derde partijen die gebruikt kan worden bij het boeken van een reis")
+Container_Ext(c4, "Externe APIs", "Geven informatie van derde partijen die gebruikt kan worden bij het boeken van een reis")
 Container(c5, "Database", "Slaat geboekte reizen op")
 
 
