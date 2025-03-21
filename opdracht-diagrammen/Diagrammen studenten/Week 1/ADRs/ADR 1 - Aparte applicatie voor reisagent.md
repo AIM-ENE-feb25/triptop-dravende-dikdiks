@@ -21,6 +21,7 @@ Wanneer de reisagent een reiziger helpt, kan het handig zijn als de reisagent me
 | Dubbele functionaliteiten     | ++           | --            |
 | Interactie met backend        | 0            | 0             |
 
+[//]: # (todo: bronnen toevoegen)
 Bronnen:
 
 ## Decision

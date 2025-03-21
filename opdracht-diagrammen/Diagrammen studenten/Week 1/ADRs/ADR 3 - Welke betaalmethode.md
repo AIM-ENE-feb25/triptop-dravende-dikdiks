@@ -22,6 +22,7 @@ We moeten een veilige en gebruiksvriendelijke betalingsmethode hebben waarmee ge
 | Kopersbescherming     | 0     | +      | ++     |
 | Transactiekosten      | -     | -      | +      |
 
+[//]: # (todo: bronnen toevoegen)
 Bronnen:
 
 ## Decision

@@ -22,6 +22,7 @@ Het is voor ons zaak dat we de beste kaart voor onze usecase vinden en gebruiken
 | Privacy                           | 0           | 0          | ++            |
 | Aangepaste functionaliteit        | ++          | 0          | ++            |
 
+[//]: # (todo: bronnen toevoegen)
 Bronnen:
 
 ## Decision
