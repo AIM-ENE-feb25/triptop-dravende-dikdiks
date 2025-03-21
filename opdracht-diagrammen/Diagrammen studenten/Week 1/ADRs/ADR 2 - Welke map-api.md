@@ -27,7 +27,9 @@ Bronnen:
 
 ## Decision
 
-Hoewel de uptime van Apple Maps waarschijnlijk vrij hoog ligt, hebben we hier geen historische data van kunnen vinden. Daarom lijkt, gebaseerd op deze tabel, OpenStreetMap de beste optie. 
+Hoewel de uptime van Apple Maps waarschijnlijk vrij hoog ligt, hebben we hier geen historische data van kunnen vinden. Daarom lijkt, gebaseerd op deze tabel, OpenStreetMap de beste optie.
+
+[//]: # (todo: controleren of de diagrammen en geschreven teksten overeen komen met de gekozen technologie/oplossing)
 
 ## Consequences
 
