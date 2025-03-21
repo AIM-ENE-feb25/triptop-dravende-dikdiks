@@ -4,7 +4,7 @@
 Container(c1, "Triptop", "Frontend-applicatie")
 Container(c2, "Backend", "Backend-applicatie")
 Container(c3, "Wiremock", "Identity provider")
-Container(c6, "Adyen", "Zorgt ervoor dat gebruikers veilig kunnen betalen")
+Container(c6, "Stripe", "Zorgt ervoor dat gebruikers veilig kunnen betalen")
 Container_Ext(c4, "Externe APIs", "Geven informatie van derde partijen die gebruikt kan worden bij het boeken van een reis")
 Container(c5, "Database", "Slaat geboekte reizen op")
 
@@ -20,3 +20,6 @@ Rel(c2, c5, "Slaat boekingsgegevens op")
 Rel(c2, c1, "Bevestiging boeking en bijbehorende gegevens")
 
 @enduml
+
+'todo: reserveren en betalen voor reis opsplitsen in aparte scenario's
+'todo: eventueel techniek-labels onder de beschrijving bij de pijlen zoals in het andere dynamische containerdiagram
