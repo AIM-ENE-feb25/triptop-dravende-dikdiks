@@ -1,0 +1,29 @@
+@startuml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Sequence.puml
+
+Container(c1, "TripTop-applicatie", "JavaScript and Angular", "Provides all of the Internet banking functionality to customers via their web browser.")
+
+Container_Boundary(b, "API Application")
+  Component(c2, "Login controller", "Spring MVC Rest Controller", "Allows users to sign in to the Internet Banking System.")
+'  Component(c3, "Security Component", "Spring Bean", "Provides functionality Related to signing in, changing passwords, etc.")
+Boundary_End()
+
+'Container(c4, "Wiremock API", "", "API containing login credentials")
+
+Container(c3, "Wiremock API", "Identity Provider", "Stores user registration information, hashed authentication credentials, access logs, etc.")
+
+Rel(c1, c2, "Stuurt credentials op", "JSON/HTTP")
+
+Rel(c2, c3, "Stuurt credentials op", "JSON/HTTP")
+Rel(c3, c2, "Geeft username en token terug", "JSON/HTTP")
+
+Rel(c2, c1, "Token wordt opgeslagen", "JSON/HTTP")
+
+
+'Backend checkt of token valide is
+'Rel(c3, c5, " ", " ")
+
+
+SHOW_LEGEND()
+@enduml

@@ -9,8 +9,20 @@ Dit software guidebook geeft een overzicht van de Triptop-applicatie. Het bevat 
 
 ## 2. Context
 
-> [!IMPORTANT]
-> Werk zelf dit hoofdstuk uit met context diagrammen en een beschrijving van de context van de software.
+### Individueel
+![contextDiagramBartu-Context diagram voor het Triptop systeem.svg](../Bartu/contextDiagramBartu-Context%20diagram%20voor%20het%20Triptop%20systeem.svg)
+<sub> Context diagram Bartu
+
+![dd-Context_diagram_voor_TripTop.png](../Marijn/dd-Context_diagram_voor_TripTop.png)
+<sub> Context diagram Marijn
+
+![context_diagram-0.svg](../Mike/Diagrammen/context_diagram-0.svg)
+<sub> Context diagram Mike
+
+### Team
+![contextDiagram.svg](../opdracht-diagrammen/Diagrammen%20studenten/contextDiagram.svg)
+<sub> Context diagram Groep
+
 
 Toelichting op de context van de software inclusief System Context Diagram:
 * Functionaliteit
@@ -78,20 +90,21 @@ Voordat deze casusomschrijving tot stand kwam, heeft de opdrachtgever de volgend
 ## 7. Software Architecture
 
 ###     7.1. Containers
-
-![container_diagram-0.svg](../Mike/Diagrammen/container_diagram-0.svg)
-<sub> Container diagram Mike
-
+### Individueel
 ![containerDiagramBartu-0.svg](../Bartu/containerDiagramBartu-0.svg)
 <sub> Container diagram Bartu
 
 ![containerdiagram-Container_diagram_voor_TripTop.png](../Marijn/containerdiagram-Container_diagram_voor_TripTop.png)
 <sub> Container diagram Marijn
 
+![container_diagram-0.svg](../Mike/Diagrammen/container_diagram-0.svg)
+<sub> Container diagram Mike
 
+### Team
 
-> [!IMPORTANT]
-> Voeg toe: Container Diagram plus een Dynamic Diagram van een aantal scenario's inclusief begeleidende tekst.
+![container_diagram-0.svg](../opdracht-diagrammen/Diagrammen%20studenten/container_diagram-0.svg)
+<sub> Container diagram Groep
+
 
 ###     7.2. Components
 
@@ -101,7 +114,7 @@ Voordat deze casusomschrijving tot stand kwam, heeft de opdrachtgever de volgend
 ###     7.3. Design & Code
 
 > [!IMPORTANT]
-> Voeg toe: Per ontwerpvraag een Class Diagram plus een Sequence Diagram van een aantal scenario's inclusief begeleidende tekst.
+> Voeg toe: Per ontwerpvraag een Class Diagram plus een Sequence Diagram va n een aantal scenario's inclusief begeleidende tekst.
 
 ## 8. Architectural Decision Records
 
