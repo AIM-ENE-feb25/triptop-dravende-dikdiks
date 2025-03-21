@@ -10,17 +10,17 @@ Dit software guidebook geeft een overzicht van de Triptop-applicatie. Het bevat 
 ## 2. Context
 
 ### Individueel
-![contextDiagramBartu-Context diagram voor het Triptop systeem.svg](../Bartu/contextDiagramBartu-Context%20diagram%20voor%20het%20Triptop%20systeem.svg)
+![contextDiagramBartu-Context diagram voor het Triptop systeem.svg](../Bartu/contextDiagramBartu-Context%20diagram%20voor%20het%20Triptop%20systeem.svg)  
 <sub> Context diagram Bartu
 
-![dd-Context_diagram_voor_TripTop.png](../Marijn/dd-Context_diagram_voor_TripTop.png)
+![dd-Context_diagram_voor_TripTop.png](../Marijn/dd-Context_diagram_voor_TripTop.png)  
 <sub> Context diagram Marijn
 
-![context_diagram-0.svg](../Mike/Diagrammen/context_diagram-0.svg)
+![context_diagram-0.svg](../Mike/Diagrammen/context_diagram-0.svg)  
 <sub> Context diagram Mike
 
 ### Team
-![contextDiagram.svg](../opdracht-diagrammen/Diagrammen%20studenten/Week%201/contextDiagram.svg)
+![contextDiagram.svg](../opdracht-diagrammen/Diagrammen%20studenten/Week%201/contextDiagram.svg)  
 <sub> Context diagram Groep
 
 
@@ -91,18 +91,18 @@ Voordat deze casusomschrijving tot stand kwam, heeft de opdrachtgever de volgend
 
 ###     7.1. Containers
 ### Individueel
-![containerDiagramBartu-0.svg](../Bartu/containerDiagramBartu-0.svg)
+![containerDiagramBartu-0.svg](../Bartu/containerDiagramBartu-0.svg)  
 <sub> Container diagram Bartu
 
-![containerdiagram-Container_diagram_voor_TripTop.png](../Marijn/containerdiagram-Container_diagram_voor_TripTop.png)
+![containerdiagram-Container_diagram_voor_TripTop.png](../Marijn/containerdiagram-Container_diagram_voor_TripTop.png)  
 <sub> Container diagram Marijn
 
-![container_diagram-0.svg](../Mike/Diagrammen/container_diagram-0.svg)
+![container_diagram-0.svg](../Mike/Diagrammen/container_diagram-0.svg)  
 <sub> Container diagram Mike
 
 ### Team
 
-![container_diagram-0.svg](../opdracht-diagrammen/Diagrammen%20studenten/Week%201/container_diagram-0.svg)
+![container_diagram-0.svg](../opdracht-diagrammen/Diagrammen%20studenten/Week%201/container_diagram-0.svg)  
 <sub> Container diagram Groep
 
 
