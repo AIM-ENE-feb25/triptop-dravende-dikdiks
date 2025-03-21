@@ -22,7 +22,7 @@ System_Ext("eur", "Interrail/Eurail", "Vindt beschikbare treinreizen binnen Euro
 System_Ext("wm", "Wiremock", "Identityprovider, laat mensen inloggen")
 System_Ext("tw", "Twilio", "Kan berichten naar telefoonnummers van reizigers sturen")
 System_Ext("ta", "Tripadvisor", "Vindt informatie over hotels en dergelijke")
-System_Ext("ad", "Adyen", "Laat reizeigers betalen")
+System_Ext("ad", "Stripe", "Laat reizeigers betalen")
 System_Ext("gm", "Google Maps", "Laat reizigers zien wat de locatie is van de dingen waar ze heen willen")
 
 
