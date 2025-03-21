@@ -1,0 +1,22 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Sequence.puml
+
+Container(c1, "Triptop", "Frontend-applicatie")
+Container(c2, "Backend", "Backend-applicatie")
+Container(c3, "Wiremock", "Identity provider")
+Container(c6, "Adyen", "Zorgt ervoor dat gebruikers veilig kunnen betalen")
+Container(c4, "Externe APIs", "Geven informatie van derde partijen die gebruikt kan worden bij het boeken van een reis")
+Container(c5, "Database", "Slaat geboekte reizen op")
+
+
+Rel(c1, c2, "Verstuurt encrypted betaalgegevens + token")
+Rel(c2, c3, "Valideert token")
+Rel(c2, c6, "Betaalt voor reis")
+Rel(c2, c4, "Reserveert alles aangaande de reis")
+
+Rel(c4, c2, "Stuurt boekings- en betaalgegevens terug")
+Rel(c2, c5, "Slaat boekingsgegevens op")
+
+Rel(c2, c1, "Bevestiging boeking en bijbehorende gegevens")
+
+@enduml

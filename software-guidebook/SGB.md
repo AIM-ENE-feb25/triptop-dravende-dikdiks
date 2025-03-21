@@ -20,7 +20,7 @@ Dit software guidebook geeft een overzicht van de Triptop-applicatie. Het bevat 
 <sub> Context diagram Mike
 
 ### Team
-![contextDiagram.svg](../opdracht-diagrammen/Diagrammen%20studenten/contextDiagram.svg)
+![contextDiagram.svg](../opdracht-diagrammen/Diagrammen%20studenten/Week%201/contextDiagram.svg)
 <sub> Context diagram Groep
 
 
@@ -102,7 +102,7 @@ Voordat deze casusomschrijving tot stand kwam, heeft de opdrachtgever de volgend
 
 ### Team
 
-![container_diagram-0.svg](../opdracht-diagrammen/Diagrammen%20studenten/container_diagram-0.svg)
+![container_diagram-0.svg](../opdracht-diagrammen/Diagrammen%20studenten/Week%201/container_diagram-0.svg)
 <sub> Container diagram Groep
 
 
