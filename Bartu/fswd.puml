@@ -1,0 +1,26 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Backend Component Diagram
+
+
+    Component(AuthController, "Auth Controller", "Handles authentication requests")
+    Component(ExpenseController, "Expense Controller", "Manages expense operations")
+    Component(AuthService, "Auth Service", "Validates users and handles JWT")
+    Component(ExpenseService, "Expense Service", "Handles business logic for expenses")
+    Component(JWTProvider, "JWT Provider", "Generates and validates tokens")
+    Component(ExpenseRepository, "Expense Repository", "Interacts with the database")
+
+SystemDb(DB, "2H2 Database") {
+    ContainerDb(UsersTable, "Users Table", "Stores user data")
+    ContainerDb(ExpensesTable, "Expenses Table", "Stores expense records")
+}
+
+Rel(AuthController, AuthService, "Validates user credentials")
+Rel(AuthService, JWTProvider, "Generates JWT token")
+Rel(ExpenseController, ExpenseService, "Processes expense operations")
+Rel(ExpenseService, ExpenseRepository, "Fetches and stores expense data")
+Rel(ExpenseRepository, DB, "Interacts with database tables")
+Rel(AuthService, DB, "Verifies user in database")
+
+@enduml
