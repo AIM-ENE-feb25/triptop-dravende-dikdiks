@@ -5,13 +5,11 @@ Person(user, "Gebruiker")
 
 System_Boundary(travelSys, "TravelExpensepro") {
     Container(webApp, "Frontend", "React", "")
-    Container(api, "Backend API", "", "Verwerkt business logica en biedt endpoints") {
-        Component(loginController, "LoginController", "Verwerkt login requests")
-        Component(expenseController, "ExpenseController", "Beheert uitgaven")
-        Component(authService, "AuthenticatieService", "Verwerkt authenticatie en autorisatie")
-        Component(userRepo, "UserRepo", "Database toegang voor gebruikers")
-        Component(expenseRepo, "ExpenseRepo", "Database toegang voor uitgaven")
-    }
+    Component(loginController, "LoginController", "Verwerkt login requests")
+    Component(expenseController, "ExpenseController", "Beheert uitgaven")
+    Component(authService, "AuthenticatieService", "Verwerkt authenticatie en autorisatie")
+    Component(userRepo, "UserRepo", "Database toegang voor gebruikers")
+    Component(expenseRepo, "ExpenseRepo", "Database toegang voor uitgaven")
 }
 
 Rel(user, webApp, "Gebruikt")
