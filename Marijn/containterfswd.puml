@@ -1,0 +1,25 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Person(user, "Gebruiker")
+
+System_Boundary(travelSys, "TravelExpensepro") {
+    Container(webApp, "Frontend", "React", "")
+    Container(api, "Backend API", "", "Verwerkt business logica en biedt endpoints") {
+        Component(loginController, "LoginController", "Verwerkt login requests")
+        Component(expenseController, "ExpenseController", "Beheert uitgaven")
+        Component(authService, "AuthenticatieService", "Verwerkt authenticatie en autorisatie")
+        Component(userRepo, "UserRepo", "Database toegang voor gebruikers")
+        Component(expenseRepo, "ExpenseRepo", "Database toegang voor uitgaven")
+    }
+}
+
+Rel(user, webApp, "Gebruikt")
+Rel(webApp, loginController, "Stuurt login verzoeken naar")
+Rel(webApp, expenseController, "Stuurt uitgaven verzoeken naar")
+Rel(loginController, authService, "Controleert gebruikersgegevens bij")
+Rel(loginController, userRepo, "Gebruikt gebruikersdata van")
+Rel(expenseController, authService, "Controleert token bij")
+Rel(expenseController, expenseRepo, "Gebruikt uitgaven data van")
+
+@enduml
