@@ -1,15 +1,15 @@
 @startuml
 
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
-title Container Diagram voor TripTop met Beveiligingslaag
+title Component Diagram voor TripTop met Beveiligingslaag
 
-Container("BackEnd", "BackEnd", "Verbindt frontend met API's")
+Component("BackEnd", "BackEnd", "Verbindt frontend met API's")
 
-Container("GatewayAPI", "GatewayAPI", "Beveiligt en beheert API-verzoeken")
-Container("SecurityProxy", "SecurityProxy", "Voegt encryptie/authenticatie toe voor verouderde APIs")
-Container("Validation", "Validation", "Filtert en valideert API-data")
-Container("Logging", "Logging", "Detecteert en logt verdachte verzoeken")
+Component("GatewayAPI", "GatewayAPI", "Beveiligt en beheert API-verzoeken")
+Component("SecurityProxy", "SecurityProxy", "Voegt encryptie/authenticatie toe voor verouderde APIs")
+Component("Validation", "Validation", "Filtert en valideert API-data")
+Component("Logging", "Logging", "Detecteert en logt verdachte verzoeken")
 
 System_Ext("BookinCOM", "BookinCOM", "Zoekt hotelprijzen, autohuurprijzen, vluchtprijzen, etc.")
 
