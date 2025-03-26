@@ -11,9 +11,9 @@ Person("ra", "Reisagent", "Helpt reiziger wanneer dat nodig is")
 
 
 System_Boundary("naam", "Titel"){
-    Component("be", "Backend", "Handelt requests vanuit de frontend af")
-    Component("fe", "Triptop-applicatie", "Frontend van reisapplicatie die reizigers kunnen gebruiken")
-    Component("db", "Database", "Worden geboekte reizen in opgeslagen")
+    Container("be", "Backend", "Handelt requests vanuit de frontend af")
+    Container("fe", "Triptop-applicatie", "Frontend van reisapplicatie die reizigers kunnen gebruiken")
+    Container("db", "Database", "Worden geboekte reizen in opgeslagen")
 }
 
 System_Ext("sg", "Sendgrid", "Kan mails sturen naar relevante actoren")
