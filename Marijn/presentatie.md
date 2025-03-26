@@ -8,11 +8,6 @@ Onderhoud
 Herbruikbaarheid
 Testbaarheid
 
-### Gebaseerd op
-Open-Closed Principle – Code is open voor uitbreiding, maar gesloten voor wijziging.
-Separation of Concerns – Scheiding tussen veranderlijke en stabiele delen.
-Single Responsibility Principle  – Elke klasse heeft één duidelijke verantwoordelijkheid.
-
 
 ``` java
 
@@ -34,3 +29,8 @@ public class StripePaymentGateway implements PaymentGateway {
 }
 
 ```
+
+### Gebaseerd op
+Open-Closed Principle – Code is open voor uitbreiding, maar gesloten voor wijziging.
+Separation of Concerns – Scheiding tussen veranderlijke en stabiele delen.
+Single Responsibility Principle  – Elke klasse heeft één duidelijke verantwoordelijkheid.
