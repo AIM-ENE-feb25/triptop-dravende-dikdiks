@@ -1,14 +1,14 @@
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
-Component(tep, "TravelExpensePro")
+Component(tep, "TravelExpensePro", "Dit is de main applicatie")
 
-Component(emc, "ExpenseManagementController")
-Component(ec, "ExpenseController")
+Component(emc, "ExpenseManagementController", "Handelt in- en uitloggen af")
+Component(ec, "ExpenseController", "Laat de gebruiker expenses toevoegen en expensen ophalen")
 
-Component(er, "ExpenseRepository")
-Component(ur, "UserRepository")
-Component(as, "AuthenticationService")
+Component(er, "ExpenseRepository", "")
+Component(ur, "UserRepository", "")
+Component(as, "AuthenticationService", "")
 
 Rel(emc, tep, " ")
 Rel(ec, tep, " ")
