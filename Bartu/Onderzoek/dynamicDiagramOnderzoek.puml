@@ -1,0 +1,28 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Sequence.puml
+
+Component(BouwsteenComponent, "BouwsteenComponent", "", "BouwsteenComponent-applicatie")
+Component(BouwsteenService, "BouwsteenService","", "BouwsteenService")
+Component(BouwsteenRepository, "BouwsteenRepository","", "BouwsteenRepository")
+Component(TripService, "TripService","", "TripService")
+Component(ApiService, "ApiService","", "ApiService")
+
+actor User
+
+User -> BouwsteenComponent : Create Bouwsteen(type, details)
+BouwsteenComponent -> BouwsteenService : createBouwsteen(type, details)
+BouwsteenService -> BouwsteenRepository : save(bouwsteen)
+BouwsteenRepository --> BouwsteenService : return saved bouwsteen
+BouwsteenService --> BouwsteenComponent : return bouwsteen
+BouwsteenComponent --> User : return created bouwsteen
+
+User -> TripService : Add Bouwsteen to trip(tripId, bouwsteen)
+TripService -> BouwsteenService : getBouwsteenById(bouwsteenId)
+BouwsteenService --> TripService : return bouwsteen
+TripService -> TripService : add bouwsteen to trip
+TripService --> User : return updated trip
+
+User -> ApiService : Book Accommodation (overnachting)
+ApiService --> User : return booking info
+
+@enduml
