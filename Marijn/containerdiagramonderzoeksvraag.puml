@@ -13,7 +13,7 @@ Container("Logging", "Logging", "Detecteert en logt verdachte verzoeken")
 
 System_Ext("BookinCOM", "BookinCOM", "Zoekt hotelprijzen, autohuurprijzen, vluchtprijzen, etc.")
 
-Rel("BackEnd", "GatewayAPI", "Routet veilige verzoeken")
+Rel("BackEnd", "GatewayAPI", "Veilige verzoeken")
 Rel("GatewayAPI", "SecurityProxy", "Verwerkt onveilige verzoeken")
 Rel("SecurityProxy", "Validation", "Filtert schadelijke input")
 Rel("Validation", "Logging", "Registreert verdachte activiteiten")
