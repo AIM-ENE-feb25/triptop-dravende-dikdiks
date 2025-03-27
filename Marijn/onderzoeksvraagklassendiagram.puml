@@ -1,0 +1,34 @@
+@startuml
+
+class BackEnd {
+  +sendRequest(request: Request): Response
+}
+
+class GatewayAPI {
+  +processRequest(request: Request): Response
+}
+
+class SecurityProxy {
+  +encryptRequest(request: Request): Request
+  +authenticateRequest(request: Request): Boolean
+}
+
+class Validation {
+  +validateData(data: Data): Boolean
+}
+
+class Logging {
+  +logActivity(activity: String): void
+}
+
+class BookinCOM {
+  +fetchData(query: Query): Data
+}
+
+BackEnd --> GatewayAPI : "Veilige verzoeken"
+GatewayAPI --> SecurityProxy : "Verwerkt onveilige verzoeken"
+SecurityProxy --> Validation : "Filtert schadelijke input"
+Validation --> Logging : "Registreert verdachte activiteiten"
+SecurityProxy --> BookinCOM : "Stuurt beveiligde verzoeken naar verouderde API's"
+
+@enduml
