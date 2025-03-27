@@ -1,0 +1,75 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}
+
+'abstract class BouwsteenFactory {
+'    +createBouwsteen(type: String, details: Map<String, Object>) : Bouwsteen
+'}
+'
+'abstract class BouwsteenManager {
+'    +createBouwsteen(type: String, details: Map<String, Object>) : Bouwsteen
+'    +deleteBouwsteen(bouwsteenId: Long)
+'    +getBouwsteenById(bouwsteenId: Long) : Optional<Bouwsteen>
+'}
+'
+'abstract class BouwsteenRepositoryImpl {
+'    +save(bouwsteen: Bouwsteen)
+'    +delete(bouwsteenId: Long)
+'    +findById(bouwsteenId: Long) : Optional<Bouwsteen>
+'}
+'
+'abstract class TripManager {
+'    +addBouwsteenToTrip(tripId: Long, bouwsteen: Bouwsteen)
+'    +removeBouwsteenFromTrip(tripId: Long, bouwsteenId: Long)
+'    +getBouwstenenForTrip(tripId: Long) : List<Bouwsteen>
+'}
+'
+'abstract class AccommodatieApiClient {
+'    +boekOvernachting(overnachting: Overnachting) : BookingInfo
+'}
+'
+'abstract class VervoerApiClient {
+'    +boekVervoer(vervoer: Vervoer) : TransportInfo
+'}
+'
+'interface ApiService {
+'    +boekOvernachting(overnachting: Overnachting) : BookingInfo
+'    +boekVervoer(vervoer: Vervoer) : TransportInfo
+'}
+'
+'BouwsteenFactory <|-- BouwsteenManager
+'BouwsteenManager <|-- BouwsteenRepositoryImpl
+'TripManager <|-- BouwsteenManager
+'AccommodatieApiClient <|-- ApiService
+'VervoerApiClient <|-- ApiService
+'
+'BouwsteenFactory --> BouwsteenManager : gebruikt
+'BouwsteenManager --> BouwsteenRepositoryImpl : gebruikt
+'TripManager --> BouwsteenManager : gebruikt
+'AccommodatieApiClient --> ApiService : gebruikt
+'VervoerApiClient --> ApiService : gebruikt
+@enduml
+
+

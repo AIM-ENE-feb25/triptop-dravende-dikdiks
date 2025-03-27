@@ -9,43 +9,33 @@ SHOW_PERSON_OUTLINE()
 Person("r", "Reiziger", "Stelt reis samen en boekt deze")
 Person("ra", "Reisagent", "Helpt reiziger wanneer dat nodig is")
 
-
-System_Boundary("naam", "Titel"){
-    Container("be", "Backend", "Handelt requests vanuit de frontend af")
-    Container("fe", "Triptop-applicatie", "Frontend van reisapplicatie die reizigers kunnen gebruiken")
-    Container("db", "Database", "Worden geboekte reizen in opgeslagen")
+System_Boundary("triptop", "Triptop Systeem") {
+    Container("be", "Backend", "Springboot", "Handelt aanvragen van de frontend af en verwerkt boekingen")
+    Container("fe", "Triptop-applicatie", "javascript + react", "Webapplicatie waarmee reizigers hun reis kunnen plannen en boeken")
+    Container("db", "Database", "SQL","Slaat gegevens van geboekte reizen en gebruikers op")
 }
 
+System_Ext("sg", "SendGrid", "Verstuurt bevestigingen en meldingen per e-mail")
+System_Ext("as", "Airscraper", "Zoekt en vergelijkt beschikbare vluchten")
+System_Ext("eur", "Interrail/Eurail", "Biedt toegang tot internationale treinreizen")
+System_Ext("wm", "Wiremock", "Externe authenticatie voor login")
+System_Ext("tw", "Twilio", "Stuurt SMS-meldingen naar reizigers")
+System_Ext("ta", "Tripadvisor", "Zoekt en vergelijkt hotels en activiteiten")
+System_Ext("st", "Stripe", "Verwerkt betalingen voor boekingen")
+System_Ext("osm", "OpenStreetMap", "Geeft kaartweergave van bestemmingen en routes")
 
-System_Ext("sg", "Sendgrid", "Kan mails sturen naar relevante actoren")
-System_Ext("as", "Airscraper", "Vindt beschikbare vluchten")
-System_Ext("eur", "Interrail/Eurail", "Vindt beschikbare treinreizen binnen Europa")
-System_Ext("wm", "Wiremock", "Identityprovider, laat mensen inloggen")
-System_Ext("tw", "Twilio", "Kan berichten naar telefoonnummers van reizigers sturen")
-System_Ext("ta", "Tripadvisor", "Vindt informatie over hotels en dergelijke")
-System_Ext("st", "Stripe", "Laat reizeigers betalen")
-System_Ext("osm", "OpenStreetMap", "Laat reizigers zien wat de locatie is van de dingen waar ze heen willen")
+Rel("r", "fe", "Stelt reis samen en boekt deze via de app")
+Rel("ra", "fe", "Adviseert en helpt de reiziger indien nodig")
+Rel("fe", "be", "Stuurt aanvragen voor boekingen en gegevensverwerking")
+Rel("be", "db", "Slaat boekingen en gebruikersgegevens op")
 
+Rel("fe", "osm", "Toont kaart met locaties van accommodaties en activiteiten")
 
-Rel("r", "fe", " ")
-Rel("ra", "fe", " ")
-Rel("fe", "be", " ")
-Rel("be", "db", " ")
-
-Rel("fe", "osm", " ")
-
-Rel("be", "sg", " ")
-Rel("be", "as", " ")
-Rel("be", "eur", " ")
-Rel("be", "wm", " ")
-Rel("be", "tw", " ")
-Rel("be", "ta", " ")
-Rel("be", "st", " ")
-
-
-'todo: labels bij de pijltjes bedenken
-
-
-
-
+Rel("be", "sg", "Stuurt boekingsbevestigingen en updates per e-mail")
+Rel("be", "as", "Zoekt beschikbare vluchten")
+Rel("be", "eur", "Regelt internationale treinreizen")
+Rel("be", "wm", "Verifieert gebruikers via externe logins")
+Rel("be", "tw", "Stuurt SMS-notificaties naar reizigers")
+Rel("be", "ta", "Biedt suggesties voor hotels en excursies")
+Rel("be", "st", "Handelt betalingen af")
 @enduml
