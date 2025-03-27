@@ -16,20 +16,23 @@ System_Boundary("naam", "Titel"){
     Container("db", "Database", "Worden geboekte reizen in opgeslagen")
 }
 
+
 System_Ext("sg", "Sendgrid", "Kan mails sturen naar relevante actoren")
-System_Ext("as", "airscraper", "Vindt beschikbare vluchten")
+System_Ext("as", "Airscraper", "Vindt beschikbare vluchten")
 System_Ext("eur", "Interrail/Eurail", "Vindt beschikbare treinreizen binnen Europa")
 System_Ext("wm", "Wiremock", "Identityprovider, laat mensen inloggen")
 System_Ext("tw", "Twilio", "Kan berichten naar telefoonnummers van reizigers sturen")
 System_Ext("ta", "Tripadvisor", "Vindt informatie over hotels en dergelijke")
 System_Ext("st", "Stripe", "Laat reizeigers betalen")
-System_Ext("gm", "Google Maps", "Laat reizigers zien wat de locatie is van de dingen waar ze heen willen")
+System_Ext("osm", "OpenStreetMap", "Laat reizigers zien wat de locatie is van de dingen waar ze heen willen")
 
 
 Rel("r", "fe", " ")
 Rel("ra", "fe", " ")
 Rel("fe", "be", " ")
 Rel("be", "db", " ")
+
+Rel("fe", "osm", " ")
 
 Rel("be", "sg", " ")
 Rel("be", "as", " ")
@@ -38,7 +41,6 @@ Rel("be", "wm", " ")
 Rel("be", "tw", " ")
 Rel("be", "ta", " ")
 Rel("be", "st", " ")
-Rel("fe", "gm", " ")
 
 
 'todo: labels bij de pijltjes bedenken

@@ -2,11 +2,10 @@
 
 ## Voorbereiding
 ### Ontwerpvraag
-- Hoe kunnen we ervoor zorgen dat bepaalde bouwstenen automatisch een alternatieve dienst kiezen als de primaire dienst niet beschikbaar is?
-
+- Hoe maak je de applicatie uitbreidbaar met nieuwe bouwstenen?
 
 ### Componenten
--  i
+- i
 
 ## Verantwoordelijkheid van componenten
 

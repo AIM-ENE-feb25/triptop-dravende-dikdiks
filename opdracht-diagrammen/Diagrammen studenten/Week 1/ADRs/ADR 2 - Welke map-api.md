@@ -17,19 +17,27 @@ Het is voor ons zaak dat we de beste kaart voor onze usecase vinden en gebruiken
 | Kosten                            | 0           | +          | ++            |
 | Beschikbaarheid (uptime)          | ++          | ?          | +             |
 | Development time                  | +           | +          | 0             |
-| Moeilijkheidsgraad van integreren | ++          | ++         | 0             |
-| Nauwkeurigheid                    | +           | +          | ++            |
+| Moeilijkheidsgraad van integreren | ++          | +          | ++            |
+| Nauwkeurigheid                    | ++          | +          | ++            |
 | Privacy                           | 0           | 0          | ++            |
 | Aangepaste functionaliteit        | ++          | 0          | ++            |
 
-[//]: # (todo: bronnen toevoegen)
-Bronnen:
+Bronnen:  
+Google Maps uptime: https://status.cloud.google.com/maps-platform/summary  
+OpenStreetMap uptime: https://uptime.com/upstatus/openstreetmap.org
+
+Google Maps kosten: https://mapsplatform.google.com/pricing/  
+Apple Maps kosten: https://developer.apple.com/maps/web/  
+OpenStreetMap kosten: https://www.openstreetmap.org/copyright
+
+Google Maps naslagwerk: https://developers.google.com/maps/documentation  
+Apple Maps naslagwerk: https://developer.apple.com/documentation/applemapsserverapi/  
+OpenStreetMap naslagwerk: https://taginfo.openstreetmap.org/taginfo/apidoc
+
 
 ## Decision
 
 Hoewel de uptime van Apple Maps waarschijnlijk vrij hoog ligt, hebben we hier geen historische data van kunnen vinden. Daarom lijkt, gebaseerd op deze tabel, OpenStreetMap de beste optie.
-
-[//]: # (todo: controleren of de diagrammen en geschreven teksten overeen komen met de gekozen technologie/oplossing)
 
 ## Consequences
 
