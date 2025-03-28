@@ -1,0 +1,28 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Component Diagram for Trip-top System
+
+System("Frontend", "Frontend", "")
+
+System_Boundary("backend", "Backend") {
+    Component("BouwsteenController", "BouwsteenController", "Voegt, verwijdert en haalt bouwstenen op.")
+    Component("BouwsteenService", "BouwsteenService", "Behandelt bouwsteen logica.")
+    Component("BouwsteenRepository", "BouwsteenRepository", "Slaat bouwstenen op.")
+    Component("BouwsteenFactory", "BouwsteenFactory", "Maakt bouwstenen aan.")
+    Component("TripService", "TripService", "Beheert trip gerelateerde bouwstenen.")
+    Component("ApiService", "ApiService", "Boekt overnachtingen en vervoer.")
+}
+
+System_Boundary("database", "Database") {
+    System("Database", "Database", "Slaat alle gegevens op.")
+}
+
+Rel("Frontend", "BouwsteenController", "Verstuurt aanvragen")
+Rel("BouwsteenController", "BouwsteenService", "Gebruikt")
+Rel("BouwsteenService", "BouwsteenRepository", "Gebruikt")
+Rel("BouwsteenService", "BouwsteenFactory", "Gebruikt")
+Rel("TripService", "BouwsteenService", "Gebruikt")
+Rel("ApiService", "TripService", "Gebruikt")
+Rel("BouwsteenRepository", "Database", "verstuurt naar")
+@enduml

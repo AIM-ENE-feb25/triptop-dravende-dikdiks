@@ -1,28 +1,21 @@
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Sequence.puml
 
-Component(BouwsteenComponent, "BouwsteenComponent", "", "BouwsteenComponent-applicatie")
-Component(BouwsteenService, "BouwsteenService","", "BouwsteenService")
-Component(BouwsteenRepository, "BouwsteenRepository","", "BouwsteenRepository")
-Component(TripService, "TripService","", "TripService")
-Component(ApiService, "ApiService","", "ApiService")
+actor Reiziger
 
-actor User
+Component(BouwsteenController, "BouwsteenController", "", "Beheert bouwstenen")
+Component(BouwsteenService, "BouwsteenService","", "Behandelt bouwsteen logica")
+Component(BouwsteenRepository, "BouwsteenRepository","", "Slaat bouwstenen op")
+Component(TripService, "TripService","", "Beheert trip gerelateerde bouwstenen")
+Component(ApiService, "ApiService","", "Boekt overnachtingen en vervoer")
 
-User -> BouwsteenComponent : Create Bouwsteen(type, details)
-BouwsteenComponent -> BouwsteenService : createBouwsteen(type, details)
+Reiziger -> BouwsteenController : Create Bouwsteen(type, details)
+BouwsteenController -> BouwsteenService : Bouwsteen bouwsteen = createBouwsteen(type, details)
 BouwsteenService -> BouwsteenRepository : save(bouwsteen)
-BouwsteenRepository --> BouwsteenService : return saved bouwsteen
-BouwsteenService --> BouwsteenComponent : return bouwsteen
-BouwsteenComponent --> User : return created bouwsteen
 
-User -> TripService : Add Bouwsteen to trip(tripId, bouwsteen)
-TripService -> BouwsteenService : getBouwsteenById(bouwsteenId)
-BouwsteenService --> TripService : return bouwsteen
-TripService -> TripService : add bouwsteen to trip
-TripService --> User : return updated trip
+Reiziger -> TripService : Add Bouwsteen to trip(tripId, bouwsteen)
+TripService -> BouwsteenService : Bouwsteen bouwsteen = getBouwsteenById(bouwsteenId)
 
-User -> ApiService : Book Accommodation (overnachting)
-ApiService --> User : return booking info
+Reiziger -> ApiService : Book Accommodation (overnachting)
 
 @enduml

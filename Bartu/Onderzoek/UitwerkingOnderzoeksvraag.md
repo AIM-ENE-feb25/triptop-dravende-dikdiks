@@ -1,17 +1,29 @@
 ### Wie is verantwoordelijk voor het creëren van een nieuwe instantie van een bouwsteen? Wie is verantwoordelijk voor het verwijderen van een instantie van een bouwsteen?
 
 ## Lijst met componenten
-* BouwsteenComponent : creeren van instanties van bouwstenen
+* Bouwsteencontroller : Opvangen api-calls frontend
+* BouwsteenFactory : creeren van instanties van bouwstenen
 * BouwsteenService : Voert businesslogica uit
 * BouwsteenRepository : opslaan bouwsteen
 * TripService : toevoegen/ verwijderen van bouwstenen aan reis
 * ApiService : communicatie met externe API's
 
+![componentDiagramOnderzoek-Component Diagram for Trip-top System.svg](componentDiagramOnderzoek-Component%20Diagram%20for%20Trip-top%20System.svg)
 
 ## Lijst met interfaces
 
 ```java
-public interface BouwsteenComponent {
+@RestController
+@RequestMapping("/api/bouwstenen")
+public interface BouwsteenController {
+ResponseEntity<Bouwsteen> voegBouwsteenToe(@RequestBody BouwsteenRequest request);
+ResponseEntity<Void> verwijderBouwsteen(@PathVariable String bouwsteenId);
+ResponseEntity<Bouwsteen> haalBouwsteenOp(@PathVariable String bouwsteenId);
+ResponseEntity<List<Bouwsteen>> haalAlleBouwstenenOpVoorTrip(@PathVariable String tripId);
+}
+```
+```java
+public interface BouwsteenFactory {
 Bouwsteen createBouwsteen(String type, Map<String, Object> details);
 }
 ```
@@ -50,3 +62,4 @@ TransportInfo boekVervoer(Vervoer vervoer);
 
 ## Class diagram
 
+![classDiagramOnderzoek-0.svg](classDiagramOnderzoek-0.svg)
