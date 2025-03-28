@@ -1,0 +1,34 @@
+@startuml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Component Diagram voor TripTop met Beveiligingslaag
+left to right direction
+
+
+System("Frontend", "Frontend", "")
+
+System_Boundary("backend", "Backend") {
+    Component("BackEnd", "BookTripController", "Boekt alle reizen.")
+    Component("GatewayAPI", "GatewayAPI", "Beveiligt en beheert API-verzoeken")
+    Component("SecurityProxy", "SecurityProxy", "Voegt encryptie/authenticatie toe voor verouderde APIs")
+    Component("Validation", "Validation", "Filtert en valideert API-data")
+    Component("Logging", "Logging", "Detecteert en logt verdachte verzoeken")
+}
+
+System_Boundary("database", "Database") {
+    System("Database", "Database", " ")
+}
+
+System_Ext("BookinCOM", "BookinCOM", "Zoekt hotelprijzen, autohuurprijzen, vluchtprijzen, etc.")
+
+Rel("Frontend", "BackEnd", "Boekt reis")
+Rel("BackEnd", "GatewayAPI", "Veilige verzoeken")
+Rel("GatewayAPI", "SecurityProxy", "Verwerkt onveilige verzoeken")
+Rel("SecurityProxy", "Validation", "Filtert schadelijke input")
+Rel("Validation", "Database", "Slaat geboekte reis op.")
+Rel("Validation", "Logging", "Registreert verdachte activiteiten")
+Rel("SecurityProxy", "BookinCOM", "Stuurt beveiligde verzoeken naar verouderde API's")
+
+
+@enduml

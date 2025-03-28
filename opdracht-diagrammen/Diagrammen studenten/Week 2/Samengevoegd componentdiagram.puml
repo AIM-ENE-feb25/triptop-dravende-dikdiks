@@ -1,0 +1,43 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Component("hc", "HotelController")
+Component("tc", "TripController")
+Component("hr", "HotelRepo")
+Component("tr", "TripRepo")
+Component("sp", "SecurityProxy", "Voegt encryptie/authenticatie toe voor verouderde APIs")
+Component("l", "Logging", "Detecteert en logt verdachte verzoeken in CSV-format",)
+Component("bsf", "BouwsteenFactory", "Maakt bouwstenen aan.")
+Component("bss", "BouwsteenService", "Behandelt bouwsteen logica.")
+Component("gapi", "GatewayAPI", "Beveiligt en beheert API-verzoeken")
+Component("v", "Validation", "Filtert en valideert API-data")
+
+Component_Ext("hapi","HotelAPI")
+Component_Ext("tapi","TripAPI")
+
+System("db", "Database")
+
+
+
+Rel("hc", "gapi", " ")
+Rel("tc", "gapi", " ")
+
+Rel("gapi", "sp", " ")
+Rel("gapi", "bss", " ")
+
+Rel("bss", "bsf", " ")
+Rel("bss", "tr", " ")
+Rel("bss", "hr", " ")
+
+Rel("sp", "hapi", " ")
+Rel("sp", "tapi", " ")
+Rel("sp", "l", " ")
+Rel("sp", "v", " ")
+
+Rel("v", "l", " ")
+
+Rel("tr", "db", " ")
+Rel("hr", "db", " ")
+
+
+@enduml
