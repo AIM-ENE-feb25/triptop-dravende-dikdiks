@@ -5,22 +5,29 @@
 title Component Diagram voor TripTop
 
 System_Boundary("backend", "Backend") {
+    Component(TripController, "TripController", "Beveiligde toegang tot backend")
     Component(interface, "Interface", "Standaard contract")
     Component(adapter, "Adapter", "Communiceert met externe services")
     Component(factory, "ServiceFactory", "Maakt de juiste service-adapter aan")
     Component(handler, "ExternalServiceHandler", "Handelt externe service-verzoeken af")
-    Component(TripController, "TripController", "Beveiligde toegang tot backend")
+    Component(TripRepo, "TripRepo", "Verbinding met database")
 }
 
 System_Boundary("database", "Database") {
     System(db, "Database", "Opslag van gegevens")
 }
 
+System_Boundary("APIS", "APIS") {
+    System(API, "externeAPI", "")
+}
+
 Rel(TripController, interface, "Verzendt beveiligde verzoeken naar")
 Rel(interface, handler, "Routet verzoeken naar")
 Rel(handler, factory, "Maakt adapter aan via")
 Rel(factory, adapter, "Geeft juiste adapter terug")
-Rel(handler, db, "Leest/Schrijft data naar")
 Rel(adapter, handler, "Implementeert communicatie met externe services")
+Rel("handler", "TripRepo", "Verbinding met database")
+Rel("adapter", API, "Leest/Schrijft data naar")
+Rel("TripRepo", db, "Leest/Schrijft data naar")
 
 @enduml
