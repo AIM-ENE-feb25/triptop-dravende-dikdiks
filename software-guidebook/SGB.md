@@ -66,11 +66,6 @@ Voordat deze casusomschrijving tot stand kwam, heeft de opdrachtgever de volgend
 * Security -> Integrity (Degree to which a system, product or component ensures that the state of its system and data are protected from unauthorized modification or deletion either by malicious action or computer error)
 * Security -> Confidentiality (Degree to which a system, product or component ensures that data are accessible only to those authorized to have access)
 
-## 5. Constraints
-
-> [!IMPORTANT]
-> Beschrijf zelf de beperkingen die op voorhand bekend zijn die invloed hebben op keuzes die wel of niet gemaakt kunnen of mogen worden.
-
 ## 6. Principles
 
 > [!IMPORTANT]
@@ -85,13 +80,20 @@ Voordat deze casusomschrijving tot stand kwam, heeft de opdrachtgever de volgend
 
 ###     7.2. Components
 
-![componentdiagrambookinCOM-Component_Diagram_voor_TripTop_met_Beveiligingslaag.png](..%2FMarijn%2Fonderzoeksvraag%2FcomponentdiagrambookinCOM-Component_Diagram_voor_TripTop_met_Beveiligingslaag.png)
-![dynamicdiagramonderzoeksvraag.png](..%2FMarijn%2Fonderzoeksvraag%2Fdynamicdiagramonderzoeksvraag.png)
+![componentdiagrambookinCOM-Component_Diagram_voor_TripTop_met_Beveiligingslaag.png](..%2FMarijn%2Fonderzoeksvraag%2FcomponentdiagrambookinCOM-Component_Diagram_voor_TripTop_met_Beveiligingslaag.png)  
+![dynamicdiagramonderzoeksvraag.png](..%2FMarijn%2Fonderzoeksvraag%2Fdynamicdiagramonderzoeksvraag.png)    
+<sub> Diagrammen Marijn
+
+![componentDiagramOnderzoek-Component Diagram for Trip-top System.svg](../Bartu/Onderzoek/componentDiagramOnderzoek-Component%20Diagram%20for%20Trip-top%20System.svg)
+<sub>Component diagram Bartu
 
 ###     7.3. Design & Code
-![onderzoeksvraagklassendiagram.png](..%2FMarijn%2Fonderzoeksvraag%2Fonderzoeksvraagklassendiagram.png)
+![onderzoeksvraagklassendiagram.png](..%2FMarijn%2Fonderzoeksvraag%2Fonderzoeksvraagklassendiagram.png)  
+<sub>Class diagram Marijn
 
-![classDiagramOnderzoek-0.svg](../Bartu/Onderzoek/classDiagramOnderzoek-0.svg)
+![classDiagramOnderzoek-0.svg](../Bartu/Onderzoek/classDiagramOnderzoek-0.svg)  
+<sub>Class diagram Bartu
+
 
 > [!IMPORTANT]
 > Voeg toe: Per ontwerpvraag een Class Diagram plus een Sequence Diagram va n een aantal scenario's inclusief begeleidende tekst.
@@ -124,8 +126,6 @@ Wanneer de reisagent een reiziger helpt, kan het handig zijn als de reisagent me
 | Dubbele functionaliteiten     | ++           | --            |
 | Interactie met backend        | 0            | 0             |
 
-[//]: # (todo: bronnen toevoegen)
-Bronnen:
 
 ## Decision
 
@@ -284,8 +284,4 @@ In eerste instantie kozen we voor Adyen, omdat dit de eerste was die in ons opkw
 
 > [!TIP]
 > This section describes the resulting context, after applying the decision. All consequences should be listed here, not just the "positive" ones. A particular decision may have positive, negative, and neutral consequences, but all of them affect the team and project in the future.
-
-## 9. Deployment, Operation and Support
-
-> [!TIP]
-> Zelf beschrijven van wat je moet doen om de software te installeren en te kunnen runnen.
+ 

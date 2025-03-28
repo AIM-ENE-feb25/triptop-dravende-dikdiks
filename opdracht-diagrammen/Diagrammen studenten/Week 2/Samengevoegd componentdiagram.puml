@@ -8,7 +8,10 @@ Component("tr", "TripRepo")
 Component("sp", "SecurityProxy", "Voegt encryptie/authenticatie toe voor verouderde APIs")
 Component("l", "Logging", "Detecteert en logt verdachte verzoeken in CSV-format",)
 Component("bsf", "BouwsteenFactory", "Maakt bouwstenen aan.")
-Component("bss", "BouwsteenService", "Behandelt bouwsteen logica.")
+Component("hs", "HotelService")
+Component("ts", "TripService")
+
+'todo: bouwsteenservice opsplitsen
 Component("gapi", "GatewayAPI", "Beveiligt en beheert API-verzoeken")
 Component("v", "Validation", "Filtert en valideert API-data")
 
@@ -23,11 +26,14 @@ Rel("hc", "gapi", " ")
 Rel("tc", "gapi", " ")
 
 Rel("gapi", "sp", " ")
-Rel("gapi", "bss", " ")
+Rel("gapi", "hs", " ")
+Rel("gapi", "ts", " ")
 
-Rel("bss", "bsf", " ")
-Rel("bss", "tr", " ")
-Rel("bss", "hr", " ")
+Rel("hs", "bsf", " ")
+Rel("ts", "bsf", " ")
+
+Rel("ts", "tr", " ")
+Rel("hs", "hr", " ")
 
 Rel("sp", "hapi", " ")
 Rel("sp", "tapi", " ")

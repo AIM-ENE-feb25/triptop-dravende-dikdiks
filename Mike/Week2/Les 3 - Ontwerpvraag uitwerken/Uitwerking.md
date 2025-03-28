@@ -38,7 +38,8 @@ Rel("tr", "db", "Slaat data response op")
 
 ```
 
-
+scenario 1: gebruiker wil nieuwe bouwsteen toevoegen. hoe gaat dat?
+scenario 2: ik ga nieuw soort bouwsteen toevoegen (theaterbezoek of zo)
 
 
 
