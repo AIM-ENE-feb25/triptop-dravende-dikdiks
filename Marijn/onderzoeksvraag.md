@@ -63,3 +63,8 @@ public interface ILogging {
 }
 
 ```
+### patterns
+
+Proxy pattern: laag geplaatst tussen API gateway en de API voor security, alleen veilige verzoeken gaan naar de API en komen van de API.
+
+Facade pattern: eenvoudige interface gemaakt om verouderde API's eenvoudiger te maken.
