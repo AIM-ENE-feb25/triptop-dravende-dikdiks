@@ -1,0 +1,15 @@
+@startuml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Component Diagram voor TripTop met Beveiligingslaag
+
+System_Boundary("backend", "Backend") {
+    Component("Interface", "Interface", ".")
+    Component("Adapter", "Adapter", ".")
+    Component("ServiceFactory", "ServiceFactory", ".")
+    Component("ExternalServiceHandler", "ExternalServiceHandler", ".")
+    Component("API-gateway", "API-gateway", ".")
+}
+
+@enduml
