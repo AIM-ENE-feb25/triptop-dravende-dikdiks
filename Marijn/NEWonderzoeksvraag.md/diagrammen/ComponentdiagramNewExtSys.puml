@@ -5,11 +5,22 @@
 title Component Diagram voor TripTop met Beveiligingslaag
 
 System_Boundary("backend", "Backend") {
-    Component("Interface", "Interface", ".")
-    Component("Adapter", "Adapter", ".")
-    Component("ServiceFactory", "ServiceFactory", ".")
-    Component("ExternalServiceHandler", "ExternalServiceHandler", ".")
-    Component("API-gateway", "API-gateway", ".")
+    Component(interface, "Interface", "Standaard contract")
+    Component(adapter, "Adapter", "Communiceert met externe services")
+    Component(factory, "ServiceFactory", "Maakt de juiste service-adapter aan")
+    Component(handler, "ExternalServiceHandler", "Handelt externe service-verzoeken af")
+    Component(api_gateway, "API-gateway", "Beveiligde toegang tot backend")
 }
+
+System_Boundary("database", "Database") {
+    System(db, "Database", "Opslag van gegevens")
+}
+
+Rel(api_gateway, interface, "Verzendt beveiligde verzoeken naar")
+Rel(interface, handler, "Routet verzoeken naar")
+Rel(handler, factory, "Maakt adapter aan via")
+Rel(factory, adapter, "Geeft juiste adapter terug")
+Rel(handler, db, "Leest/Schrijft data naar")
+Rel(adapter, handler, "Implementeert communicatie met externe services")
 
 @enduml
