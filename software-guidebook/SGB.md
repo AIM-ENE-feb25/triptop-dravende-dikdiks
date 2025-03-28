@@ -90,6 +90,9 @@ Voordat deze casusomschrijving tot stand kwam, heeft de opdrachtgever de volgend
 
 ###     7.3. Design & Code
 ![onderzoeksvraagklassendiagram.png](..%2FMarijn%2Fonderzoeksvraag%2Fonderzoeksvraagklassendiagram.png)
+
+![classDiagramOnderzoek-0.svg](../Bartu/Onderzoek/classDiagramOnderzoek-0.svg)
+
 > [!IMPORTANT]
 > Voeg toe: Per ontwerpvraag een Class Diagram plus een Sequence Diagram va n een aantal scenario's inclusief begeleidende tekst.
 
