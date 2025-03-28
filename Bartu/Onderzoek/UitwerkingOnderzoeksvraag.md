@@ -30,7 +30,7 @@ Bouwsteen createBouwsteen(String type, Map<String, Object> details);
 
 ```java
 public interface BouwsteenService {
-Bouwsteen createBouwsteen(String type, Map<String, Object> details);
+Bouwsteen addBouwsteen(String type, Map<String, Object> details);
 void deleteBouwsteen(Long bouwsteenId);
 Optional<Bouwsteen> getBouwsteenById(Long bouwsteenId);
 }
