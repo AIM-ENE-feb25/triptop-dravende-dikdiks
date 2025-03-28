@@ -24,16 +24,6 @@ class BouwsteenRepository {
     +findById(bouwsteenId: Long): Optional<Bouwsteen>
 }
 
-class TripService {
-    +addBouwsteenToTrip(tripId: Long, bouwsteen: Bouwsteen): void
-    +removeBouwsteenFromTrip(tripId: Long, bouwsteenId: Long): void
-    +getBouwstenenForTrip(tripId: Long): List<Bouwsteen>
-}
-
-class ApiService {
-    +boekOvernachting(overnachting: Overnachting): BookingInfo
-    +boekVervoer(vervoer: Vervoer): TransportInfo
-}
 
 interface Bouwsteen {
     +getType(): String
@@ -59,7 +49,5 @@ BouwsteenFactory ..> Vervoer : creates
 BouwsteenController ..> BouwsteenService : delegates
 BouwsteenService ..> BouwsteenRepository : uses
 BouwsteenRepository ..> Bouwsteen : handles
-TripService ..> BouwsteenService : uses
-ApiService ..> TripService : interacts
 
 @enduml
