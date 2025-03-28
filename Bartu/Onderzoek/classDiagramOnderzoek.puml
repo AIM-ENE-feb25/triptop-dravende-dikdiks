@@ -8,7 +8,7 @@ class BouwsteenController {
     +haalAlleBouwstenenOpVoorTrip(tripId: String): ResponseEntity<List<Bouwsteen>>
 }
 
-interface BouwsteenFactory {
+class BouwsteenFactory {
     +createBouwsteen(type: String, details: Map<String, Object>): Bouwsteen
 }
 
@@ -54,6 +54,8 @@ Bouwsteen <|-- Overnachting : implements
 Bouwsteen <|-- Vervoer : implements
 
 BouwsteenController ..> BouwsteenFactory : uses
+BouwsteenFactory ..> Overnachting : creates
+BouwsteenFactory ..> Vervoer : creates
 BouwsteenController ..> BouwsteenService : delegates
 BouwsteenService ..> BouwsteenRepository : uses
 BouwsteenRepository ..> Bouwsteen : handles
