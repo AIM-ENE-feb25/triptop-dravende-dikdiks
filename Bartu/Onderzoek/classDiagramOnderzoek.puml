@@ -12,25 +12,25 @@ interface BouwsteenFactory {
     +createBouwsteen(type: String, details: Map<String, Object>): Bouwsteen
 }
 
-interface BouwsteenService {
+class BouwsteenService {
     +createBouwsteen(type: String, details: Map<String, Object>): Bouwsteen
     +deleteBouwsteen(bouwsteenId: Long): void
     +getBouwsteenById(bouwsteenId: Long): Optional<Bouwsteen>
 }
 
-interface BouwsteenRepository {
+class BouwsteenRepository {
     +save(bouwsteen: Bouwsteen): void
     +delete(bouwsteenId: Long): void
     +findById(bouwsteenId: Long): Optional<Bouwsteen>
 }
 
-interface TripService {
+class TripService {
     +addBouwsteenToTrip(tripId: Long, bouwsteen: Bouwsteen): void
     +removeBouwsteenFromTrip(tripId: Long, bouwsteenId: Long): void
     +getBouwstenenForTrip(tripId: Long): List<Bouwsteen>
 }
 
-interface ApiService {
+class ApiService {
     +boekOvernachting(overnachting: Overnachting): BookingInfo
     +boekVervoer(vervoer: Vervoer): TransportInfo
 }
