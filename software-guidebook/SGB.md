@@ -85,11 +85,11 @@ Voordat deze casusomschrijving tot stand kwam, heeft de opdrachtgever de volgend
 
 ###     7.2. Components
 
-> [!IMPORTANT]
-> Voeg toe: Component Diagram plus een Dynamic Diagram van een aantal scenario's inclusief begeleidende tekst.
+![componentdiagrambookinCOM-Component_Diagram_voor_TripTop_met_Beveiligingslaag.png](..%2FMarijn%2Fonderzoeksvraag%2FcomponentdiagrambookinCOM-Component_Diagram_voor_TripTop_met_Beveiligingslaag.png)
+![dynamicdiagramonderzoeksvraag.png](..%2FMarijn%2Fonderzoeksvraag%2Fdynamicdiagramonderzoeksvraag.png)
 
 ###     7.3. Design & Code
-
+![onderzoeksvraagklassendiagram.png](..%2FMarijn%2Fonderzoeksvraag%2Fonderzoeksvraagklassendiagram.png)
 > [!IMPORTANT]
 > Voeg toe: Per ontwerpvraag een Class Diagram plus een Sequence Diagram va n een aantal scenario's inclusief begeleidende tekst.
 
