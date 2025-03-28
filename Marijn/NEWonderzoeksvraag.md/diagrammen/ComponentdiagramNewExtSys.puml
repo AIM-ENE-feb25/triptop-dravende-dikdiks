@@ -2,21 +2,21 @@
 
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
-title Component Diagram voor TripTop met Beveiligingslaag
+title Component Diagram voor TripTop
 
 System_Boundary("backend", "Backend") {
     Component(interface, "Interface", "Standaard contract")
     Component(adapter, "Adapter", "Communiceert met externe services")
     Component(factory, "ServiceFactory", "Maakt de juiste service-adapter aan")
     Component(handler, "ExternalServiceHandler", "Handelt externe service-verzoeken af")
-    Component(api_gateway, "API-gateway", "Beveiligde toegang tot backend")
+    Component(TripController, "TripController", "Beveiligde toegang tot backend")
 }
 
 System_Boundary("database", "Database") {
     System(db, "Database", "Opslag van gegevens")
 }
 
-Rel(api_gateway, interface, "Verzendt beveiligde verzoeken naar")
+Rel(TripController, interface, "Verzendt beveiligde verzoeken naar")
 Rel(interface, handler, "Routet verzoeken naar")
 Rel(handler, factory, "Maakt adapter aan via")
 Rel(factory, adapter, "Geeft juiste adapter terug")
