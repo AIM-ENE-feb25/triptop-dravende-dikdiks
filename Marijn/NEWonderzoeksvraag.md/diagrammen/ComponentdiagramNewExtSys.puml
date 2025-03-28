@@ -2,13 +2,12 @@
 
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
-title Component Diagram voor TripTop
+title Component Diagram voor TripTop (Makkelijk toevoegen externe service)
 
 System_Boundary("backend", "Backend") {
     Component(TripController, "TripController", "Beveiligde toegang tot backend")
     Component(interface, "Interface", "Standaard contract")
     Component(adapter, "Adapter", "Communiceert met externe services")
-    Component(factory, "ServiceFactory", "Maakt de juiste service-adapter aan")
     Component(handler, "ExternalServiceHandler", "Handelt externe service-verzoeken af")
     Component(TripRepo, "TripRepo", "Verbinding met database")
 }
@@ -22,12 +21,10 @@ System_Boundary("APIS", "APIS") {
 }
 
 Rel(TripController, interface, "Verzendt beveiligde verzoeken naar")
-Rel(interface, handler, "Routet verzoeken naar")
-Rel(handler, factory, "Maakt adapter aan via")
-Rel(factory, adapter, "Geeft juiste adapter terug")
-Rel(adapter, handler, "Implementeert communicatie met externe services")
+Rel(interface, handler, "Routeert verzoeken naar")
+Rel(handler, "adapter", "Implementeert communicatie met externe services")
 Rel("handler", "TripRepo", "Verbinding met database")
-Rel("adapter", API, "Leest/Schrijft data naar")
+Rel("adapter", API, "Stuurt request")
 Rel("TripRepo", db, "Leest/Schrijft data naar")
 
 @enduml
