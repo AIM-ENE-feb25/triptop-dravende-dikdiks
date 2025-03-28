@@ -63,3 +63,22 @@ TransportInfo boekVervoer(Vervoer vervoer);
 ## Class diagram
 
 ![classDiagramOnderzoek-0.svg](classDiagramOnderzoek-0.svg)
+
+## ADR - Instanties bouwstenen
+
+Datum: 28-03-2025
+
+## Status
+Accepted
+
+## Context
+
+Wie is verantwoordelijk voor het creëren van een nieuwe instantie van een bouwsteen? 
+Wie is verantwoordelijk voor het verwijderen van een instantie van een bouwsteen?
+
+## Considered Options
+![classDiagramOnderzoek-0.svg](classDiagramOnderzoek-0.svg)
+
+## Decision
+
+## Consequences
