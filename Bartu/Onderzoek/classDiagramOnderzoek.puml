@@ -1,7 +1,7 @@
 @startuml
 !include https://raw.githubusercontent.com/craft-coder/plantuml-styles/main/styles/modern-style.plantuml
 
-interface BouwsteenController {
+class BouwsteenController {
     +voegBouwsteenToe(request: BouwsteenRequest): ResponseEntity<Bouwsteen>
     +verwijderBouwsteen(bouwsteenId: String): ResponseEntity<Void>
     +haalBouwsteenOp(bouwsteenId: String): ResponseEntity<Bouwsteen>
