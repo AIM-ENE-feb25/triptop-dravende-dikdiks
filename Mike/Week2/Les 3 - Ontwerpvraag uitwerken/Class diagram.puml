@@ -1,76 +1,10 @@
 @startuml
 
-class Trip {
-    -startDatum:Datum
-    -eindDatum:Datum
-    -budget:double
-    +berekenDuur(): int
-    +berekenPrijs(): double
-    +bepaalDuurzaamheidsScore():DuurzaamheidsScore
-}
 
-interface Bouwsteen{
-    -naam:String
-}
 
-interface BouwsteenRepo{
-    +sqlRelatedFunctions():int
-}
 
-class Verblijf implements Bouwsteen{
-    -startDatum:Datum
-    -eindDatum:Datum
-    +berekenVerblijfsduur(): int
-}
 
-class Reis implements Bouwsteen{
-    -startDatum:Datum
-    -eindDatum:Datum
-    -prijs:double
-    -vervoer:Vervoer
-}
 
-class Excursie implements Bouwsteen{
-    -titel:String
-    -datum:Datum
-    -startTijd:Tijd
-    -eindTijd:Tijd
-    -prijs:double
-}
 
-class Restaurant implements Bouwsteen{
-    -naam:String
-    -datum:Datum
-    -tijdstip:Tijd
-    -aantalPersonen:int
-}
-
-class Locatie {
-    -lat:Coordinaat
-    -lon:Coordinaat
-}
-
-class Verblijfplaats {
-    -locatie:Locatie
-    -prijs:double
-}
-
-class HotelRepo implements BouwsteenRepo {
-    +sqlRelatedFunctions():int
-}
-
-class TripRepo implements BouwsteenRepo{
-    +sqlRelatedFunctions():int
-}
-
-Reis "1..*" -- "1"  Locatie : bestemming
-Reis "1..*" -- "1"  Locatie : vertrek
-
-Trip "1" -- "2..*" Reis : verplaatsing
-Trip "1" -- "0..*" Excursie : excursie
-Trip "1" -- "0..*" Verblijf : verblijf
-Trip "1" -- "0..*" Restaurant : restaurant
-
-Verblijf "1" -- "1"  Verblijfplaats : verblijfplaats
 
 @enduml
