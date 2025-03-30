@@ -1,6 +1,18 @@
 @startuml
 !include https://raw.githubusercontent.com/craft-coder/plantuml-styles/main/styles/modern-style.plantuml
 
+interface BouwsteenFactory {
+    +createBouwsteen(details: Map<String, Object>): Bouwsteen
+}
+
+class OvernachtingFactory {
+    +createBouwsteen(details: Map<String, Object>): Overnachting
+}
+
+class VervoerFactory {
+    +createBouwsteen(details: Map<String, Object>): Vervoer
+}
+
 class BouwsteenController {
     +voegBouwsteenToe(request: BouwsteenRequest): ResponseEntity<Bouwsteen>
     +verwijderBouwsteen(bouwsteenId: String): ResponseEntity<Void>
@@ -8,12 +20,8 @@ class BouwsteenController {
     +haalAlleBouwstenenOpVoorTrip(tripId: String): ResponseEntity<List<Bouwsteen>>
 }
 
-class BouwsteenFactory {
-    +createBouwsteen(type: String, details: Map<String, Object>): Bouwsteen
-}
-
 class BouwsteenService {
-    +createBouwsteen(type: String, details: Map<String, Object>): Bouwsteen
+    +createBouwsteen(factory: BouwsteenFactory, details: Map<String, Object>): Bouwsteen
     +deleteBouwsteen(bouwsteenId: Long): void
     +getBouwsteenById(bouwsteenId: Long): Optional<Bouwsteen>
 }
@@ -23,7 +31,6 @@ class BouwsteenRepository {
     +delete(bouwsteenId: Long): void
     +findById(bouwsteenId: Long): Optional<Bouwsteen>
 }
-
 
 interface Bouwsteen {
     +getType(): String
@@ -42,11 +49,12 @@ class Vervoer {
 
 Bouwsteen <|-- Overnachting : implements
 Bouwsteen <|-- Vervoer : implements
+BouwsteenFactory <|-- OvernachtingFactory
+BouwsteenFactory <|-- VervoerFactory
 
-BouwsteenController ..> BouwsteenFactory : uses
-BouwsteenFactory ..> Overnachting : creates
-BouwsteenFactory ..> Vervoer : creates
+BouwsteenService ..> BouwsteenFactory : uses
 BouwsteenController ..> BouwsteenService : delegates
+
 BouwsteenService ..> BouwsteenRepository : uses
 BouwsteenRepository ..> Bouwsteen : handles
 
