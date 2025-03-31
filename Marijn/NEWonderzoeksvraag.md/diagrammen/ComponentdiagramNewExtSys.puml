@@ -5,26 +5,29 @@
 title Component Diagram voor TripTop (Makkelijk toevoegen externe service)
 
 System_Boundary("backend", "Backend") {
-    Component(TripController, "TripController", "Beveiligde toegang tot backend")
-    Component(interface, "Interface", "Standaard contract")
-    Component(adapter, "Adapter", "Communiceert met externe services")
-    Component(handler, "ExternalServiceHandler", "Handelt externe service-verzoeken af")
+    Component(HotelController, "HotelController", "Beveiligde toegang tot backend")
+    Component(adapter1, "BookingAdapter", "Communiceert met externe services")
+    Component(adapter2, "AirBNBAdapter", "Communiceert met externe services")
+    Component(service, "HotelService", "Handelt externe service-verzoeken af")
     Component(TripRepo, "TripRepo", "Verbinding met database")
 }
 
 System_Boundary("database", "Database") {
-    System(db, "Database", "Opslag van gegevens")
+    System_Ext(db, "Database", "Opslag van gegevens")
 }
 
 System_Boundary("APIS", "APIS") {
-    System(API, "externeAPI", "")
+    System_Ext(API1, "BookinCOM", "")
+    System_Ext(API2, "AirBNB", "")
 }
 
-Rel(TripController, interface, "Verzendt beveiligde verzoeken naar")
-Rel(interface, handler, "Routeert verzoeken naar")
-Rel(handler, "adapter", "Implementeert communicatie met externe services")
-Rel("handler", "TripRepo", "Verbinding met database")
-Rel("adapter", API, "Stuurt request")
+Rel("HotelController", "service", "Implementeert communicatie met externe services")
+Rel(service, "adapter1", "Implementeert communicatie met externe services")
+Rel(service, "adapter2", "Implementeert communicatie met externe services")
+Rel("service", "TripRepo", "Verbinding met database")
+Rel("adapter1", API1, "Stuurt request")
 Rel("TripRepo", db, "Leest/Schrijft data naar")
+
+Rel("adapter2", API2, "Stuurt request")
 
 @enduml
