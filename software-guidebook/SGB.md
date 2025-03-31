@@ -1,5 +1,8 @@
 # Software Guidebook Triptop
 
+[//]: # (todo: Mike class diagram toevoegen)
+[//]: # (todo: Samengevoegd componentdiagram up to date maken)
+
 ## 1. Introduction
 Dit software guidebook geeft een overzicht van de Triptop-applicatie. Het bevat een samenvatting van het volgende: 
 1. De vereisten, beperkingen en principes. 
