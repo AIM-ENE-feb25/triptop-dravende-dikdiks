@@ -6,11 +6,11 @@ interface BouwsteenFactory {
 }
 
 class OvernachtingFactory {
-    +createBouwsteen(details: Map<String, Object>): Overnachting
+    +createBouwsteen(details: Map<String, Object>): Bouwsteen
 }
 
 class VervoerFactory {
-    +createBouwsteen(details: Map<String, Object>): Vervoer
+    +createBouwsteen(details: Map<String, Object>): Bouwsteen
 }
 
 class BouwsteenController {
