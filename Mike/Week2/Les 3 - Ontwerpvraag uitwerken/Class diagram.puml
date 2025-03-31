@@ -1,7 +1,64 @@
 @startuml
+interface BookingStrategy{}
+
+package StrategyImplementations{
+    class HotelStrategyImpl{
+    - HotelAadpter
+    }
+    class TripStrategyImpl{
+    - TripAadpter
+    }
+}
+
+package Hotel{
+    class HotelAdapter{}
+    class HotelRepo{}
+    class HotelController{
+    - HotelService
+    + getHotels()
+    + getHotel()
+    + boekHotel()
+    }
+    class HotelService{
+    - HotelRepo
+    - BookingStrategy
+    }
+}
+
+package Trip{
+    class TripAdapter{}
+    class TripRepo{}
+    class TripController{
+    - TripService
+    + getTrips()
+    + getTrip()
+    + boekTrip()
+    }
+    class TripService{
+    - TripRepo
+    - BookingStrategy
+    }
+}
 
 
+HotelStrategyImpl ..|> BookingStrategy : uses
+TripStrategyImpl ..|> BookingStrategy : uses
 
+HotelController --> HotelService : uses
+TripController --> TripService : uses
+
+HotelService --> HotelRepo : uses
+TripService --> TripRepo : uses
+
+HotelService --> BookingStrategy : uses
+TripService --> BookingStrategy : uses
+
+HotelStrategyImpl --> HotelRepo : uses
+TripStrategyImpl --> TripRepo : uses
+
+
+HotelStrategyImpl --> HotelAdapter
+TripStrategyImpl --> TripAdapter
 
 
 
