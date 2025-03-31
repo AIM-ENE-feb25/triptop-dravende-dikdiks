@@ -4,6 +4,10 @@
 
 title Component Diagram voor TripTop (Makkelijk toevoegen externe service)
 
+System_Boundary("frontend", "frontend") {
+    System_Ext(FE, "FE", "Opslag van gegevens")
+}
+
 System_Boundary("backend", "Backend") {
     Component(HotelController, "HotelController", "Beveiligde toegang tot backend")
     Component(adapter1, "BookingAdapter", "Communiceert met externe services")
@@ -21,6 +25,7 @@ System_Boundary("APIS", "APIS") {
     System_Ext(API2, "AirBNB", "")
 }
 
+Rel("FE", HotelController, "Stuurt request")
 Rel("HotelController", "service", "Implementeert communicatie met externe services")
 Rel(service, "adapter1", "Implementeert communicatie met externe services")
 Rel(service, "adapter2", "Implementeert communicatie met externe services")
