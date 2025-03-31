@@ -5,7 +5,7 @@
 title Component Diagram voor TripTop (Makkelijk toevoegen externe service)
 
 System_Boundary("frontend", "frontend") {
-    System_Ext(FE, "FE", "Opslag van gegevens")
+    System_Ext(FE, "frontend", "Opslag van gegevens")
 }
 
 System_Boundary("backend", "Backend") {
