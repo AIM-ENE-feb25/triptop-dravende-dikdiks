@@ -1,6 +1,5 @@
 package je.applicatie.domain.soexintegratie.Controllers;
 
-
 import je.applicatie.domain.soexintegratie.Domain.Bouwsteen;
 import je.applicatie.domain.soexintegratie.Domain.HotelBouwsteen;
 import je.applicatie.domain.soexintegratie.Domain.TripBouwsteen;
@@ -83,4 +82,6 @@ public class BouwsteenController {
     //todo: ja, dat kan. gebruik later een van de onderste twee opties
     //todo: key-value pair
     //todo: reflectie??
+
+    //todo: moet ik alleen van happy path uit gaan?
 }

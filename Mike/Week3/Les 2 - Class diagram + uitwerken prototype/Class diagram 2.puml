@@ -10,8 +10,8 @@ class BouwsteenController{
 
 interface ServiceStrategy{
     + saveBouwsteen(Bouwsteen)
-    + getBouwstenen(): List<Bouwsteen>
-    + getBouwsteenDataByID(id): Bouwsteen
+    + getBouwstenen(Bouwsteen): List<Bouwsteen>
+    + getBouwsteenDataByID(id, Bouwsteen): Bouwsteen
     + getAPIData()
 }
 

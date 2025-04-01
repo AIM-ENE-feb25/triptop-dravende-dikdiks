@@ -28,7 +28,6 @@ public class HotelServiceStrategyImpl implements ServiceStrategy {
     @Override
     public void getBouwstenen(Bouwsteen bouwsteen) {
         repo.getAllBouwstenen(bouwsteen);
-        System.out.println("Alle hotels zijn teruggegeven!");
     }
 
     @Override
@@ -38,5 +37,7 @@ public class HotelServiceStrategyImpl implements ServiceStrategy {
 
     @Override
     public void getApiData() {
+        //todo: beter invullen
+        System.out.println("Dit is API-data van de trip-API. Doe alsof je JSON ziet.");
     }
 }
