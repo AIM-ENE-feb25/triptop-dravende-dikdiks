@@ -1,0 +1,52 @@
+@startuml
+
+class BouwsteenController{
+    - strategy: Strategy
+    + boekBouwsteen()
+    + getBouwsteen()
+    + getBouwstenen()
+}
+
+interface ServiceStrategy{
+    - repo: BouwsteenRepo
+    - adapter: BouwsteenAdapter
+    - apiUrl: String
+    - apiKey: String
+    + saveBouwsteen(Bouwsteen)
+    + getBouwstenen(): List<Bouwsteen>
+    + getBouwsteenDataByID(id): Bouwsteen
+    + getAPIData()
+}
+
+package interfaceImpls{
+    class HotelServiceStrategyImpl{}
+    class TripServiceStrategyImpl{}
+}
+
+
+
+
+class BouwsteenRepo{
+    + saveBouwsteen(Bouwsteen)
+    + getBouwstenen(): List<Bouwsteen>
+    + getBouwsteenDataByID(id): Bouwsteen
+}
+class BouwsteenAdapter{
+    +getAPIData(apiKey, apiUrl)
+
+}
+
+
+BouwsteenController --> ServiceStrategy : uses
+HotelServiceStrategyImpl ..|> ServiceStrategy : implements
+TripServiceStrategyImpl ..|> ServiceStrategy : implements
+ServiceStrategy --> BouwsteenRepo : uses
+ServiceStrategy --> BouwsteenAdapter : uses
+
+
+
+
+
+
+
+@enduml

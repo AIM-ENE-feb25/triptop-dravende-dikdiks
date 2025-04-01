@@ -1,0 +1,80 @@
+@startuml
+
+class BouwsteenController{
+    - service: ServiceStrategy
+    + boekBouwsteen()
+    + getBouwsteen()
+    + getBouwstenen()
+    + getAPIData()
+}
+
+interface ServiceStrategy{
+    + saveBouwsteen(Bouwsteen)
+    + getBouwstenen(): List<Bouwsteen>
+    + getBouwsteenDataByID(id): Bouwsteen
+    + getAPIData()
+}
+
+package serviceImpls{
+    class HotelServiceStrategyImpl{
+        - repo: BouwsteenRepo
+        - adapter: BouwsteenAdapter
+        - apiUrl: String
+        - apiKey: String
+    }
+    class TripServiceStrategyImpl{
+        - repo: BouwsteenRepo
+        - adapter: BouwsteenAdapter
+        - apiUrl: String
+        - apiKey: String
+    }
+}
+
+interface Bouwsteen{
+    + setDetails(Map<String, String>)
+}
+
+package bouwsteenImpls{
+    class HotelBouwsteen{
+        - name: String
+        - city: String
+        - durationInDays: int
+    }
+    class TripBouwsteen{
+        - name: String
+        - lengthInKM: int
+    }
+}
+
+
+
+
+
+class BouwsteenRepo{
+    + saveBouwsteen(Bouwsteen)
+    + getAllBouwstenen(Bouwsteen): List<Bouwsteen>
+    + getBouwsteen(id, Bouwsteen): Bouwsteen
+}
+class BouwsteenAdapter{
+    + getAPIData(apiKey, apiUrl)
+    + saveBooking(Bouwsteen)
+}
+
+
+BouwsteenController --> ServiceStrategy : uses
+
+HotelServiceStrategyImpl ..|> ServiceStrategy : implements
+TripServiceStrategyImpl ..|> ServiceStrategy : implements
+HotelBouwsteen ..|> Bouwsteen : implements
+TripBouwsteen ..|> Bouwsteen : implements
+
+ServiceStrategy --> BouwsteenRepo : uses
+ServiceStrategy --> BouwsteenAdapter : uses
+
+
+
+
+
+
+
+@enduml
