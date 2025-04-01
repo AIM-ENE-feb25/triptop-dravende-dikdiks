@@ -1,0 +1,26 @@
+@startuml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Sequence.puml
+
+Container(c1, "TripTop-applicatie", "React", "")
+Container(c2, "HotelController", "Spring MVC Applicatie")
+Container(c3, "HotelService", "Service voor hotel bouwsteen")
+Container(c4, "BookingcomAdapter", "Adapter voor Bookin.com externe service")
+Container(c5, "BookinCOM", "Externe service")
+
+
+Rel(c1, c2, "Stuurt reisgegevens op", "JSON/HTTP")
+Rel(c2, c3, "Stuurt reisgegevens op", "")
+Rel(c3, c4, "Stuurt reisgegevens op", "")
+Rel(c4, c5, "Stuurt reisgegevens op", "JSON/HTTP")
+Rel(c5, c4, "Geeft response", "JSON/HTTP")
+Rel(c4, c3, "Stuurt API response door", "")
+Rel(c3, c2, "Stuurt API response door", "")
+Rel(c2, c1, "Stuurt API response door", "")
+
+'Backend checkt of token valide is
+'Rel(c3, c5, " ", " ")
+
+
+SHOW_LEGEND()
+@enduml

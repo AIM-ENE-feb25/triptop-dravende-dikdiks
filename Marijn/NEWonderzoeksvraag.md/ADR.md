@@ -40,5 +40,5 @@ We kiezen voor het adapter pattern omdat het de meeste flexibiliteit biedt bij h
 - Er moet een duidelijke abstracte interface worden gedefinieerd voor externe services.
 
 ## Gerelateerde beslissingen
-- Gebruik van Dependency Injection om adapters eenvoudig in te pluggen.
+- Gebruik van Dependency Injection om adapters eenvoudig te gebruiken.
 - Overweging van een Factory Pattern voor het beheren van adaptercreatie.
