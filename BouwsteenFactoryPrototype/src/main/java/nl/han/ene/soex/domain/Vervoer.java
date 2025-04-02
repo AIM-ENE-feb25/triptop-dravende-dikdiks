@@ -15,7 +15,7 @@ public class Vervoer implements Bouwsteen {
     }
 
     @Override
-    public String toonDetails() {
+    public String getDetails() {
         return ("Details van Vervoer: " + details);
     }
 }

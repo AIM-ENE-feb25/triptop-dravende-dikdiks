@@ -14,11 +14,5 @@ public class Overnachting implements Bouwsteen {
     }
 
     @Override
-    public String toonDetails() {
-        return "Details van Overnachting: " + details;
-    }
-
-    public Map<String, Object> getDetails() {
-        return details;
-    }
+    public String getDetails() {return ("Details van Overnachting: " + details);}
 }
