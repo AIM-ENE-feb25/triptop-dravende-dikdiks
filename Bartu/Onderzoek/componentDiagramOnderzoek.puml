@@ -6,12 +6,10 @@ title Component Diagram for Trip-top System
 System("Frontend", "Frontend", "")
 
 System_Boundary("backend", "Backend") {
-    Component("BouwsteenController", "BouwsteenController", "Voegt, verwijdert en haalt bouwstenen op.")
-    Component("BouwsteenService", "BouwsteenService", "Behandelt bouwsteen logica.")
-    Component("BouwsteenRepository", "BouwsteenRepository", "Slaat bouwstenen op.")
-    Component("BouwsteenFactory", "BouwsteenFactory", "Maakt bouwstenen aan.")
-    Component("TripService", "TripService", "Beheert trip gerelateerde bouwstenen.")
-    Component("ApiService", "ApiService", "Boekt overnachtingen en vervoer.")
+    Component("BouwsteenController", "BouwsteenController", "","Verwerkt requests")
+    Component("BouwsteenService", "BouwsteenService", "", "Behandelt bouwsteen logica.")
+    Component("BouwsteenRepository", "BouwsteenRepository", "", "Slaat bouwstenen op.")
+    Component("BouwsteenFactory", "BouwsteenFactory", "", "Maakt bouwstenen aan.")
 }
 
 System_Boundary("database", "Database") {
@@ -19,10 +17,8 @@ System_Boundary("database", "Database") {
 }
 
 Rel("Frontend", "BouwsteenController", "Verstuurt aanvragen")
-Rel("BouwsteenController", "BouwsteenService", "Gebruikt")
-Rel("BouwsteenService", "BouwsteenRepository", "Gebruikt")
-Rel("BouwsteenService", "BouwsteenFactory", "Gebruikt")
-Rel("TripService", "BouwsteenService", "Gebruikt")
-Rel("ApiService", "TripService", "Gebruikt")
+Rel("BouwsteenController", "BouwsteenService", "Roept methode aan in")
+Rel("BouwsteenService", "BouwsteenRepository", "Roept methode aan in")
+Rel("BouwsteenService", "BouwsteenFactory", "Roept methode aan in")
 Rel("BouwsteenRepository", "Database", "verstuurt naar")
 @enduml
