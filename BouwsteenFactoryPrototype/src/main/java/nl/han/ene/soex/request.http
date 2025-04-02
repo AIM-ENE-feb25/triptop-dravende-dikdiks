@@ -1,0 +1,15 @@
+### POST request: Voeg bouwsteen toe
+POST http://localhost:8080/bouwstenen
+Content-Type: application/json
+
+{
+  "type": "overnachting",
+  "naam": "Hotel Amsterdam",
+  "prijs": 120.50
+}
+
+### GET request: Haal een bouwsteen op
+GET http://localhost:8080/bouwstenen/1
+
+### DELETE request: Verwijder een bouwsteen
+DELETE http://localhost:8080/bouwstenen/1
