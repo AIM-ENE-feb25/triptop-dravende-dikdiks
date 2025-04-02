@@ -17,7 +17,6 @@ class BouwsteenController {
     +voegBouwsteenToe(request: BouwsteenRequest): ResponseEntity<Bouwsteen>
     +verwijderBouwsteen(bouwsteenId: String): ResponseEntity<Void>
     +haalBouwsteenOp(bouwsteenId: String): ResponseEntity<Bouwsteen>
-    +haalAlleBouwstenenOpVoorTrip(tripId: String): ResponseEntity<List<Bouwsteen>>
 }
 
 class BouwsteenService {
@@ -34,17 +33,19 @@ class BouwsteenRepository {
 
 interface Bouwsteen {
     +getType(): String
-    +toonDetails(): void
+    +toonDetails(): String
 }
 
 class Overnachting {
+    -details: Map<String, Object>
     +getType(): String
-    +toonDetails(): void
+    +getDetails(): String
 }
 
 class Vervoer {
+    -details: Map<String, Object>
     +getType(): String
-    +toonDetails(): void
+    +getDetails(): String
 }
 
 Bouwsteen <|-- Overnachting : implements
