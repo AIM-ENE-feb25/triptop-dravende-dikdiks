@@ -1,21 +1,14 @@
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Sequence.puml
 
-actor Reiziger
-
+Container(Triptop, "Triptop", "Frontend")
 Component(BouwsteenController, "BouwsteenController", "", "Beheert bouwstenen")
-Component(BouwsteenService, "BouwsteenService","", "Behandelt bouwsteen logica")
-Component(BouwsteenRepository, "BouwsteenRepository","", "Slaat bouwstenen op")
-Component(TripService, "TripService","", "Beheert trip gerelateerde bouwstenen")
-Component(ApiService, "ApiService","", "Boekt overnachtingen en vervoer")
+Component(BouwsteenService, "BouwsteenService", "", "Behandelt bouwsteen logica")
+Component(BouwsteenFactory, "BouwsteenFactory", "", "Creëert Bouwsteen objecten")
+Component(BouwsteenRepository, "BouwsteenRepository", "", "Slaat bouwstenen op")
 
-Reiziger -> BouwsteenController : Create Bouwsteen(type, details)
-BouwsteenController -> BouwsteenService : Bouwsteen bouwsteen = createBouwsteen(type, details)
+Rel(Triptop, BouwsteenController, "Verstuurt request voor toevoegen bouwsteen", "JSON/HTTP")
+BouwsteenController -> BouwsteenService : createBouwsteen(factory, details)
+BouwsteenService -> BouwsteenFactory : Bouwsteen bouwsteen = createBouwsteen(details)
 BouwsteenService -> BouwsteenRepository : save(bouwsteen)
-
-Reiziger -> TripService : Add Bouwsteen to trip(tripId, bouwsteen)
-TripService -> BouwsteenService : Bouwsteen bouwsteen = getBouwsteenById(bouwsteenId)
-
-Reiziger -> ApiService : Book Accommodation (overnachting)
-
 @enduml
