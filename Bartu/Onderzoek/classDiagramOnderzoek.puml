@@ -50,13 +50,13 @@ class Vervoer {
 
 Bouwsteen <|-- Overnachting : implements
 Bouwsteen <|-- Vervoer : implements
-BouwsteenFactory <|-- OvernachtingFactory
-BouwsteenFactory <|-- VervoerFactory
+BouwsteenFactory <|-- OvernachtingFactory : implements
+BouwsteenFactory <|-- VervoerFactory : implements
 
 BouwsteenService ..> BouwsteenFactory : uses
 BouwsteenController ..> BouwsteenService : delegates
 
 BouwsteenService ..> BouwsteenRepository : uses
-BouwsteenRepository ..> Bouwsteen : handles
+BouwsteenFactory --> Bouwsteen : creates
 
 @enduml
