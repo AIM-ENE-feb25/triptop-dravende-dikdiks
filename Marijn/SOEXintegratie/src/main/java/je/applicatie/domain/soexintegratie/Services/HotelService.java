@@ -15,11 +15,12 @@ public class HotelService {
         this.airbnbAdapter = airbnbAdapter;
     }
 
-    public String callBookingcom() {
-        return bookincomAdapter.fetchData("");
+    public String[][] callHotelAPIS() {
+        return new String[][]{
+                {bookincomAdapter.fetchData("")},
+                {airbnbAdapter.fetchData("")}
+        };
     }
 
-    public String callAirbnb() {
-        return airbnbAdapter.fetchData("");
-    }
+
 }

@@ -15,13 +15,8 @@ public class HotelController {
         this.hotelService = hotelService;
     }
 
-    @GetMapping("/bookingcom")
-    public String callBookincom() {
-        return hotelService.callBookingcom();
-    }
-
-    @GetMapping("/airbnb")
-    public String callAirbnb() {
-        return hotelService.callAirbnb();
+    @GetMapping("/hotel")
+    public String[][] callHotelAPIS() {
+        return hotelService.callHotelAPIS();
     }
 }

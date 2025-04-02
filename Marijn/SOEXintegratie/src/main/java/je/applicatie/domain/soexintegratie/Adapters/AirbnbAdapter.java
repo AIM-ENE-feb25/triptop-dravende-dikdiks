@@ -34,6 +34,5 @@ public class AirbnbAdapter implements ExternalServicesInterface {
         ResponseEntity<String> response = restTemplate.exchange(apiUrl, HttpMethod.GET, entity, String.class);
 
         return response.getBody();
-
     }
 }
