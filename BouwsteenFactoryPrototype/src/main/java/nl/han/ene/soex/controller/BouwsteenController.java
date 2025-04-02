@@ -22,7 +22,6 @@ public class BouwsteenController {
 
     @PostMapping
     public ResponseEntity<Bouwsteen> voegBouwsteenToe(@RequestBody Map<String, Object> request) {
-        //factory die een factory teruggeeft
         BouwsteenFactory factory = request.get("type").equals("overnachting") ?
                 new OvernachtingFactory() : new VervoerFactory();
         Bouwsteen bouwsteen = service.createBouwsteen(factory, request);

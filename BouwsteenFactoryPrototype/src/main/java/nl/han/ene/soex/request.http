@@ -3,7 +3,7 @@ POST http://localhost:8080/bouwstenen
 Content-Type: application/json
 
 {
-  "type": "overnachting",
+  "type": "Overnachting",
   "naam": "Hotel Amsterdam",
   "prijs": 120.50
 }
