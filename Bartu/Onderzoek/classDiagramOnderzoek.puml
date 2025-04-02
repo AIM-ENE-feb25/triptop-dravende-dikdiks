@@ -33,7 +33,7 @@ class BouwsteenRepository {
 
 interface Bouwsteen {
     +getType(): String
-    +toonDetails(): String
+    +getDetails(): String
 }
 
 class Overnachting {
