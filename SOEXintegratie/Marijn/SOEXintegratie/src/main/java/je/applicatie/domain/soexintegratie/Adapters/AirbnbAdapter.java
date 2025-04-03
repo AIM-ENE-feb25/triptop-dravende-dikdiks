@@ -11,15 +11,16 @@ import org.springframework.web.client.RestTemplate;
 
 
 @Service
-public class BookincomAdapter implements ExternalServicesInterface {
+public class AirbnbAdapter implements ExternalServicesInterface {
 
     private final RestTemplate restTemplate = new RestTemplate();
-    private final String serviceUrl = "https://booking-com.p.rapidapi.com/v1/hotels/map-markers?locale=en-gb&hotel_id=1676161";
 
-    @Value("${rapidapi.key}")
+    @Value("${airbnb.key}")
     private String apiKey;
-    @Value("${rapidapi.host}")
+    @Value("${airbnb.host}")
     private String apiHost;
+    @Value("${airbnb.url}")
+    private String apiUrl;
 
     @Override
     public String fetchData(String param) {
@@ -30,9 +31,8 @@ public class BookincomAdapter implements ExternalServicesInterface {
 
 
         HttpEntity<String> entity = new HttpEntity<>(headers);
-        ResponseEntity<String> response = restTemplate.exchange(serviceUrl, HttpMethod.GET, entity, String.class);
+        ResponseEntity<String> response = restTemplate.exchange(apiUrl, HttpMethod.GET, entity, String.class);
 
         return response.getBody();
-
     }
 }

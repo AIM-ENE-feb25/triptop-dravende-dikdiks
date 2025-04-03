@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class HotelController {
 
-    private final HotelService HotelService;
+    private final HotelService hotelService;
 
-    public HotelController(HotelService HotelService) {
-        this.HotelService = HotelService;
+    public HotelController(HotelService hotelService) {
+        this.hotelService = hotelService;
     }
 
-    @GetMapping("/external")
-    public String callExternalApi() {
-        return HotelService.callExternalApi();
+    @GetMapping("/hotel")
+    public String[][] callHotelAPIS() {
+        return hotelService.callHotelAPIS();
     }
 }
