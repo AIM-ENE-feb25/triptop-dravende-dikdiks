@@ -71,6 +71,45 @@ Voordat deze casusomschrijving tot stand kwam, heeft de opdrachtgever de volgend
 
 ## 6. Principles
 
+### Ontwerpvraag Mike
+
+- Hoe maak je de applicatie uitbreidbaar met nieuwe bouwstenen?  
+
+Om tot een antwoord en prototype voor mijn ontwerpvraag te komen, heb ik gekozen om gebruik te maken van het `strategy`-pattern. Hierdoor heb ik ook automatisch het `open-closed principe` en het `composition over inheritance principe` toegepast.
+
+#### Strategy Pattern  
+
+Ik heb voor het strategy pattern gekozen, omdat ik daarmee het prototype on-the-fly anders kon laten reageren op bepaalde zaken die werden aangeroepen, zonder dat ik daarvoor gebruik heb hoeven maken van hard-coded waardes.   
+
+Dat betekent in essentie dat er, wanneer men een nieuw type bouwsteen wil toevoegen aan de applicatie, zo min mogelijk hoeft te veranderen aan de reeds bestaande code. 
+Er bestaat ook een oplossing waarmee je letterlijk niets hoeft aan te passen aan de controller (mits je geen niet-bestaande functionaliteit toe wil kunnen voegen), maar helaas heb ik niet genoeg tijd gehad om dat te kunnen implementeren in dit prototype.  
+
+#### Open-closed principle
+
+Wanneer je gebruik maakt van het strategy-pattern, zit je ook meteen vast aan aan het open-closed principle.
+Dit principe houdt in dat 
+
+
+
+Om een prototype te kunnen bouwen waarmee ik antwoord geef op mijn gekozen ontwerpvraag, heb ik gebruik moeten maken van een strategy-pattern. 
+Middels een strategy pattern
+
+
+
+
+
+### Ontwerpvraag Marijn
+
+
+
+
+
+### Ontwerpvraag Bartu
+
+
+
+
+
 > [!IMPORTANT]
 > Beschrijf zelf de belangrijkste architecturele en design principes die zijn toegepast in de software.
 
