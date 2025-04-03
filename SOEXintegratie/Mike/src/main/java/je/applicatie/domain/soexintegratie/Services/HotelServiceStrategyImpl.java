@@ -1,12 +1,14 @@
 package je.applicatie.domain.soexintegratie.Services;
 
+import jakarta.annotation.Resource;
 import je.applicatie.domain.soexintegratie.Adapters.BouwsteenAdapter;
 import je.applicatie.domain.soexintegratie.Domain.Bouwsteen;
 import je.applicatie.domain.soexintegratie.Repository.BouwsteenRepo;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+import java.util.List;
+
+@Component
 public class HotelServiceStrategyImpl implements ServiceStrategy {
     private BouwsteenRepo repo;
     private BouwsteenAdapter adapter;
@@ -26,13 +28,13 @@ public class HotelServiceStrategyImpl implements ServiceStrategy {
     }
 
     @Override
-    public void getBouwstenen(Bouwsteen bouwsteen) {
-        repo.getAllBouwstenen(bouwsteen);
+    public Bouwsteen getBouwsteenDataById(int id, Bouwsteen bouwsteen) {
+        return repo.getBouwsteen(id, bouwsteen);
     }
 
     @Override
-    public void getBouwsteenDataById(int id, Bouwsteen bouwsteen) {
-        repo.getBouwsteen(id, bouwsteen);
+    public List<Bouwsteen> getBouwstenen(Bouwsteen bouwsteen) {
+        return repo.getAllBouwstenen(bouwsteen);
     }
 
     @Override

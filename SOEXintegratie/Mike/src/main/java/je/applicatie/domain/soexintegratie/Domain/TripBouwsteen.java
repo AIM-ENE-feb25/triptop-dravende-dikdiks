@@ -1,7 +1,12 @@
 package je.applicatie.domain.soexintegratie.Domain;
 
+import jakarta.annotation.Resource;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
 import java.util.Map;
 
+@Component
 public class TripBouwsteen implements Bouwsteen {
     private String name;
     private int lengthInKM;

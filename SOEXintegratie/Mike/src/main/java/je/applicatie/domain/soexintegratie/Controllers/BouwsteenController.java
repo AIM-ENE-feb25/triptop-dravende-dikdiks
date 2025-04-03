@@ -1,26 +1,68 @@
 package je.applicatie.domain.soexintegratie.Controllers;
 
+import jakarta.annotation.Resource;
 import je.applicatie.domain.soexintegratie.Domain.Bouwsteen;
 import je.applicatie.domain.soexintegratie.Domain.HotelBouwsteen;
 import je.applicatie.domain.soexintegratie.Domain.TripBouwsteen;
 import je.applicatie.domain.soexintegratie.Services.HotelServiceStrategyImpl;
 import je.applicatie.domain.soexintegratie.Services.ServiceStrategy;
 import je.applicatie.domain.soexintegratie.Services.TripServiceStrategyImpl;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.beans.Expression;
+import java.lang.reflect.Constructor;
+import java.util.List;
 import java.util.Map;
 
 @RestController
 public class BouwsteenController {
+    private String strategy;
     private ServiceStrategy service;
     private Bouwsteen bouwsteen;
 
+    //todo: lists van maken
+
+
 
     private void chooseStrategy(String strategy) {
+//        bouwsteen = new Expression(/*klassenaam.class*/, "new", null);
+
+
+        Bouwsteen tempBouwsteen;
+
+
+        //bouwsteen zoeken binnen spring beans
+        //custom @bean maken? anders in @component zoeken
+        //iets met hashmap bekijken?
+        //reflection zoeken op implementaties van interface
+        //todo: sowieso ADR van maken?? mogelijk focussen op spring-oplossing
+        //todo: ADR maken van eventuele keuze voor switch case als de rest teveel tijd in beslag neemt
+
+        //bouwsteen.getClass().getSimpleName().toString()
+
+//        Constructor<?>[] c = HotelBouwsteen.class.getConstructors();
+//        System.out.println(STR."Aantal constructors = \{c.length}");
+//        if (c.length > 0) {
+//            try {
+//                bouwsteen = (Bouwsteen) c[0].newInstance();
+//                System.out.println(bouwsteen);
+//            } catch (Exception e) {
+//                System.out.println(STR."Helaas :(, \{e}");
+//            }
+//        }
+
+
+
+
+
+
+
+
         switch (strategy) {
             case "hotel":
                 service = new HotelServiceStrategyImpl();
-                bouwsteen = new HotelBouwsteen();
+//                bouwsteen = new HotelBouwsteen();
                 break;
             case "trip":
                 service = new TripServiceStrategyImpl();
@@ -32,9 +74,9 @@ public class BouwsteenController {
         }
     }
 
-    public BouwsteenController() {
-        this.service = null;
-        this.bouwsteen = null;
+    public BouwsteenController(List<ServiceStrategy> serviceStrategyList,  List<Bouwsteen> bouwsteenList) {
+        System.out.println(serviceStrategyList.size());
+        System.out.println(bouwsteenList.size());
     }
 
     @PostMapping("/{strategy}/boeken")
@@ -49,23 +91,27 @@ public class BouwsteenController {
     }
 
     @GetMapping("/{strategy}/getOne/{id}")
-    public void getOneBouwsteen(@PathVariable String strategy, @PathVariable int id) {
+    public Bouwsteen getOneBouwsteen(@PathVariable String strategy, @PathVariable int id) {
         chooseStrategy(strategy);
+        Bouwsteen b = null;
         try {
-            service.getBouwsteenDataById(id, bouwsteen);
+            b = service.getBouwsteenDataById(id, bouwsteen);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return b;
     }
 
     @GetMapping("/{strategy}/getAll")
-    public void getAllBouwstenen(@PathVariable String strategy) {
+    public List<Bouwsteen> getAllBouwstenen(@PathVariable String strategy) {
         chooseStrategy(strategy);
+        List<Bouwsteen> allBouwstenen = null;
         try {
-            service.getBouwstenen(bouwsteen);
+            allBouwstenen = service.getBouwstenen(bouwsteen);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return allBouwstenen;
     }
 
     @GetMapping("/{strategy}/getApiData")

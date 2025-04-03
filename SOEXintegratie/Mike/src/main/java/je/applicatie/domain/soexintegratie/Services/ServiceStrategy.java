@@ -5,10 +5,12 @@ import je.applicatie.domain.soexintegratie.Domain.Bouwsteen;
 import je.applicatie.domain.soexintegratie.Repository.BouwsteenRepo;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface ServiceStrategy {
     void saveBouwsteen(Bouwsteen bouwsteen);
-    void getBouwstenen(Bouwsteen bouwsteen);
-    void getBouwsteenDataById(int id, Bouwsteen bouwsteen);
+    Bouwsteen getBouwsteenDataById(int id, Bouwsteen bouwsteen);
+    List<Bouwsteen> getBouwstenen(Bouwsteen bouwsteen);
     void getApiData();
 }

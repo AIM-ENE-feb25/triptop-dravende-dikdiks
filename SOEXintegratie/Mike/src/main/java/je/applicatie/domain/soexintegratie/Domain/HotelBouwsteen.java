@@ -1,7 +1,12 @@
 package je.applicatie.domain.soexintegratie.Domain;
 
+import jakarta.annotation.Resource;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
 import java.util.Map;
 
+@Component
 public class HotelBouwsteen implements Bouwsteen {
     private String name;
     private String city;
@@ -16,4 +21,6 @@ public class HotelBouwsteen implements Bouwsteen {
         System.out.println("HotelBouwsteen aangemaakt!");
         System.out.println(STR."Naam: \{name}\nStad: \{city}\nDuratie in dagen: \{durationInDays}");
     }
+
+
 }

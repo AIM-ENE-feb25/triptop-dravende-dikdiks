@@ -2,16 +2,17 @@
 
 class BouwsteenController{
     - service: ServiceStrategy
-    + boekBouwsteen()
-    + getBouwsteen()
-    + getBouwstenen()
-    + getAPIData()
+    - chooseStrategy(String)
+    + boekBouwsteen(String, Map<String, String>)
+    + getBouwsteen(String, int)
+    + getBouwstenen(String)
+    + getAPIData(String)
 }
 
 interface ServiceStrategy{
     + saveBouwsteen(Bouwsteen)
-    + getBouwstenen(Bouwsteen): List<Bouwsteen>
     + getBouwsteenDataByID(id, Bouwsteen): Bouwsteen
+    + getBouwstenen(Bouwsteen): List<Bouwsteen>
     + getAPIData()
 }
 
@@ -46,14 +47,10 @@ package bouwsteenImpls{
     }
 }
 
-
-
-
-
 class BouwsteenRepo{
     + saveBouwsteen(Bouwsteen)
-    + getAllBouwstenen(Bouwsteen): List<Bouwsteen>
     + getBouwsteen(id, Bouwsteen): Bouwsteen
+    + getAllBouwstenen(Bouwsteen): List<Bouwsteen>
 }
 class BouwsteenAdapter{
     + getAPIData(apiKey, apiUrl)
@@ -70,6 +67,10 @@ TripBouwsteen ..|> Bouwsteen : implements
 
 ServiceStrategy --> BouwsteenRepo : uses
 ServiceStrategy --> BouwsteenAdapter : uses
+
+BouwsteenController --> Bouwsteen : uses
+
+'todo: dependencies geen streepje, even beschrijven in SGB
 
 
 
