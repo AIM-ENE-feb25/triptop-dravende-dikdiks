@@ -1,5 +1,7 @@
 package je.applicatie.domain.soexintegratie.Controllers;
 
+import je.applicatie.domain.soexintegratie.Adapters.AirbnbAdapter;
+import je.applicatie.domain.soexintegratie.Adapters.BookincomAdapter;
 import je.applicatie.domain.soexintegratie.Domain.Bouwsteen;
 import je.applicatie.domain.soexintegratie.Domain.HotelBouwsteen;
 import je.applicatie.domain.soexintegratie.Domain.TripBouwsteen;
@@ -16,6 +18,8 @@ public class BouwsteenController {
     private String strategy;
     private ServiceStrategy service;
     private Bouwsteen bouwsteen;
+    private AirbnbAdapter airbnbAdapter;
+    private BookincomAdapter bookincomAdapter;
 
     //todo: lists van maken
 
@@ -50,7 +54,7 @@ public class BouwsteenController {
 
         switch (strategy) {
             case "hotel":
-                service = new HotelServiceStrategyImpl();
+                service = new HotelServiceStrategyImpl(airbnbAdapter, bookincomAdapter);
                 bouwsteen = new HotelBouwsteen();
                 break;
             case "trip":
@@ -63,7 +67,9 @@ public class BouwsteenController {
         }
     }
 
-    public BouwsteenController(List<ServiceStrategy> serviceStrategyList, List<Bouwsteen> bouwsteenList) {
+    public BouwsteenController(List<ServiceStrategy> serviceStrategyList, List<Bouwsteen> bouwsteenList, BookincomAdapter bookincomAdapter, AirbnbAdapter airbnbAdapter) {
+        this.bookincomAdapter = bookincomAdapter;
+        this.airbnbAdapter = airbnbAdapter;
     }
 
     @PostMapping("/{strategy}/boeken")

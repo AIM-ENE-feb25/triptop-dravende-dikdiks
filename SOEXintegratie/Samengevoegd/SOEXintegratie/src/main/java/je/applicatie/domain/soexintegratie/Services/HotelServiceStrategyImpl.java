@@ -19,10 +19,10 @@ public class HotelServiceStrategyImpl implements ServiceStrategy {
     //    @Value("${hotel.key}")
     private final String API_KEY = "";
 
-    public HotelServiceStrategyImpl() {
+    public HotelServiceStrategyImpl(AirbnbAdapter airbnbAdapter, BookincomAdapter bookincomAdapter) {
         this.repo = new BouwsteenRepo();
-        this.bookincomAdapter = new BookincomAdapter();
-        this.airbnbAdapter = new AirbnbAdapter();
+        this.bookincomAdapter = bookincomAdapter;
+        this.airbnbAdapter = airbnbAdapter;
     }
 
     @Override
