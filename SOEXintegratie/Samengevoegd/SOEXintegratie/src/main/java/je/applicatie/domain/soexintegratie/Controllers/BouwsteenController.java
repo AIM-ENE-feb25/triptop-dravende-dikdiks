@@ -111,6 +111,12 @@ public class BouwsteenController {
         }
     }
 
+    @GetMapping("/{strategy}/getData")
+    public String[][] callAPIS(@PathVariable String strategy) {
+        chooseStrategy(strategy);
+        return service.getApiData();
+    }
+
     //todo: kan ik dit dynamisch doen of kan ik beter een if-statement maken?
     //todo: ja, dat kan. gebruik later een van de onderste twee opties
     //todo: key-value pair

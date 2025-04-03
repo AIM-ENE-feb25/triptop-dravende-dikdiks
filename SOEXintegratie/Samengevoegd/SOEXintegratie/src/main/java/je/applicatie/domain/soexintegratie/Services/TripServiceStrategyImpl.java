@@ -37,8 +37,9 @@ public class TripServiceStrategyImpl implements ServiceStrategy {
     }
 
     @Override
-    public void getApiData() {
+    public String[][] getApiData() {
         //todo: beter invullen
         System.out.println("Dit is API-data van de trip-API. Doe alsof je JSON ziet.");
+        return new String[0][0];
     }
 }
