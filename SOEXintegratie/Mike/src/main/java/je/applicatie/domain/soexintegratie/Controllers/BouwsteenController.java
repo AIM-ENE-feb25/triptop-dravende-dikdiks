@@ -29,7 +29,7 @@ public class BouwsteenController {
 //        bouwsteen = new Expression(/*klassenaam.class*/, "new", null);
 
 
-        Bouwsteen tempBouwsteen;
+//        Bouwsteen tempBouwsteen;
 
 
         //bouwsteen zoeken binnen spring beans
@@ -52,17 +52,10 @@ public class BouwsteenController {
 //            }
 //        }
 
-
-
-
-
-
-
-
         switch (strategy) {
             case "hotel":
                 service = new HotelServiceStrategyImpl();
-//                bouwsteen = new HotelBouwsteen();
+                bouwsteen = new HotelBouwsteen();
                 break;
             case "trip":
                 service = new TripServiceStrategyImpl();
@@ -75,8 +68,6 @@ public class BouwsteenController {
     }
 
     public BouwsteenController(List<ServiceStrategy> serviceStrategyList,  List<Bouwsteen> bouwsteenList) {
-        System.out.println(serviceStrategyList.size());
-        System.out.println(bouwsteenList.size());
     }
 
     @PostMapping("/{strategy}/boeken")
