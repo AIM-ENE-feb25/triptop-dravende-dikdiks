@@ -17,6 +17,6 @@ public class TripBouwsteen implements Bouwsteen {
         lengthInKM = Integer.parseInt(details.get("lengthInKM"));
 
         System.out.println("TripBouwsteen aangemaakt!");
-        System.out.println(STR."Naam: \{name}\nLength in KM: \{lengthInKM}");
+        System.out.println("Naam: " + name + ", length in km: " + lengthInKM);
     }
 }

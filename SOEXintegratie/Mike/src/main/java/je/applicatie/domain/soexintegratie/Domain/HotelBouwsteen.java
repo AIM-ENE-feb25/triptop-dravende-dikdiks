@@ -19,7 +19,7 @@ public class HotelBouwsteen implements Bouwsteen {
         durationInDays = Integer.parseInt(details.get("durationInDays"));
 
         System.out.println("HotelBouwsteen aangemaakt!");
-        System.out.println(STR."Naam: \{name}\nStad: \{city}\nDuratie in dagen: \{durationInDays}");
+        System.out.println("Naam: " + name + ", stad: " + city + ", Duratie in dagen: " + durationInDays);
     }
 
 
