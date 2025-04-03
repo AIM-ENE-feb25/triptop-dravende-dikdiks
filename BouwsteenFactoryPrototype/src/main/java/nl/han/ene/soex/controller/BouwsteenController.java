@@ -8,6 +8,7 @@ import nl.han.ene.soex.service.BouwsteenService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Constructor;
 import java.util.Map;
 import java.util.Optional;
 
@@ -22,11 +23,20 @@ public class BouwsteenController {
 
     @PostMapping
     public ResponseEntity<Bouwsteen> voegBouwsteenToe(@RequestBody Map<String, Object> request) {
-        BouwsteenFactory factory = request.get("type").equals("overnachting") ?
-                new OvernachtingFactory() : new VervoerFactory();
-        Bouwsteen bouwsteen = service.createBouwsteen(factory, request);
-        return ResponseEntity.ok(bouwsteen);
+        String type = (String) request.get("type");
+
+        String className = "nl.han.ene.soex.domain.factory." + type + "Factory";
+        try {
+            Class<?> clazz = Class.forName(className);
+            Constructor<?> constructor = clazz.getConstructor();
+            BouwsteenFactory factory = (BouwsteenFactory) constructor.newInstance();
+            Bouwsteen bouwsteen = service.createBouwsteen(factory, request);
+            return ResponseEntity.ok(bouwsteen);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
+
 
     @DeleteMapping("/{bouwsteenId}")
     public ResponseEntity<Void> verwijderBouwsteen(@PathVariable Long bouwsteenId) {
