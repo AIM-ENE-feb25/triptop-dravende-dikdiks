@@ -67,7 +67,11 @@ public class BouwsteenController {
         }
     }
 
-    public BouwsteenController(List<ServiceStrategy> serviceStrategyList, List<Bouwsteen> bouwsteenList, BookincomAdapter bookincomAdapter, AirbnbAdapter airbnbAdapter) {
+    public BouwsteenController(List<ServiceStrategy> serviceStrategyList,
+                               List<Bouwsteen> bouwsteenList,
+                               BookincomAdapter bookincomAdapter,
+                               AirbnbAdapter airbnbAdapter)
+    {
         this.bookincomAdapter = bookincomAdapter;
         this.airbnbAdapter = airbnbAdapter;
     }
