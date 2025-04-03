@@ -276,35 +276,35 @@ In eerste instantie kozen we voor Adyen, omdat dit de eerste was die in ons opkw
 - We zullen onze diagrammen hierop aan moeten passen
 - We zullen meer kosten maken per transactie
 
-### 8.4. ADR-004 TITLE
 
-> [!TIP]
-> These documents have names that are short noun phrases. For example, "ADR 1: Deployment on Ruby on Rails 3.0.10" or "ADR 9: LDAP for Multitenant Integration". The whole ADR should be one or two pages long. We will write each ADR as if it is a conversation with a future developer. This requires good writing style, with full sentences organized into paragraphs. Bullets are acceptable only for visual style, not as an excuse for writing sentence fragments. (Bullets kill people, even PowerPoint bullets.)
+## 8.4. ADR-004 - Instanties bouwstenen
 
-#### Context
+Datum: 28-03-2025
 
-> [!TIP]
-> This section describes the forces at play, including technological, political, social, and project local. These forces are probably in tension, and should be called out as such. The language in this section is value-neutral. It is simply describing facts about the problem we're facing and points out factors to take into account or to weigh when making the final decision.
+## Status
 
-#### Considered Options
+## Context
 
-> [!TIP]
-> This section describes the options that were considered, and gives some indication as to why the chosen option was selected.
+Voor mijn onderzoek heb ik de opdracht gekregen om de volgende vragen te beantwoorden:
+* Wie is verantwoordelijk voor het creëren van een nieuwe instantie van een bouwsteen?
+* Wie is verantwoordelijk voor het verwijderen van een instantie van een bouwsteen?
+  De oplossing moest gebruik maken van een design pattern dat tijdens de lessen is behandeld. Na het analyseren van verschillende patronen heb ik gekozen voor het Factory Method Pattern. Dit patroon biedt een gestructureerde manier om objecten aan te maken zonder directe afhankelijkheid van specifieke implementaties.
 
-#### Decision
+## Considered Options
+![classDiagramOnderzoek-0.svg](classDiagramOnderzoek-0.svg)
 
-> [!TIP]
-> This section describes our response to the forces/problem. It is stated in full sentences, with active voice. "We will …"
+Eigenlijk heb ik hierbij geen andere overwogen optie. Alleen vergelijk ik hier de implementatie zonder een factory waarbij alle logica in de service laag staat.
+## Decision
+Ik heb gekozen voor het Factory Method Pattern als oplossing voor het aanmaken van instanties van bouwstenen.
 
-#### Status
+## Consequences
 
-> [!TIP]
-> A decision may be "proposed" if the project stakeholders haven't agreed with it yet, or "accepted" once it is agreed. If a later ADR changes or reverses a decision, it may be marked as "deprecated" or "superseded" with a reference to its replacement.
+Voordelen
+Uitbreidbaarheid – Nieuwe bouwsteentypes kunnen worden toegevoegd zonder wijzigingen aan bestaande code.
+Duidelijke verantwoordelijkheden – Het aanmaken en verwijderen van bouwstenen is gescheiden, waardoor de code beter te begrijpen en onderhouden is.
 
-#### Consequences
-
-> [!TIP]
-> This section describes the resulting context, after applying the decision. All consequences should be listed here, not just the "positive" ones. A particular decision may have positive, negative, and neutral consequences, but all of them affect the team and project in the future.
+Nadelen
+Complexiteit – Het Factory Method Pattern voegt extra lagen toe, wat de leercurve verhoogt.
 
 ### 8.5. ADR-005 TITLE
 
