@@ -90,6 +90,8 @@ Voordat deze casusomschrijving tot stand kwam, heeft de opdrachtgever de volgend
 ![componentDiagramOnderzoek-Component Diagram for Trip-top System.svg](../Bartu/Onderzoek/componentDiagramOnderzoek-Component%20Diagram%20for%20Trip-top%20System.svg)
 <sub>Component diagram Bartu
 
+![dynamicDiagramOnderzoek-0.svg](../Bartu/Onderzoek/dynamicDiagramOnderzoek-0.svg)
+<sub>Sequence diagram Bartu
 ###     7.3. Design & Code
 ![onderzoeksvraagklassendiagram.png](..%2FMarijn%2Fonderzoeksvraag%2Fonderzoeksvraagklassendiagram.png)  
 <sub>Class diagram Marijn
