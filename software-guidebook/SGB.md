@@ -295,7 +295,7 @@ Voor mijn onderzoek heb ik de opdracht gekregen om de volgende vragen te beantwo
   De oplossing moest gebruik maken van een design pattern dat tijdens de lessen is behandeld. Na het analyseren van verschillende patronen heb ik gekozen voor het Factory Method Pattern. Dit patroon biedt een gestructureerde manier om objecten aan te maken zonder directe afhankelijkheid van specifieke implementaties.
 
 ## Considered Options
-![classDiagramOnderzoek-0.svg](classDiagramOnderzoek-0.svg)
+![classDiagramOnderzoek-0.svg](../Bartu/Onderzoek/classDiagramOnderzoek-0.svg)
 
 Eigenlijk heb ik hierbij geen andere overwogen optie. Alleen vergelijk ik hier de implementatie zonder een factory waarbij alle logica in de service laag staat.
 ## Decision
