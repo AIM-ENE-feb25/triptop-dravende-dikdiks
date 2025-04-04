@@ -75,6 +75,7 @@ public class BouwsteenController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println("Bouwsteen getOneBouwsteen: " + b);
         return b;
     }
 
