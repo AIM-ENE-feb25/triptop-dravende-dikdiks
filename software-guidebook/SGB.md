@@ -86,6 +86,11 @@ Idealiter had ik er in mijn prototype voor gezorgd dat er, na het toevoegen van 
 
 - Hoe zorg je ervoor dat je makkelijk een nieuwe externe service kan toevoegen?
 
+- Single Responsibility Principle (adapter heeft 1 taak).
+- Open/Closed Principle (nieuwe adapter zonder bestaande adapters aan te passen).
+- Client Transparency (Controller werkt met alle adapters want hij called gewoon fetchData())
+
+
 We kiezen voor het adapter pattern omdat het de meeste flexibiliteit biedt bij het toevoegen van nieuwe externe services. Het houdt de code schoon en zorgt ervoor dat de kernlogica niet afhankelijk is van specifieke externe implementaties.
 
 
