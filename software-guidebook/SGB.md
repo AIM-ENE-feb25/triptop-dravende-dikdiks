@@ -85,7 +85,7 @@ Idealiter had ik er in mijn prototype voor gezorgd dat er, na het toevoegen van 
 
 ### Ontwerpvraag Marijn
 
-Hoe zorg je ervoor dat je makkelijk een nieuwe externe service kan toevoegen?
+- Hoe zorg je ervoor dat je makkelijk een nieuwe externe service kan toevoegen?
 
 We kiezen voor het adapter pattern omdat het de meeste flexibiliteit biedt bij het toevoegen van nieuwe externe services. Het houdt de code schoon en zorgt ervoor dat de kernlogica niet afhankelijk is van specifieke externe implementaties.
 
@@ -94,40 +94,44 @@ We kiezen voor het adapter pattern omdat het de meeste flexibiliteit biedt bij h
 
 Om te bepalen wie verantwoordelijk is voor het creëren en verwijderen van een bouwsteen, heb ik de Factory Method Pattern toegepast. Deze pattern zorgt ervoor dat de logica voor het creëren van nieuwe bouwstenen wordt gecentraliseerd en flexibel blijft.
 
-### Open-closed principle
+#### Open-closed principle
 Het Open-Closed Principle wordt hierbij ook toegepast, omdat de code uitbreidbaar is zonder bestaande functionaliteit aan te passen. Nieuwe bouwsteentypes kunnen eenvoudig worden toegevoegd door nieuwe factory klasse, die door het gebruik van reflection automatisch worden uitgebreid aan de applicatie.
 
-### Program to interface
+#### Program to interface
 Daarnaast maak ik gebruik van Program to Interfaces, Not Implementations. 
 
-###  Single Responsibility Principle
+####  Single Responsibility Principle
 Verder is het Single Responsibility Principle van toepassing: de verantwoordelijkheid zijn duidelijk verdeeld over de klassen, zodat elke klasse een specifieke taak heeft. De BouwsteenFactory is verantwoordelijk voor het creëren van bouwstenen, terwijl de BouwsteenRepository zich bezighoudt met het beheren van de opslag en verwijdering naar de database.
-
-> [!IMPORTANT]
-> Beschrijf zelf de belangrijkste architecturele en design principes die zijn toegepast in de software.
 
 ## 7. Software Architecture
 
 ###     7.1. Containers
-![container_diagram-0.svg](Bijlagen/Containerdiagram/container_diagram-0.svg)
-
+![container_diagram-0.svg](Bijlagen/Containerdiagram/container_diagram-0.svg)  
 <sub> Container diagram </sub>
+
+[//]: # (todo: begeleidende tekst ontbreekt)
 
 
 ###     7.2. Components
 
+### Componentdiagram Marijn
 ![ComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2FComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png)  
 <sub> Diagrammen Marijn
 
+[//]: # (todo: begeleidende tekst ontbreekt)
 
-
-![componentDiagramOnderzoek-Component Diagram for Trip-top System.svg](../Bartu/Onderzoek/componentDiagramOnderzoek-Component%20Diagram%20for%20Trip-top%20System.svg)
+### Componentdiagram Bartu
+![componentDiagramOnderzoek-Component Diagram for Trip-top System.svg](../Bartu/Onderzoek/componentDiagramOnderzoek-Component%20Diagram%20for%20Trip-top%20System.svg)  
 <sub>Component diagram Bartu
 
 Dit componentendiagram toont de backend van het Trip-top systeem, met de focus op het verwerken van bouwstenen. De frontend stuurt aanvragen naar de BouwsteenController, die deze verder afhandelt via de BouwsteenService. Deze service bevat de kernlogica en maakt gebruik van de BouwsteenFactory om nieuwe bouwstenen aan te maken en van de BouwsteenRepository om gegevens op te slaan in de database.
 
+### Componentdiagram Mike
 
-[//]: # (todo: Mike, zet je componentdiagram en sequencediagram er even bij en maak daar ook een leuke beschrijving bij)
+![Mike - Componentdiagram-0.svg](Bijlagen/Componentdiagrammen/svg/Mike%20-%20Componentdiagram-0.svg)  
+<sub> Componentdiagram Mike </sub>
+
+[//]: # (todo: begeleidende tekst ontbreekt)
 
 ###     7.3. Design & Code
 
@@ -135,23 +139,29 @@ Dit componentendiagram toont de backend van het Trip-top systeem, met de focus o
 ![classdiagram.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2Fclassdiagram.png)
 <sub>Class diagram Marijn </sub>
 
+[//]: # (todo: begeleidende tekst ontbreekt)
+
+
 ### Dynamic diagram Marijn
 ![dynamicDiagram.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2FdynamicDiagram.png)
 <sub> Dynamic diagram Marijn
 
+[//]: # (todo: begeleidende tekst ontbreekt)
+
+
 ### Klassediagram Bartu
 
-[//]: # (todo: Bartu, kies hier ook even welke je wil gebruiken en verwijder degene die je niet wil gebruiken en haal dan de numerikeie identifier van de andere weg, Schrijf daarna een beschrijving bij het diagram.)
 ![classDiagramOnderzoek-0.svg](../Bartu/Onderzoek/classDiagramOnderzoek-0.svg)  
 <sub>Class diagram Bartu </sub>
+
+[//]: # (todo: begeleidende tekst ontbreekt)
+
 
 ![dynamicDiagramOnderzoek-0.svg](../Bartu/Onderzoek/dynamicDiagramOnderzoek-0.svg)
 <sub>Sequence diagram Bartu
 
 Dit sequentiediagram laat zien hoe een verzoek vanuit de frontend om een bouwsteen toe te voegen wordt verwerkt. De BouwsteenController ontvangt het verzoek en schakelt de BouwsteenService in, die via de BouwsteenFactory een nieuw bouwsteen aanmaakt en dit vervolgens opslaat via de BouwsteenRepository.
 
-
-[//]: # (todo: Mike, voeg je klassediagram toe en doe er een beschrijving bij)
 
 ### Klassediagram Mike  
 ![Mike - Class diagram.svg](Bijlagen/Klassediagrammen/svg-png/Mike%20-%20Class%20diagram.svg)  
@@ -165,13 +175,7 @@ Dit is onder andere gedaan om het overzicht te bewaren, maar ook omdat in veel k
 
 Dit sequence diagram beschrijft de stappen die worden gezet wanneer een bouwsteen wordt opgeslagen.
 
-> [!IMPORTANT]
-> Voeg toe: Per ontwerpvraag een Class Diagram plus een Sequence Diagram van een aantal scenario's inclusief begeleidende tekst.
-
 ## 8. Architectural Decision Records
-
-> [!IMPORTANT]
-> Voeg toe: 3 tot 5 ADR's die beslissingen beschrijven die zijn genomen tijdens het ontwerpen en bouwen van de software.
 
 ### 8.1. ADR-001 Applicatie voor reisagent
 
