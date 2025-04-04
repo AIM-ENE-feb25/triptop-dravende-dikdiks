@@ -126,10 +126,6 @@ Verder is het Single Responsibility Principle van toepassing: de verantwoordelij
 
 Dit componentendiagram toont de backend van het Trip-top systeem, met de focus op het verwerken van bouwstenen. De frontend stuurt aanvragen naar de BouwsteenController, die deze verder afhandelt via de BouwsteenService. Deze service bevat de kernlogica en maakt gebruik van de BouwsteenFactory om nieuwe bouwstenen aan te maken en van de BouwsteenRepository om gegevens op te slaan in de database.
 
-![dynamicDiagramOnderzoek-0.svg](../Bartu/Onderzoek/dynamicDiagramOnderzoek-0.svg)
-<sub>Sequence diagram Bartu
-
-Dit sequentiediagram laat zien hoe een verzoek vanuit de frontend om een bouwsteen toe te voegen wordt verwerkt. De BouwsteenController ontvangt het verzoek en schakelt de BouwsteenService in, die via de BouwsteenFactory een nieuw bouwsteen aanmaakt en dit vervolgens opslaat via de BouwsteenRepository.
 
 [//]: # (todo: Mike, zet je componentdiagram en sequencediagram er even bij en maak daar ook een leuke beschrijving bij)
 
@@ -149,20 +145,28 @@ Dit sequentiediagram laat zien hoe een verzoek vanuit de frontend om een bouwste
 ![classDiagramOnderzoek-0.svg](../Bartu/Onderzoek/classDiagramOnderzoek-0.svg)  
 <sub>Class diagram Bartu </sub>
 
+![dynamicDiagramOnderzoek-0.svg](../Bartu/Onderzoek/dynamicDiagramOnderzoek-0.svg)
+<sub>Sequence diagram Bartu
+
+Dit sequentiediagram laat zien hoe een verzoek vanuit de frontend om een bouwsteen toe te voegen wordt verwerkt. De BouwsteenController ontvangt het verzoek en schakelt de BouwsteenService in, die via de BouwsteenFactory een nieuw bouwsteen aanmaakt en dit vervolgens opslaat via de BouwsteenRepository.
+
+
 [//]: # (todo: Mike, voeg je klassediagram toe en doe er een beschrijving bij)
 
-### Klassediagram Mike
+### Klassediagram Mike  
 ![Mike - Class diagram.svg](Bijlagen/Klassediagrammen/svg-png/Mike%20-%20Class%20diagram.svg)  
 <sub> Klassediagram Mike  </sub>
 
-Belangrijk om te vermelden is dat de klasse `Bouwsteen` geen dependecypijlen naar andere klasses heeft. 
+Belangrijk om te vermelden is dat de klasse `Bouwsteen` geen dependencypijlen naar andere klasses heeft. 
 Dit is onder andere gedaan om het overzicht te bewaren, maar ook omdat in veel klasses de dependency al duidelijk is door de returntypes die gegeven zijn.
 
 ### Sequence Diagram Mike
+![Mike - Sequence Diagram.svg](Bijlagen/Sequencediagrammen/svg/Mike%20-%20Sequence%20Diagram.svg)
 
+Dit sequence diagram beschrijft de stappen die worden gezet wanneer een bouwsteen wordt opgeslagen.
 
 > [!IMPORTANT]
-> Voeg toe: Per ontwerpvraag een Class Diagram plus een Sequence Diagram va n een aantal scenario's inclusief begeleidende tekst.
+> Voeg toe: Per ontwerpvraag een Class Diagram plus een Sequence Diagram van een aantal scenario's inclusief begeleidende tekst.
 
 ## 8. Architectural Decision Records
 
@@ -204,6 +208,7 @@ We hebben ervoor gekozen om 1 applicatie te maken waar, afhankelijk van de rolle
 - Makkelijker te onderhouden
 - Niet scheiden van functionaliteiten maakt de applicatie soms dubbelzinnig
 - Er moet strict bijgehouden worden welke gebruiker welke rechten heeft
+- 
 ### 8.2. ADR-002 Welke maps-api gaan we gebruiken?
 
 Datum: 21-03-2025
@@ -325,8 +330,6 @@ Complexiteit – Het Factory Method Pattern voegt extra lagen toe, wat de leercu
 > These documents have names that are short noun phrases. For example, "ADR 1: Deployment on Ruby on Rails 3.0.10" or "ADR 9: LDAP for Multitenant Integration". The whole ADR should be one or two pages long. We will write each ADR as if it is a conversation with a future developer. This requires good writing style, with full sentences organized into paragraphs. Bullets are acceptable only for visual style, not as an excuse for writing sentence fragments. (Bullets kill people, even PowerPoint bullets.)
 
 
-
-
 #### Context
 
 > [!TIP]
@@ -351,4 +354,4 @@ Complexiteit – Het Factory Method Pattern voegt extra lagen toe, wat de leercu
 
 > [!TIP]
 > This section describes the resulting context, after applying the decision. All consequences should be listed here, not just the "positive" ones. A particular decision may have positive, negative, and neutral consequences, but all of them affect the team and project in the future.
- 
+

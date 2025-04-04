@@ -4,17 +4,16 @@
 Container(tt, "Triptop", "Frontend")
 Component(bc, "BouwsteenController", "Beheert bouwstenen")
 Component(ss, "ServiceStrategy", "Behandelt bouwsteen logica")
-Component(bs, "Bouwsteen", "Is een bouwsteen")
 Component(br, "BouwsteenRepo", "Behandelt database-related logica voor bouwstenen")
+Component(bs, "Bouwsteen", "Is een bouwsteen")
 
 Rel(tt, bc, "Request voor opslaan bepaald type bouwsteen", "JSON/HTTP")
-Rel(bc, bc, "Juiste strategy wordt gekozen")
 Rel(bc, bs, "setDetails(details)", "Details van bouwsteen worden aan instantie toegevoegd")
 Rel(bc, ss, "saveBouwsteen(Bouwsteen)")
-Rel(ss, bs, "saveBouwsteen(Bouwsteen)")
-Rel(bs, br, "saveBouwsteen(Bouwsteen)")
-
-
+Rel(ss, br, "saveBouwsteen(Bouwsteen)")
+Rel(br, ss, "200 OK")
+Rel(ss, bc, "200 OK")
+Rel(bc, tt, "200 OK")
 
 
 
