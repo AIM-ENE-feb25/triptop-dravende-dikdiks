@@ -5,53 +5,30 @@ import je.applicatie.domain.soexintegratie.Adapters.BookincomAdapter;
 import je.applicatie.domain.soexintegratie.Domain.Bouwsteen;
 import je.applicatie.domain.soexintegratie.Domain.HotelBouwsteen;
 import je.applicatie.domain.soexintegratie.Domain.TripBouwsteen;
+import je.applicatie.domain.soexintegratie.Domain.factory.BouwsteenFactory;
+import je.applicatie.domain.soexintegratie.Services.BouwsteenService;
 import je.applicatie.domain.soexintegratie.Services.HotelServiceStrategyImpl;
 import je.applicatie.domain.soexintegratie.Services.ServiceStrategy;
 import je.applicatie.domain.soexintegratie.Services.TripServiceStrategyImpl;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Constructor;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 public class BouwsteenController {
     private String strategy;
     private ServiceStrategy service;
+    private final BouwsteenService bouwsteenService;
     private Bouwsteen bouwsteen;
     private AirbnbAdapter airbnbAdapter;
     private BookincomAdapter bookincomAdapter;
 
-    //todo: lists van maken
-
-
 
     private void chooseStrategy(String strategy) {
-//        bouwsteen = new Expression(/*klassenaam.class*/, "new", null);
-
-
-//        Bouwsteen tempBouwsteen;
-
-
-        //bouwsteen zoeken binnen spring beans
-        //custom @bean maken? anders in @component zoeken
-        //iets met hashmap bekijken?
-        //reflection zoeken op implementaties van interface
-        //todo: sowieso ADR van maken?? mogelijk focussen op spring-oplossing
-        //todo: ADR maken van eventuele keuze voor switch case als de rest teveel tijd in beslag neemt
-
-        //bouwsteen.getClass().getSimpleName().toString()
-
-//        Constructor<?>[] c = HotelBouwsteen.class.getConstructors();
-//        System.out.println(STR."Aantal constructors = \{c.length}");
-//        if (c.length > 0) {
-//            try {
-//                bouwsteen = (Bouwsteen) c[0].newInstance();
-//                System.out.println(bouwsteen);
-//            } catch (Exception e) {
-//                System.out.println(STR."Helaas :(, \{e}");
-//            }
-//        }
-
         switch (strategy) {
             case "hotel":
                 service = new HotelServiceStrategyImpl(airbnbAdapter, bookincomAdapter);
@@ -70,8 +47,10 @@ public class BouwsteenController {
     public BouwsteenController(List<ServiceStrategy> serviceStrategyList,
                                List<Bouwsteen> bouwsteenList,
                                BookincomAdapter bookincomAdapter,
-                               AirbnbAdapter airbnbAdapter)
+                               AirbnbAdapter airbnbAdapter,
+                               BouwsteenService bouwsteenService)
     {
+        this.bouwsteenService = bouwsteenService;
         this.bookincomAdapter = bookincomAdapter;
         this.airbnbAdapter = airbnbAdapter;
     }
@@ -96,6 +75,7 @@ public class BouwsteenController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println("Bouwsteen getOneBouwsteen: " + b);
         return b;
     }
 
@@ -127,8 +107,32 @@ public class BouwsteenController {
         return service.getApiData();
     }
 
-    //todo: kan ik dit dynamisch doen of kan ik beter een if-statement maken?
-    //todo: ja, dat kan. gebruik later een van de onderste twee opties
-    //todo: key-value pair
-    //todo: reflectie??
+    @PostMapping("/bouwstenen")
+    public ResponseEntity<Bouwsteen> voegBouwsteenToe(@RequestBody Map<String, Object> request) {
+        String type = (String) request.get("type");
+
+        String className = "je.applicatie.domain.soexintegratie.Domain.factory." + type + "Factory";
+        try {
+            Class<?> clazz = Class.forName(className);
+            Constructor<?> constructor = clazz.getConstructor();
+            BouwsteenFactory factory = (BouwsteenFactory) constructor.newInstance();
+            Bouwsteen bouwsteen = bouwsteenService.createBouwsteen(factory, request);
+            return ResponseEntity.ok(bouwsteen);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+
+    @DeleteMapping("/bouwstenen/{bouwsteenId}")
+    public ResponseEntity<Void> verwijderBouwsteen(@PathVariable Long bouwsteenId) {
+        bouwsteenService.deleteBouwsteen(bouwsteenId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/bouwstenen/{bouwsteenId}")
+    public ResponseEntity<Bouwsteen> haalBouwsteenOp(@PathVariable Long bouwsteenId) {
+        Optional<Bouwsteen> bouwsteen = bouwsteenService.getBouwsteenById(bouwsteenId);
+        return bouwsteen.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
 }

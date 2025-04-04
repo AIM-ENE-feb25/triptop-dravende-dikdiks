@@ -17,4 +17,14 @@ public class TripBouwsteen implements Bouwsteen {
         System.out.println("TripBouwsteen aangemaakt!");
         System.out.println("Naam: " + name + ", length in km: " + lengthInKM);
     }
+
+    @Override
+    public String getType() {
+        return "";
+    }
+
+    @Override
+    public String getDetails() {
+        return "";
+    }
 }

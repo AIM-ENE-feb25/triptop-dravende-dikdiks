@@ -1,57 +1,22 @@
 package je.applicatie.domain.soexintegratie.Controllers;
 
-import jakarta.annotation.Resource;
 import je.applicatie.domain.soexintegratie.Domain.Bouwsteen;
 import je.applicatie.domain.soexintegratie.Domain.HotelBouwsteen;
 import je.applicatie.domain.soexintegratie.Domain.TripBouwsteen;
 import je.applicatie.domain.soexintegratie.Services.HotelServiceStrategyImpl;
 import je.applicatie.domain.soexintegratie.Services.ServiceStrategy;
 import je.applicatie.domain.soexintegratie.Services.TripServiceStrategyImpl;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
-import java.beans.Expression;
-import java.lang.reflect.Constructor;
 import java.util.List;
 import java.util.Map;
 
 @RestController
 public class BouwsteenController {
-    private String strategy;
     private ServiceStrategy service;
     private Bouwsteen bouwsteen;
 
-    //todo: lists van maken
-
-
-
     private void chooseStrategy(String strategy) {
-//        bouwsteen = new Expression(/*klassenaam.class*/, "new", null);
-
-
-//        Bouwsteen tempBouwsteen;
-
-
-        //bouwsteen zoeken binnen spring beans
-        //custom @bean maken? anders in @component zoeken
-        //iets met hashmap bekijken?
-        //reflection zoeken op implementaties van interface
-        //todo: sowieso ADR van maken?? mogelijk focussen op spring-oplossing
-        //todo: ADR maken van eventuele keuze voor switch case als de rest teveel tijd in beslag neemt
-
-        //bouwsteen.getClass().getSimpleName().toString()
-
-//        Constructor<?>[] c = HotelBouwsteen.class.getConstructors();
-//        System.out.println(STR."Aantal constructors = \{c.length}");
-//        if (c.length > 0) {
-//            try {
-//                bouwsteen = (Bouwsteen) c[0].newInstance();
-//                System.out.println(bouwsteen);
-//            } catch (Exception e) {
-//                System.out.println(STR."Helaas :(, \{e}");
-//            }
-//        }
-
         switch (strategy) {
             case "hotel":
                 service = new HotelServiceStrategyImpl();
@@ -63,11 +28,15 @@ public class BouwsteenController {
                 break;
             default:
                 service = null;
+                bouwsteen = null;
                 break;
         }
     }
 
-    public BouwsteenController(List<ServiceStrategy> serviceStrategyList,  List<Bouwsteen> bouwsteenList) {
+    public BouwsteenController(List<ServiceStrategy> serviceStrategyList,
+                               List<Bouwsteen> bouwsteenList)
+    {
+
     }
 
     @PostMapping("/{strategy}/boeken")
@@ -114,11 +83,4 @@ public class BouwsteenController {
             e.printStackTrace();
         }
     }
-
-    //todo: kan ik dit dynamisch doen of kan ik beter een if-statement maken?
-    //todo: ja, dat kan. gebruik later een van de onderste twee opties
-    //todo: key-value pair
-    //todo: reflectie??
-
-    //todo: moet ik alleen van happy path uit gaan?
 }

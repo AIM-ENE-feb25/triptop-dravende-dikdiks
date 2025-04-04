@@ -116,19 +116,20 @@ Verder is het Single Responsibility Principle van toepassing: de verantwoordelij
 
 ###     7.2. Components
 
-![ComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2FComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png)
+![ComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2FComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png)  
 <sub> Diagrammen Marijn
 
 
-[//]: # (todo: Bartu, zie onderstaand)
-Bartu, kijk voor jezelf in [Componentdiagrammen](Bijlagen/Componentdiagrammen) of je Componentdiagram 1 of 2 in het SGB wil hebben staan. Verwijder degene die je niet wil hebben en haal de numerieke identifier weg bij degene die je wil bewaren.  
-Zet daarna ff een beschrijving bij je diagrammen om te voldoen aan de LUK daarvoor
 
 ![componentDiagramOnderzoek-Component Diagram for Trip-top System.svg](../Bartu/Onderzoek/componentDiagramOnderzoek-Component%20Diagram%20for%20Trip-top%20System.svg)
 <sub>Component diagram Bartu
 
+Dit componentendiagram toont de backend van het Trip-top systeem, met de focus op het verwerken van bouwstenen. De frontend stuurt aanvragen naar de BouwsteenController, die deze verder afhandelt via de BouwsteenService. Deze service bevat de kernlogica en maakt gebruik van de BouwsteenFactory om nieuwe bouwstenen aan te maken en van de BouwsteenRepository om gegevens op te slaan in de database.
+
 ![dynamicDiagramOnderzoek-0.svg](../Bartu/Onderzoek/dynamicDiagramOnderzoek-0.svg)
 <sub>Sequence diagram Bartu
+
+Dit sequentiediagram laat zien hoe een verzoek vanuit de frontend om een bouwsteen toe te voegen wordt verwerkt. De BouwsteenController ontvangt het verzoek en schakelt de BouwsteenService in, die via de BouwsteenFactory een nieuw bouwsteen aanmaakt en dit vervolgens opslaat via de BouwsteenRepository.
 
 [//]: # (todo: Mike, zet je componentdiagram en sequencediagram er even bij en maak daar ook een leuke beschrijving bij)
 
@@ -151,9 +152,14 @@ Zet daarna ff een beschrijving bij je diagrammen om te voldoen aan de LUK daarvo
 [//]: # (todo: Mike, voeg je klassediagram toe en doe er een beschrijving bij)
 
 ### Klassediagram Mike
+![Mike - Class diagram.svg](Bijlagen/Klassediagrammen/svg-png/Mike%20-%20Class%20diagram.svg)  
+<sub> Klassediagram Mike  </sub>
 
-![Mike - Class diagram-0.svg](Bijlagen/Klassediagrammen/svg-png/Mike%20-%20Class%20diagram-0.svg)  
-<sub> Klassediagram Mike
+Belangrijk om te vermelden is dat de klasse `Bouwsteen` geen dependecypijlen naar andere klasses heeft. 
+Dit is onder andere gedaan om het overzicht te bewaren, maar ook omdat in veel klasses de dependency al duidelijk is door de returntypes die gegeven zijn.
+
+### Sequence Diagram Mike
+
 
 > [!IMPORTANT]
 > Voeg toe: Per ontwerpvraag een Class Diagram plus een Sequence Diagram va n een aantal scenario's inclusief begeleidende tekst.
