@@ -26,32 +26,6 @@ public class BouwsteenController {
 
 
     private void chooseStrategy(String strategy) {
-//        bouwsteen = new Expression(/*klassenaam.class*/, "new", null);
-
-
-//        Bouwsteen tempBouwsteen;
-
-
-        //bouwsteen zoeken binnen spring beans
-        //custom @bean maken? anders in @component zoeken
-        //iets met hashmap bekijken?
-        //reflection zoeken op implementaties van interface
-        //todo: sowieso ADR van maken?? mogelijk focussen op spring-oplossing
-        //todo: ADR maken van eventuele keuze voor switch case als de rest teveel tijd in beslag neemt
-
-        //bouwsteen.getClass().getSimpleName().toString()
-
-//        Constructor<?>[] c = HotelBouwsteen.class.getConstructors();
-//        System.out.println(STR."Aantal constructors = \{c.length}");
-//        if (c.length > 0) {
-//            try {
-//                bouwsteen = (Bouwsteen) c[0].newInstance();
-//                System.out.println(bouwsteen);
-//            } catch (Exception e) {
-//                System.out.println(STR."Helaas :(, \{e}");
-//            }
-//        }
-
         switch (strategy) {
             case "hotel":
                 service = new HotelServiceStrategyImpl(airbnbAdapter, bookincomAdapter);
@@ -126,9 +100,4 @@ public class BouwsteenController {
         chooseStrategy(strategy);
         return service.getApiData();
     }
-
-    //todo: kan ik dit dynamisch doen of kan ik beter een if-statement maken?
-    //todo: ja, dat kan. gebruik later een van de onderste twee opties
-    //todo: key-value pair
-    //todo: reflectie??
 }

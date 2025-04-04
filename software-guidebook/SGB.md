@@ -151,9 +151,14 @@ Zet daarna ff een beschrijving bij je diagrammen om te voldoen aan de LUK daarvo
 [//]: # (todo: Mike, voeg je klassediagram toe en doe er een beschrijving bij)
 
 ### Klassediagram Mike
+![Mike - Class diagram.svg](Bijlagen/Klassediagrammen/svg-png/Mike%20-%20Class%20diagram.svg)  
+<sub> Klassediagram Mike  </sub>
 
-![Mike - Class diagram-0.svg](Bijlagen/Klassediagrammen/svg-png/Mike%20-%20Class%20diagram-0.svg)  
-<sub> Klassediagram Mike
+Belangrijk om te vermelden is dat de klasse `Bouwsteen` geen dependecypijlen naar andere klasses heeft. 
+Dit is onder andere gedaan om het overzicht te bewaren, maar ook omdat in veel klasses de dependency al duidelijk is door de returntypes die gegeven zijn.
+
+### Sequence Diagram Mike
+
 
 > [!IMPORTANT]
 > Voeg toe: Per ontwerpvraag een Class Diagram plus een Sequence Diagram va n een aantal scenario's inclusief begeleidende tekst.

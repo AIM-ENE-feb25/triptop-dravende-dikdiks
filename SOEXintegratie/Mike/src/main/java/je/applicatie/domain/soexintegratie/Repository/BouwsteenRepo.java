@@ -8,14 +8,14 @@ import java.util.List;
 public class BouwsteenRepo {
 
     public void saveBouwsteen(Bouwsteen bouwsteen) {
-        System.out.println(STR."De bouwsteen van klasse \{bouwsteen.getClass().getSimpleName().toString()} is toegevoegd aan de database.");
+        System.out.println("Bouwsteen van klasse " + bouwsteen.getClass().getSimpleName() + "gemaakt.");
     }
     public Bouwsteen getBouwsteen(int id, Bouwsteen bouwsteen) {
-        System.out.println(STR."De bouwsteen van klasse \{bouwsteen.getClass().getSimpleName().toString()} is opgehaald uit de database.");
+        System.out.println("Bouwsteen van klasse " + bouwsteen.getClass().getSimpleName() + "opgehaald.");
         return bouwsteen;
     }
     public List<Bouwsteen> getAllBouwstenen(Bouwsteen bouwsteen) {
-        System.out.println(STR."Alle bouwstenen van klasse \{bouwsteen.getClass().getSimpleName().toString()} zijn opgehaald uit de database.");
+        System.out.println("Alle bouwstenen van klasse " + bouwsteen.getClass().getSimpleName() + "opgehaald.");
         List<Bouwsteen> allBouwstenen = new ArrayList<>();
         allBouwstenen.add(bouwsteen);
         return allBouwstenen;
