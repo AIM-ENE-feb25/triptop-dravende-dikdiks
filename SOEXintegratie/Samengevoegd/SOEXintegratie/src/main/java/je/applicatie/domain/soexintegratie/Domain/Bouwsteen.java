@@ -4,4 +4,6 @@ import java.util.Map;
 
 public interface Bouwsteen {
     void setDetails(Map<String, String> details);
+    String getType();
+    String getDetails();
 }

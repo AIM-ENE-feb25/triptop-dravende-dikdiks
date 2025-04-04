@@ -20,5 +20,15 @@ public class HotelBouwsteen implements Bouwsteen {
         System.out.println("Naam: " + name + ", stad: " + city + ", Duratie in dagen: " + durationInDays);
     }
 
+    @Override
+    public String getType() {
+        return "";
+    }
+
+    @Override
+    public String getDetails() {
+        return "";
+    }
+
 
 }
