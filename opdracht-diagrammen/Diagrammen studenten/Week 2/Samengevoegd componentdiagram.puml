@@ -1,18 +1,18 @@
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
-Component("bc", "BouwsteenController")
-Component("hr", "HotelRepo")
-Component("tr", "TripRepo")
-Component("bsf", "BouwsteenFactory", "Maakt bouwstenen aan.")
-Component("hs", "HotelService")
-Component("ts", "TripService")
+Component("bc", "BouwsteenController", "controller voor alle bouwstenen")
+Component("hr", "HotelRepo", "Repo voor hotel bouwsteen")
+Component("tr", "TripRepo", "Repo voor trip bouwsteen")
+Component("bsf", "BouwsteenFactory", "Maakt instanties van bouwstenen aan.")
+Component("hs", "HotelService", "Service voor hotel bouwsteen")
+Component("ts", "TripService", "Service voor trip bouwsteen")
 
 
-Component_Ext("aa","adapterAirbnb")
-Component_Ext("ab","adapterBookingcom")
+Component_Ext("aa","adapterAirbnb", "API")
+Component_Ext("ab","adapterBookingcom", "API")
 
-Component_Ext("tapi","TripAPIS")
+Component_Ext("tapi","TripAPIS", "API's voor trip bouwsteen")
 
 System("db", "Database")
 
