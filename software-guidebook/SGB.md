@@ -87,6 +87,9 @@ Idealiter had ik er in mijn prototype voor gezorgd dat er, na het toevoegen van 
 
 Hoe zorg je ervoor dat je makkelijk een nieuwe externe service kan toevoegen?
 
+We kiezen voor het adapter pattern omdat het de meeste flexibiliteit biedt bij het toevoegen van nieuwe externe services. Het houdt de code schoon en zorgt ervoor dat de kernlogica niet afhankelijk is van specifieke externe implementaties.
+
+
 ### Ontwerpvraag Bartu
 
 Om te bepalen wie verantwoordelijk is voor het creëren en verwijderen van een bouwsteen, heb ik de Factory Method Pattern toegepast. Deze pattern zorgt ervoor dat de logica voor het creëren van nieuwe bouwstenen wordt gecentraliseerd en flexibel blijft.
