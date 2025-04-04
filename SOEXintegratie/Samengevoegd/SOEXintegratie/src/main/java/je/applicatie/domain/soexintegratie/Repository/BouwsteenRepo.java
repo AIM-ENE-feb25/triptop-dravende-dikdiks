@@ -9,9 +9,11 @@ import java.util.List;
 public class BouwsteenRepo {
 
     public void saveBouwsteen(Bouwsteen bouwsteen) {
+        System.out.println("Bouwsteen opgeslagen: " + bouwsteen);
         //System.out.println(STR."De bouwsteen van klasse \{bouwsteen.getClass().getSimpleName().toString()} is toegevoegd aan de database.");
     }
     public Bouwsteen getBouwsteen(int id, Bouwsteen bouwsteen) {
+        System.out.println("Bouwsteen teruggegeven: " + bouwsteen);
         //System.out.println(STR."De bouwsteen van klasse \{bouwsteen.getClass().getSimpleName().toString()} is opgehaald uit de database.");
         return bouwsteen;
     }

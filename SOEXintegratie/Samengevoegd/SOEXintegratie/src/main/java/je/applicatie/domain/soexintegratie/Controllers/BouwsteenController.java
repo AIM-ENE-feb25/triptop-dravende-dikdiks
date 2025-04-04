@@ -5,18 +5,24 @@ import je.applicatie.domain.soexintegratie.Adapters.BookincomAdapter;
 import je.applicatie.domain.soexintegratie.Domain.Bouwsteen;
 import je.applicatie.domain.soexintegratie.Domain.HotelBouwsteen;
 import je.applicatie.domain.soexintegratie.Domain.TripBouwsteen;
+import je.applicatie.domain.soexintegratie.Domain.factory.BouwsteenFactory;
+import je.applicatie.domain.soexintegratie.Services.BouwsteenService;
 import je.applicatie.domain.soexintegratie.Services.HotelServiceStrategyImpl;
 import je.applicatie.domain.soexintegratie.Services.ServiceStrategy;
 import je.applicatie.domain.soexintegratie.Services.TripServiceStrategyImpl;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Constructor;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 public class BouwsteenController {
     private String strategy;
     private ServiceStrategy service;
+    private final BouwsteenService bouwsteenService;
     private Bouwsteen bouwsteen;
     private AirbnbAdapter airbnbAdapter;
     private BookincomAdapter bookincomAdapter;
@@ -41,8 +47,10 @@ public class BouwsteenController {
     public BouwsteenController(List<ServiceStrategy> serviceStrategyList,
                                List<Bouwsteen> bouwsteenList,
                                BookincomAdapter bookincomAdapter,
-                               AirbnbAdapter airbnbAdapter)
+                               AirbnbAdapter airbnbAdapter,
+                               BouwsteenService bouwsteenService)
     {
+        this.bouwsteenService = bouwsteenService;
         this.bookincomAdapter = bookincomAdapter;
         this.airbnbAdapter = airbnbAdapter;
     }
@@ -67,6 +75,7 @@ public class BouwsteenController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println("Bouwsteen getOneBouwsteen: " + b);
         return b;
     }
 
@@ -96,5 +105,34 @@ public class BouwsteenController {
     public String[][] callAPIS(@PathVariable String strategy) {
         chooseStrategy(strategy);
         return service.getApiData();
+    }
+
+    @PostMapping("/bouwstenen")
+    public ResponseEntity<Bouwsteen> voegBouwsteenToe(@RequestBody Map<String, Object> request) {
+        String type = (String) request.get("type");
+
+        String className = "je.applicatie.domain.soexintegratie.Domain.factory." + type + "Factory";
+        try {
+            Class<?> clazz = Class.forName(className);
+            Constructor<?> constructor = clazz.getConstructor();
+            BouwsteenFactory factory = (BouwsteenFactory) constructor.newInstance();
+            Bouwsteen bouwsteen = bouwsteenService.createBouwsteen(factory, request);
+            return ResponseEntity.ok(bouwsteen);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+
+    @DeleteMapping("/bouwstenen/{bouwsteenId}")
+    public ResponseEntity<Void> verwijderBouwsteen(@PathVariable Long bouwsteenId) {
+        bouwsteenService.deleteBouwsteen(bouwsteenId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/bouwstenen/{bouwsteenId}")
+    public ResponseEntity<Bouwsteen> haalBouwsteenOp(@PathVariable Long bouwsteenId) {
+        Optional<Bouwsteen> bouwsteen = bouwsteenService.getBouwsteenById(bouwsteenId);
+        return bouwsteen.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 }
