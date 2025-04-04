@@ -30,8 +30,6 @@ Bronnen:
 In eerste instantie kozen we voor Adyen, omdat dit de eerste was die in ons opkwam. Na verder onderzoek gedaan te hebben, zijn we tot de conclusie gekomen dat Stripe eigenlijk beter aansluit op onze eisen en wensen.
 
 
-
-
 ## Consequences
 
 - We zullen onze diagrammen hierop aan moeten passen

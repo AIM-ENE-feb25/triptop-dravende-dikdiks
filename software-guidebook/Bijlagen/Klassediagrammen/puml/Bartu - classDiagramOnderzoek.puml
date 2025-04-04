@@ -1,0 +1,62 @@
+@startuml
+!include https://raw.githubusercontent.com/craft-coder/plantuml-styles/main/styles/modern-style.plantuml
+
+interface BouwsteenFactory {
+    +createBouwsteen(details: Map<String, Object>): Bouwsteen
+}
+
+class OvernachtingFactory {
+    +createBouwsteen(details: Map<String, Object>): Bouwsteen
+}
+
+class VervoerFactory {
+    +createBouwsteen(details: Map<String, Object>): Bouwsteen
+}
+
+class BouwsteenController {
+    +voegBouwsteenToe(request: BouwsteenRequest): ResponseEntity<Bouwsteen>
+    +verwijderBouwsteen(bouwsteenId: String): ResponseEntity<Void>
+    +haalBouwsteenOp(bouwsteenId: String): ResponseEntity<Bouwsteen>
+}
+
+class BouwsteenService {
+    +createBouwsteen(factory: BouwsteenFactory, details: Map<String, Object>): Bouwsteen
+    +deleteBouwsteen(bouwsteenId: Long): void
+    +getBouwsteenById(bouwsteenId: Long): Optional<Bouwsteen>
+}
+
+class BouwsteenRepository {
+    +save(bouwsteen: Bouwsteen): void
+    +delete(bouwsteenId: Long): void
+    +findById(bouwsteenId: Long): Optional<Bouwsteen>
+}
+
+interface Bouwsteen {
+    +getType(): String
+    +getDetails(): String
+}
+
+class Overnachting {
+    -details: Map<String, Object>
+    +getType(): String
+    +getDetails(): String
+}
+
+class Vervoer {
+    -details: Map<String, Object>
+    +getType(): String
+    +getDetails(): String
+}
+
+Bouwsteen <|-- Overnachting : implements
+Bouwsteen <|-- Vervoer : implements
+BouwsteenFactory <|-- OvernachtingFactory : implements
+BouwsteenFactory <|-- VervoerFactory : implements
+
+BouwsteenService ..> BouwsteenFactory : uses
+BouwsteenController ..> BouwsteenService : delegates
+
+BouwsteenService ..> BouwsteenRepository : uses
+BouwsteenFactory --> Bouwsteen : creates
+
+@enduml

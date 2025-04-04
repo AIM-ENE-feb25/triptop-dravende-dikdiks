@@ -75,28 +75,13 @@ Voordat deze casusomschrijving tot stand kwam, heeft de opdrachtgever de volgend
 
 - Hoe maak je de applicatie uitbreidbaar met nieuwe bouwstenen?  
 
-Om tot een antwoord en prototype voor mijn ontwerpvraag te komen, heb ik gekozen om gebruik te maken van het `strategy`-pattern. Hierdoor heb ik ook automatisch het `open-closed principe` en het `composition over inheritance principe` toegepast.
+Om een prototype te kunnen bouwen waarmee ik antwoord geef op mijn gekozen ontwerpvraag, heb ik gebruik moeten maken van het strategy-pattern.
+Wanneer je een strategy patten gebruikt, gebruik je daar automatisch de `composition over inheritance`- en `open-closed` principes bij.  
 
-#### Strategy Pattern  
+Ik heb ervoor gekozen dit pattern en deze principes te gebruiken omdat je, wanneer je ze op de juiste manier toepast, je enkel de implementatie van een service, de implementatie van een bouwsteen en de implementatie van een adapter hoeft te schrijven.
+In de oude code hoeft bijna niets veranderd te worden om het programma te laten functioneren met de nieuwe bouwsteen.  
 
-Ik heb voor het strategy pattern gekozen, omdat ik daarmee het prototype on-the-fly anders kon laten reageren op bepaalde zaken die werden aangeroepen, zonder dat ik daarvoor gebruik heb hoeven maken van hard-coded waardes.   
-
-Dat betekent in essentie dat er, wanneer men een nieuw type bouwsteen wil toevoegen aan de applicatie, zo min mogelijk hoeft te veranderen aan de reeds bestaande code. 
-Er bestaat ook een oplossing waarmee je letterlijk niets hoeft aan te passen aan de controller (mits je geen niet-bestaande functionaliteit toe wil kunnen voegen), maar helaas heb ik niet genoeg tijd gehad om dat te kunnen implementeren in dit prototype.  
-
-#### Open-closed principle
-
-Wanneer je gebruik maakt van het strategy-pattern, zit je ook meteen vast aan aan het open-closed principle.
-Dit principe houdt in dat 
-
-
-
-Om een prototype te kunnen bouwen waarmee ik antwoord geef op mijn gekozen ontwerpvraag, heb ik gebruik moeten maken van een strategy-pattern. 
-Middels een strategy pattern
-
-
-
-
+Idealiter had ik er in mijn prototype voor gezorgd dat er, na het toevoegen van een nieuwe bouwsteen, compleet geen oude code aan had hoeven passen, bijvoorbeeld door gebruik te maken van reflection of het zoeken door Spring Boot Beans. Helaas is dit door een tekort aan tijd niet gelukt.  
 
 ### Ontwerpvraag Marijn
 
@@ -123,28 +108,44 @@ Verder is het Single Responsibility Principle van toepassing: de verantwoordelij
 ## 7. Software Architecture
 
 ###     7.1. Containers
-![container_diagram-0.svg](../opdracht-diagrammen/Diagrammen%20studenten/Week%201/ContainerDiagram/container_diagram-0.svg)  
-<sub> Container diagram 
+![container_diagram-0.svg](Bijlagen/Containerdiagram/container_diagram-0.svg)
+
+<sub> Container diagram </sub>
 
 
 ###     7.2. Components
 
+[//]: # (todo: Marijn, zie onderstaand)
+Marijn fix dit ff en zet je diagrammen in [Componentdiagrammen](Bijlagen/Componentdiagrammen) onder de naam "Marijn - Componentdiagram" en "Marijn - Sequencediagram"  
+Zet er daarna ook een beschrijving bij zodat je voldoet aan de LUK daarvoor
 ![componentdiagrambookinCOM-Component_Diagram_voor_TripTop_met_Beveiligingslaag.png](..%2FMarijn%2Fonderzoeksvraag%2FcomponentdiagrambookinCOM-Component_Diagram_voor_TripTop_met_Beveiligingslaag.png)  
 ![dynamicdiagramonderzoeksvraag.png](..%2FMarijn%2Fonderzoeksvraag%2Fdynamicdiagramonderzoeksvraag.png)    
 <sub> Diagrammen Marijn
+
+
+[//]: # (todo: Bartu, zie onderstaand)
+Bartu, kijk voor jezelf in [Componentdiagrammen](Bijlagen/Componentdiagrammen) of je Componentdiagram 1 of 2 in het SGB wil hebben staan. Verwijder degene die je niet wil hebben en haal de numerieke identifier weg bij degene die je wil bewaren.  
+Zet daarna ff een beschrijving bij je diagrammen om te voldoen aan de LUK daarvoor
 
 ![componentDiagramOnderzoek-Component Diagram for Trip-top System.svg](../Bartu/Onderzoek/componentDiagramOnderzoek-Component%20Diagram%20for%20Trip-top%20System.svg)
 <sub>Component diagram Bartu
 
 ![dynamicDiagramOnderzoek-0.svg](../Bartu/Onderzoek/dynamicDiagramOnderzoek-0.svg)
 <sub>Sequence diagram Bartu
+
+[//]: # (todo: Mike, zet je componentdiagram en sequencediagram er even bij en maak daar ook een leuke beschrijving bij)
+
 ###     7.3. Design & Code
-![onderzoeksvraagklassendiagram.png](..%2FMarijn%2Fonderzoeksvraag%2Fonderzoeksvraagklassendiagram.png)  
-<sub>Class diagram Marijn
 
+[//]: # (todo: Marijn, beschrijving toevoegen)
+![Marijn - onderzoeksvraagklassendiagram.png](Bijlagen/Klassediagrammen/svg-png/Marijn%20-%20onderzoeksvraagklassendiagram.png)
+<sub>Class diagram Marijn </sub>
+
+[//]: # (todo: Bartu, kies hier ook even welke je wil gebruiken en verwijder degene die je niet wil gebruiken en haal dan de numerikeie identifier van de andere weg, Schrijf daarna een beschrijving bij het diagram.)
 ![classDiagramOnderzoek-0.svg](../Bartu/Onderzoek/classDiagramOnderzoek-0.svg)  
-<sub>Class diagram Bartu
+<sub>Class diagram Bartu </sub>
 
+[//]: # (todo: Mike, voeg je klassediagram toe en doe er een beschrijving bij)
 
 > [!IMPORTANT]
 > Voeg toe: Per ontwerpvraag een Class Diagram plus een Sequence Diagram va n een aantal scenario's inclusief begeleidende tekst.
@@ -261,14 +262,12 @@ We moeten een veilige en gebruiksvriendelijke betalingsmethode hebben waarmee ge
 | Kopersbescherming     | 0     | +      | ++     |
 | Transactiekosten      | -     | -      | +      |
 
-[//]: # (todo: bronnen toevoegen)
+[//]: # (todo: Marijnof Bartu, een van jullie mag hier bronnen gaan toevoegen)
 Bronnen:
 
 ## Decision
 
 In eerste instantie kozen we voor Adyen, omdat dit de eerste was die in ons opkwam. Na verder onderzoek gedaan te hebben, zijn we tot de conclusie gekomen dat Stripe eigenlijk beter aansluit op onze eisen en wensen.
-
-
 
 
 ## Consequences

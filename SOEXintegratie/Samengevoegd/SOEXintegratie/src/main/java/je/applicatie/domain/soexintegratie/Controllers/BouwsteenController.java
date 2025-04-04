@@ -131,6 +131,4 @@ public class BouwsteenController {
     //todo: ja, dat kan. gebruik later een van de onderste twee opties
     //todo: key-value pair
     //todo: reflectie??
-
-    //todo: moet ik alleen van happy path uit gaan?
 }

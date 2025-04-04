@@ -11,7 +11,7 @@ Component("bsf", "BouwsteenFactory", "Maakt bouwstenen aan.")
 Component("hs", "HotelService")
 Component("ts", "TripService")
 
-'todo: bouwsteenservice opsplitsen
+'todo: aanpassen op basis van wat nu bestaat + marijns nieuwe ontwerpvraag
 Component("gapi", "GatewayAPI", "Beveiligt en beheert API-verzoeken")
 Component("v", "Validation", "Filtert en valideert API-data")
 

@@ -1,0 +1,41 @@
+@startuml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+SHOW_PERSON_OUTLINE()
+
+Person("r", "Reiziger", "Stelt reis samen en boekt deze")
+Person("ra", "Reisagent", "Helpt reiziger wanneer dat nodig is")
+
+System_Boundary("triptop", "Triptop Systeem") {
+    Container("be", "Backend", "Springboot", "Handelt aanvragen van de frontend af en verwerkt boekingen")
+    Container("fe", "Triptop-applicatie", "javascript + react", "Webapplicatie waarmee reizigers hun reis kunnen plannen en boeken")
+    Container("db", "Database", "SQL","Slaat gegevens van geboekte reizen en gebruikers op")
+}
+
+System_Ext("sg", "SendGrid", "Verstuurt bevestigingen en meldingen per e-mail")
+System_Ext("as", "Airscraper", "Zoekt en vergelijkt beschikbare vluchten")
+System_Ext("eur", "Interrail/Eurail", "Biedt toegang tot internationale treinreizen")
+System_Ext("wm", "Wiremock", "Externe authenticatie voor login")
+System_Ext("tw", "Twilio", "Stuurt SMS-meldingen naar reizigers")
+System_Ext("ta", "Tripadvisor", "Zoekt en vergelijkt hotels en activiteiten")
+System_Ext("st", "Stripe", "Verwerkt betalingen voor boekingen")
+System_Ext("osm", "OpenStreetMap", "Geeft kaartweergave van bestemmingen en routes")
+
+Rel("r", "fe", "Stelt reis samen en boekt deze via de app")
+Rel("ra", "fe", "Adviseert en helpt de reiziger indien nodig")
+Rel("fe", "be", "Stuurt aanvragen voor boekingen en gegevensverwerking")
+Rel("be", "db", "Slaat boekingen en gebruikersgegevens op")
+
+Rel("fe", "osm", "Toont kaart met locaties van accommodaties en activiteiten")
+
+Rel("be", "sg", "Stuurt boekingsbevestigingen en updates per e-mail")
+Rel("be", "as", "Zoekt beschikbare vluchten")
+Rel("be", "eur", "Regelt internationale treinreizen")
+Rel("be", "wm", "Verifieert gebruikers via externe logins")
+Rel("be", "tw", "Stuurt SMS-notificaties naar reizigers")
+Rel("be", "ta", "Biedt suggesties voor hotels en excursies")
+Rel("be", "st", "Handelt betalingen af")
+@enduml

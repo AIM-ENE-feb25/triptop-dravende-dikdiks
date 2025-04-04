@@ -1,6 +1,5 @@
 package je.applicatie.domain.soexintegratie.Services;
 
-import jakarta.annotation.Resource;
 import je.applicatie.domain.soexintegratie.Adapters.BouwsteenAdapter;
 import je.applicatie.domain.soexintegratie.Domain.Bouwsteen;
 import je.applicatie.domain.soexintegratie.Repository.BouwsteenRepo;
@@ -39,7 +38,6 @@ public class HotelServiceStrategyImpl implements ServiceStrategy {
 
     @Override
     public void getApiData() {
-        //todo: beter invullen
         System.out.println("Dit is API-data van de trip-API. Doe alsof je JSON ziet.");
     }
 }
