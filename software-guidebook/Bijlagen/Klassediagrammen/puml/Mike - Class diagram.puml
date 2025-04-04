@@ -72,7 +72,6 @@ ServiceStrategy --> BouwsteenAdapter : uses
 
 BouwsteenController --> Bouwsteen : uses
 
-'todo: dependencies geen streepje, even beschrijven in SGB
 
 
 
