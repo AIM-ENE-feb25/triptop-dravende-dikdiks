@@ -137,15 +137,23 @@ Zet daarna ff een beschrijving bij je diagrammen om te voldoen aan de LUK daarvo
 
 ###     7.3. Design & Code
 
+### Klassediagram Marijn
 [//]: # (todo: Marijn, beschrijving toevoegen)
 ![Marijn - onderzoeksvraagklassendiagram.png](Bijlagen/Klassediagrammen/svg-png/Marijn%20-%20onderzoeksvraagklassendiagram.png)
 <sub>Class diagram Marijn </sub>
+
+### Klassediagram Bartu
 
 [//]: # (todo: Bartu, kies hier ook even welke je wil gebruiken en verwijder degene die je niet wil gebruiken en haal dan de numerikeie identifier van de andere weg, Schrijf daarna een beschrijving bij het diagram.)
 ![classDiagramOnderzoek-0.svg](../Bartu/Onderzoek/classDiagramOnderzoek-0.svg)  
 <sub>Class diagram Bartu </sub>
 
 [//]: # (todo: Mike, voeg je klassediagram toe en doe er een beschrijving bij)
+
+### Klassediagram Mike
+
+![Mike - Class diagram-0.svg](Bijlagen/Klassediagrammen/svg-png/Mike%20-%20Class%20diagram-0.svg)  
+<sub> Klassediagram Mike
 
 > [!IMPORTANT]
 > Voeg toe: Per ontwerpvraag een Class Diagram plus een Sequence Diagram va n een aantal scenario's inclusief begeleidende tekst.
@@ -307,8 +315,11 @@ Complexiteit – Het Factory Method Pattern voegt extra lagen toe, wat de leercu
 
 ### 8.5. ADR-005 TITLE
 
-> [!TIP]
+> [!TIP]  
 > These documents have names that are short noun phrases. For example, "ADR 1: Deployment on Ruby on Rails 3.0.10" or "ADR 9: LDAP for Multitenant Integration". The whole ADR should be one or two pages long. We will write each ADR as if it is a conversation with a future developer. This requires good writing style, with full sentences organized into paragraphs. Bullets are acceptable only for visual style, not as an excuse for writing sentence fragments. (Bullets kill people, even PowerPoint bullets.)
+
+
+
 
 #### Context
 
