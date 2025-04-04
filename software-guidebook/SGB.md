@@ -120,9 +120,9 @@ Verder is het Single Responsibility Principle van toepassing: de verantwoordelij
 
 ### Componentdiagram Marijn
 ![ComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2FComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png)  
-<sub> Diagrammen Marijn
 
-[//]: # (todo: Marijn - begeleidende tekst ontbreekt)
+Er wordt een endpoint aangeroepen in de controller, de controller roeps de service aan, deze service roeps weer de juiste adapters aan die vervolgens een api call doen. De data die uit de api calls terugkomen worden weer teruggestuurd naar de frontend.
+
 
 ### Componentdiagram Bartu
 ![componentDiagramOnderzoek-Component Diagram for Trip-top System.svg](../Bartu/Onderzoek/componentDiagramOnderzoek-Component%20Diagram%20for%20Trip-top%20System.svg)  
@@ -143,14 +143,13 @@ Dit componentendiagram toont de backend van het Trip-top systeem, met de focus o
 ![classdiagram.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2Fclassdiagram.png)
 <sub>Class diagram Marijn </sub>
 
-[//]: # (todo: Marijn - begeleidende tekst ontbreekt)
+De adapters implementeren de interface. apiKey, apiHost en apiURL worden met @value uit application.properties gehaald.
 
 
 ### Dynamic diagram Marijn
 ![dynamicDiagram.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2FdynamicDiagram.png)
 <sub> Dynamic diagram Marijn
 
-[//]: # (todo: Marijn - begeleidende tekst ontbreekt)
 
 
 ### Klassediagram Bartu
