@@ -116,7 +116,7 @@ Verder is het Single Responsibility Principle van toepassing: de verantwoordelij
 
 ###     7.2. Components
 
-![ComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2FComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png)
+![ComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2FComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png)  
 <sub> Diagrammen Marijn
 
 

@@ -21,9 +21,6 @@ public class BouwsteenController {
     private AirbnbAdapter airbnbAdapter;
     private BookincomAdapter bookincomAdapter;
 
-    //todo: lists van maken
-
-
 
     private void chooseStrategy(String strategy) {
         switch (strategy) {
