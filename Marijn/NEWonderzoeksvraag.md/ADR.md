@@ -23,6 +23,7 @@ Het Adapter Pattern zorgt ervoor dat een nieuwe externe service eenvoudig kan wo
 ### 2. Factory Pattern
 Het Factory Pattern kan worden gebruikt om objecten van externe services te creÃ«ren via een centrale factory. Dit zorgt voor een makkelijke manier om externe services te beheren en biedt minimale flexibiliteit.
 
+
 **Voordelen:**
 - Centraliseert objectcreatie, waardoor het eenvoudiger wordt om services te wisselen.
 - Zorgt voor een consistente manier om services te initialiseren.
@@ -30,6 +31,15 @@ Het Factory Pattern kan worden gebruikt om objecten van externe services te creÃ
 **Nadelen:**
 - De implementaties van externe services moeten nog steeds voldoen aan een interface.
 - Minder flexibel dan een adapter als er significante verschillen zijn tussen de externe services.
+
+| Criteria                                       | Adapter Pattern | Factory Pattern |
+|-----------------------------------------------|-----------------|-----------------|
+| Flexibiliteit bij verschillende services       | ++              | -               |
+| Scheiding van businesslogica en services       | ++              | +               |
+| Eenvoud bij toevoegen van nieuwe services      | +               | 0               |
+| Overzichtelijkheid van de codebase             | -               | +               |
+| Complexiteit van implementatie                 | -               | 0               |
+
 
 ## Besluit
 We kiezen voor het adapter pattern omdat het de meeste flexibiliteit biedt bij het toevoegen van nieuwe externe services. Het houdt de code schoon en zorgt ervoor dat de kernlogica niet afhankelijk is van specifieke externe implementaties.
