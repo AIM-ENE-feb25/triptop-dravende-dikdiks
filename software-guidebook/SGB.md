@@ -1,7 +1,5 @@
 # Software Guidebook Triptop
 
-[//]: # (todo: Samengevoegd componentdiagram up to date maken)
-
 ## 1. Introduction
 Dit software guidebook geeft een overzicht van de Triptop-applicatie. Het bevat een samenvatting van het volgende: 
 1. De vereisten, beperkingen en principes. 
@@ -101,9 +99,6 @@ Om te bepalen wie verantwoordelijk is voor het creëren en verwijderen van een b
 #### Open-closed principle
 Het Open-Closed Principle wordt hierbij ook toegepast, omdat de code uitbreidbaar is zonder bestaande functionaliteit aan te passen. Nieuwe bouwsteentypes kunnen eenvoudig worden toegevoegd door nieuwe factory klasse, die door het gebruik van reflection automatisch worden uitgebreid aan de applicatie.
 
-#### Program to interface
-Daarnaast maak ik gebruik van Program to Interfaces, Not Implementations. 
-
 ####  Single Responsibility Principle
 Verder is het Single Responsibility Principle van toepassing: de verantwoordelijkheid zijn duidelijk verdeeld over de klassen, zodat elke klasse een specifieke taak heeft. De BouwsteenFactory is verantwoordelijk voor het creëren van bouwstenen, terwijl de BouwsteenRepository zich bezighoudt met het beheren van de opslag en verwijdering naar de database.
 
@@ -122,6 +117,7 @@ Verder is het Single Responsibility Principle van toepassing: de verantwoordelij
 
 ![Algemeen - Samengevoegd componentdiagram.svg](Bijlagen/Componentdiagrammen/svg/Algemeen%20-%20Samengevoegd%20componentdiagram.svg)
 
+[//]: # (todo: Allen - begeleidende tekst ontbreekt)
 
 ### Componentdiagram Marijn
 ![ComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2FComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png)  
@@ -140,9 +136,9 @@ Dit componentendiagram toont de backend van het Trip-top systeem, met de focus o
 ![Mike - Componentdiagram-0.svg](Bijlagen/Componentdiagrammen/svg/Mike%20-%20Componentdiagram-0.svg)  
 <sub> Componentdiagram Mike </sub>  
 
+Via de frontend wordt een request gedaan naar de backend. Afhankelijk van of je het endpoint `hotel` of `trip` aanroept, wordt er gebruik gemaakt van een andere strategy voor de service.
+Dit bepaalt ook welke bouwsteen wordt aangemaakt in de Controller, zodat die door de applicatie heen gebruikt kan worden.
 
-
-[//]: # (todo: Mike - begeleidende tekst ontbreekt)
 
 ###     7.3. Design & Code
 
