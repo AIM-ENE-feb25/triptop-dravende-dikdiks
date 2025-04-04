@@ -18,7 +18,7 @@ public class BouwsteenRepo {
         return bouwsteen;
     }
     public List<Bouwsteen> getAllBouwstenen(Bouwsteen bouwsteen) {
-        //System.out.println(STR."Alle bouwstenen van klasse \{bouwsteen.getClass().getSimpleName().toString()} zijn opgehaald uit de database.");
+//        System.out.println(STR."Alle bouwstenen van klasse \{bouwsteen.getClass().getSimpleName().toString()} zijn opgehaald uit de database.");
         List<Bouwsteen> allBouwstenen = new ArrayList<>();
         allBouwstenen.add(bouwsteen);
         return allBouwstenen;
