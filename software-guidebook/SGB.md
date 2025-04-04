@@ -133,7 +133,9 @@ Dit componentendiagram toont de backend van het Trip-top systeem, met de focus o
 ### Componentdiagram Mike
 
 ![Mike - Componentdiagram-0.svg](Bijlagen/Componentdiagrammen/svg/Mike%20-%20Componentdiagram-0.svg)  
-<sub> Componentdiagram Mike </sub>
+<sub> Componentdiagram Mike </sub>  
+
+
 
 [//]: # (todo: Mike - begeleidende tekst ontbreekt)
 
@@ -157,6 +159,7 @@ De adapters implementeren de interface. apiKey, apiHost en apiURL worden met @va
 ![classDiagramOnderzoek-0.svg](../Bartu/Onderzoek/classDiagramOnderzoek-0.svg)  
 <sub>Class diagram Bartu </sub>
 
+Dit klassendiagram toont de structuur van het systeem voor het beheren van bouwstenen, waarbij verschillende type bouwstenen (zoals Overnachting en Vervoer) worden aangemaakt via bijbehorende factories (OvernachtingFactory en VervoerFactory). De interface BouwsteenFactory definieert de methode voor het maken van bouwstenen, en de specifieke implementaties van deze methodes zorgen voor het creëren van de verschillende soorten bouwstenen. De BouwsteenController handelt aanvragen vanuit de frontend af, zoals het toevoegen, verwijderen of ophalen van bouwstenen, en stuurt deze verzoeken door naar de BouwsteenService. De service voert de bedrijfslogica uit en maakt gebruik van de repository voor het opslaan en ophalen van gegevens. De BouwsteenRepository zorgt voor opslag van bouwstenen. Dit ontwerp volgt het Factory Pattern voor het creëren van verschillende soorten bouwstenen en zorgt voor een flexibele en uitbreidbare architectuur.
 
 
 ![dynamicDiagramOnderzoek-0.svg](../Bartu/Onderzoek/dynamicDiagramOnderzoek-0.svg)
