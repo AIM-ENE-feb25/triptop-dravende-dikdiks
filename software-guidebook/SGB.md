@@ -85,9 +85,7 @@ Idealiter had ik er in mijn prototype voor gezorgd dat er, na het toevoegen van 
 
 ### Ontwerpvraag Marijn
 
-
-
-
+Hoe zorg je ervoor dat je makkelijk een nieuwe externe service kan toevoegen?
 
 ### Ontwerpvraag Bartu
 
@@ -115,11 +113,7 @@ Verder is het Single Responsibility Principle van toepassing: de verantwoordelij
 
 ###     7.2. Components
 
-[//]: # (todo: Marijn, zie onderstaand)
-Marijn fix dit ff en zet je diagrammen in [Componentdiagrammen](Bijlagen/Componentdiagrammen) onder de naam "Marijn - Componentdiagram" en "Marijn - Sequencediagram"  
-Zet er daarna ook een beschrijving bij zodat je voldoet aan de LUK daarvoor
-![componentdiagrambookinCOM-Component_Diagram_voor_TripTop_met_Beveiligingslaag.png](..%2FMarijn%2Fonderzoeksvraag%2FcomponentdiagrambookinCOM-Component_Diagram_voor_TripTop_met_Beveiligingslaag.png)  
-![dynamicdiagramonderzoeksvraag.png](..%2FMarijn%2Fonderzoeksvraag%2Fdynamicdiagramonderzoeksvraag.png)    
+![ComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2FComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png)
 <sub> Diagrammen Marijn
 
 
@@ -138,9 +132,12 @@ Zet daarna ff een beschrijving bij je diagrammen om te voldoen aan de LUK daarvo
 ###     7.3. Design & Code
 
 ### Klassediagram Marijn
-[//]: # (todo: Marijn, beschrijving toevoegen)
-![Marijn - onderzoeksvraagklassendiagram.png](Bijlagen/Klassediagrammen/svg-png/Marijn%20-%20onderzoeksvraagklassendiagram.png)
+![classdiagram.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2Fclassdiagram.png)
 <sub>Class diagram Marijn </sub>
+
+### Dynamic diagram Marijn
+![dynamicDiagram.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2FdynamicDiagram.png)
+<sub> Dynamic diagram Marijn
 
 ### Klassediagram Bartu
 
