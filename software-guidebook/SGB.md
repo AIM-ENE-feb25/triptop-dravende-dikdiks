@@ -1,6 +1,5 @@
 # Software Guidebook Triptop
 
-[//]: # (todo: Mike class diagram toevoegen)
 [//]: # (todo: Samengevoegd componentdiagram up to date maken)
 
 ## 1. Introduction
@@ -109,16 +108,20 @@ Verder is het Single Responsibility Principle van toepassing: de verantwoordelij
 ![container_diagram-0.svg](Bijlagen/Containerdiagram/container_diagram-0.svg)  
 <sub> Container diagram </sub>
 
-[//]: # (todo: begeleidende tekst ontbreekt)
+[//]: # (todo: Allen - begeleidende tekst ontbreekt)
 
 
 ###     7.2. Components
+
+### Componentdiagram Samengevoegd
+
+[//]: # (todo: Bartu - diagram invoegen)
 
 ### Componentdiagram Marijn
 ![ComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2FComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png)  
 <sub> Diagrammen Marijn
 
-[//]: # (todo: begeleidende tekst ontbreekt)
+[//]: # (todo: Marijn - begeleidende tekst ontbreekt)
 
 ### Componentdiagram Bartu
 ![componentDiagramOnderzoek-Component Diagram for Trip-top System.svg](../Bartu/Onderzoek/componentDiagramOnderzoek-Component%20Diagram%20for%20Trip-top%20System.svg)  
@@ -131,7 +134,7 @@ Dit componentendiagram toont de backend van het Trip-top systeem, met de focus o
 ![Mike - Componentdiagram-0.svg](Bijlagen/Componentdiagrammen/svg/Mike%20-%20Componentdiagram-0.svg)  
 <sub> Componentdiagram Mike </sub>
 
-[//]: # (todo: begeleidende tekst ontbreekt)
+[//]: # (todo: Mike - begeleidende tekst ontbreekt)
 
 ###     7.3. Design & Code
 
@@ -139,14 +142,14 @@ Dit componentendiagram toont de backend van het Trip-top systeem, met de focus o
 ![classdiagram.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2Fclassdiagram.png)
 <sub>Class diagram Marijn </sub>
 
-[//]: # (todo: begeleidende tekst ontbreekt)
+[//]: # (todo: Marijn - begeleidende tekst ontbreekt)
 
 
 ### Dynamic diagram Marijn
 ![dynamicDiagram.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2FdynamicDiagram.png)
 <sub> Dynamic diagram Marijn
 
-[//]: # (todo: begeleidende tekst ontbreekt)
+[//]: # (todo: Marijn - begeleidende tekst ontbreekt)
 
 
 ### Klassediagram Bartu
@@ -154,7 +157,7 @@ Dit componentendiagram toont de backend van het Trip-top systeem, met de focus o
 ![classDiagramOnderzoek-0.svg](../Bartu/Onderzoek/classDiagramOnderzoek-0.svg)  
 <sub>Class diagram Bartu </sub>
 
-[//]: # (todo: begeleidende tekst ontbreekt)
+[//]: # (todo: Bartu - begeleidende tekst ontbreekt)
 
 
 ![dynamicDiagramOnderzoek-0.svg](../Bartu/Onderzoek/dynamicDiagramOnderzoek-0.svg)
@@ -276,17 +279,27 @@ We moeten een veilige en gebruiksvriendelijke betalingsmethode hebben waarmee ge
 
 
 | Kenmerk               | Adyen | Stripe | Mollie |
-|-----------------------|-------|--------|--------|
-| Aantal betaalmethodes | +     | ++     | ++     |
-| Integratiegemak       | +     | ++     | +      |
-| Gebruikersgemak       | +     | ++     | ++     |
-| Documentatie/API      | +     | ++     | +      |
-| Webhook ondersteuning | ++    | ++     | +      |
-| Kopersbescherming     | 0     | +      | ++     |
-| Transactiekosten      | -     | -      | +      |
+|-----------------------|-------|--------|-------|
+| Aantal betaalmethodes | ++    | ++     | +     |
+| Integratiegemak       | +     | ++     | +     |
+| Gebruikersgemak       | +     | ++     | ++    |
+| Documentatie/API      | +     | ++     | +     |
+| Webhook ondersteuning | ++    | ++     | +     |
+| Kopersbescherming     | 0     | +      | ++    |
+| Transactiekosten      | -     | -      | +     |
 
-[//]: # (todo: Marijnof Bartu, een van jullie mag hier bronnen gaan toevoegen)
-Bronnen:
+## Bronnen:
+- Aantal betaalmethodes Stripe: https://stripe.com/nl/guides/payment-methods-guide
+- Aantal betaalmethodes Adyen: https://www.adyen.com/nl_NL/betaalmethoden/?gad_source=1&gclid=Cj0KCQjwhr6_BhD4ARIsAH1YdjD7W523MnX-Zp8eIqDfE--WG2Vo1UCQW_Y4280kWwxhFirjrUpaBZMaAsXXEALw_wcB&utm_campaign=2023_05_OA_NL_BRANDEDADYEN_GSN_CONS_CON_SEARCH_[NL]_ECPC&utm_medium=Online+Advertising&utm_source=Google
+- Aantal betaalmethodes Mollie: https://www.mollie.com/nl/payments
+
+- Gebruikersgemak Adyen: https://www.adyen.com/nl_NL/web-betalingen
+- Gebruikersgemak Stripe: https://stripe.com/nl/payments/elements
+- Gebruikersgemak Mollie: https://www.mollie.com/nl/payments
+
+- Documentatie Adyen: https://docs.adyen.com/
+- Documentatie Stripe: https://docs.stripe.com/
+- Documentatie Mollie: https://docs.mollie.com/docs/getting-started
 
 ## Decision
 
@@ -328,34 +341,59 @@ Duidelijke verantwoordelijkheden – Het aanmaken en verwijderen van bouwstenen 
 Nadelen
 Complexiteit – Het Factory Method Pattern voegt extra lagen toe, wat de leercurve verhoogt.
 
-### 8.5. ADR-005 TITLE
+### 8.5. ADR-005 pattern toevoegen externe services
 
-> [!TIP]  
-> These documents have names that are short noun phrases. For example, "ADR 1: Deployment on Ruby on Rails 3.0.10" or "ADR 9: LDAP for Multitenant Integration". The whole ADR should be one or two pages long. We will write each ADR as if it is a conversation with a future developer. This requires good writing style, with full sentences organized into paragraphs. Bullets are acceptable only for visual style, not as an excuse for writing sentence fragments. (Bullets kill people, even PowerPoint bullets.)
+Datum: 4/4/2025
+
+## Status
+Geaccepteerd
+
+## Context
+In ons systeem willen we flexibel en eenvoudig nieuwe externe services kunnen toevoegen zonder bestaande code aan te moeten passen. We hebben verschillende patterns overwogen om deze uitbreidbaarheid te ondersteunen.
+
+## Alternatieven
+
+### 1. Adapter Pattern (Gekozen oplossing)
+Het Adapter Pattern zorgt ervoor dat een nieuwe externe service eenvoudig kan worden geïntegreerd door een abstracte interface te definiëren. Elke externe service heeft een eigen adapter klasse die de interface implementeert. Hierdoor is het makkelijk om een nieuwe externe service toe te voegen die eigen logica nodig heeft.
+
+**Voordelen:**
+- Externe services kunnen onafhankelijk van elkaar worden ontwikkeld en gewijzigd.
+- Weinig impact op de bestaande code bij het toevoegen van nieuwe services.
+- Houdt de businesslogica gescheiden van externe afhankelijkheden.
+
+**Nadelen:**
+- Vereist extra code (adapterklassen).
+- Kan leiden tot een toename van het aantal klassen en bestanden (Kan het onoverzichtelijk maken).
+
+### 2. Factory Pattern
+Het Factory Pattern kan worden gebruikt om objecten van externe services te creëren via een centrale factory. Dit zorgt voor een makkelijke manier om externe services te beheren en biedt minimale flexibiliteit.
 
 
-#### Context
+**Voordelen:**
+- Centraliseert objectcreatie, waardoor het eenvoudiger wordt om services te wisselen.
+- Zorgt voor een consistente manier om services te initialiseren.
 
-> [!TIP]
-> This section describes the forces at play, including technological, political, social, and project local. These forces are probably in tension, and should be called out as such. The language in this section is value-neutral. It is simply describing facts about the problem we're facing and points out factors to take into account or to weigh when making the final decision.
+**Nadelen:**
+- De implementaties van externe services moeten nog steeds voldoen aan een interface.
+- Minder flexibel dan een adapter als er significante verschillen zijn tussen de externe services.
 
-#### Considered Options
+| Criteria                                       | Adapter Pattern | Factory Pattern |
+|------------------------------------------------|-----------------|-----------------|
+| Flexibiliteit bij verschillende services       | ++              | -               |
+| Scheiding van businesslogica en services       | ++              | +               |
+| Eenvoud bij toevoegen van nieuwe services      | +               | 0               |
+| Overzichtelijkheid van de codebase             | -               | +               |
+| Complexiteit van implementatie                 | -               | 0               |
 
-> [!TIP]
-> This section describes the options that were considered, and gives some indication as to why the chosen option was selected.
 
-#### Decision
+## Besluit
+We kiezen voor het adapter pattern omdat het de meeste flexibiliteit biedt bij het toevoegen van nieuwe externe services. Het houdt de code schoon en zorgt ervoor dat de kernlogica niet afhankelijk is van specifieke externe implementaties.
 
-> [!TIP]
-> This section describes our response to the forces/problem. It is stated in full sentences, with active voice. "We will …"
+## Consequenties
+- Elke nieuwe externe service vereist een eigen adapter.
+- De architectuur blijft schaalbaar en uitbreidbaar.
+- Er moet een duidelijke abstracte interface worden gedefinieerd voor externe services.
 
-#### Status
-
-> [!TIP]
-> A decision may be "proposed" if the project stakeholders haven't agreed with it yet, or "accepted" once it is agreed. If a later ADR changes or reverses a decision, it may be marked as "deprecated" or "superseded" with a reference to its replacement.
-
-#### Consequences
-
-> [!TIP]
-> This section describes the resulting context, after applying the decision. All consequences should be listed here, not just the "positive" ones. A particular decision may have positive, negative, and neutral consequences, but all of them affect the team and project in the future.
-
+## Gerelateerde beslissingen
+- Gebruik van Dependency Injection om adapters eenvoudig te gebruiken.
+- Overweging van een Factory Pattern voor het beheren van adaptercreatie.
