@@ -1,0 +1,20 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+System(fe, Frontend)
+
+System_Boundary(be, Backend){
+    Component(bc, BouwsteenController)
+    Component(s, ServiceStrategy)
+    Component(bsr, BouwsteenRepo)
+    Component(bsa, BouwsteenAdapter)
+}
+
+Component_Ext(eapi, Externe API)
+
+Rel(fe, bc, Doet request)
+Rel(bc, s, Roept request-afhankelijke methode aan)
+Rel(s, bsr, Roept methode aan)
+Rel(s, bsa, Roept externe API aan)
+Rel(bsa, eapi, Haalt externe gegevens op)
+@enduml
