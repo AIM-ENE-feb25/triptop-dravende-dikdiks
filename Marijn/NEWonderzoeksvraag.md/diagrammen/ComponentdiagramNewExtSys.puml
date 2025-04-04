@@ -1,0 +1,38 @@
+@startuml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Component Diagram voor TripTop (Makkelijk toevoegen externe service)
+
+System_Boundary("frontend", "frontend") {
+    System_Ext(FE, "frontend", "Opslag van gegevens")
+}
+
+System_Boundary("backend", "Backend") {
+    Component(HotelController, "HotelController", "Beveiligde toegang tot backend")
+    Component(adapter1, "BookingAdapter", "Communiceert met externe services")
+    Component(adapter2, "AirBNBAdapter", "Communiceert met externe services")
+    Component(service, "HotelService", "Handelt externe service-verzoeken af")
+    Component(TripRepo, "TripRepo", "Verbinding met database")
+}
+
+System_Boundary("database", "Database") {
+    System_Ext(db, "Database", "Opslag van gegevens")
+}
+
+System_Boundary("APIS", "APIS") {
+    System_Ext(API1, "BookinCOM", "")
+    System_Ext(API2, "AirBNB", "")
+}
+
+Rel("FE", HotelController, "Stuurt request")
+Rel("HotelController", "service", "Implementeert communicatie met externe services")
+Rel(service, "adapter1", "Implementeert communicatie met externe services")
+Rel(service, "adapter2", "Implementeert communicatie met externe services")
+Rel("service", "TripRepo", "Verbinding met database")
+Rel("adapter1", API1, "Stuurt request")
+Rel("TripRepo", db, "Leest/Schrijft data naar")
+
+Rel("adapter2", API2, "Stuurt request")
+
+@enduml

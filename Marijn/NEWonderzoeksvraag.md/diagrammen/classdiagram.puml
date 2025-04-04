@@ -1,0 +1,36 @@
+@startuml
+
+class HotelController {
+    -HotelService HotelService
+    +callExternalApi(): String
+}
+
+class ExternalServicesInterface {
+    +fetchData(): String
+}
+
+class BookingcomAdapter {
+    - private String apiKey;
+    - private String apiHost;
+    - private String apiUrl;
+    +fetchData(): String
+}
+
+class AirBNBAdapter {
+    - private String apiKey;
+    - private String apiHost;
+    - private String apiUrl;
+    +fetchData(): String
+}
+
+class HotelService {
+    -BookingcomAdapter BookingcomAdapter
+    +callExternalApi(): String
+}
+
+ExternalServicesInterface --> BookingcomAdapter : uses
+ExternalServicesInterface --> AirBNBAdapter : uses
+HotelService --> ExternalServicesInterface : uses
+HotelController --> HotelService : uses
+
+@enduml
