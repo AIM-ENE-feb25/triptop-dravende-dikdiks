@@ -115,7 +115,8 @@ Verder is het Single Responsibility Principle van toepassing: de verantwoordelij
 
 ### Componentdiagram Samengevoegd
 
-[//]: # (todo: Bartu - diagram invoegen)
+![Algemeen - Samengevoegd componentdiagram.svg](Bijlagen/Componentdiagrammen/svg/Algemeen%20-%20Samengevoegd%20componentdiagram.svg)
+
 
 ### Componentdiagram Marijn
 ![ComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png](..%2FMarijn%2FNEWonderzoeksvraag.md%2Fdiagrammen%2FComponentdiagramNewExtSys-Component_Diagram_voor_TripTop__Makkelijk_toevoegen_externe_service_.png)  
@@ -157,7 +158,6 @@ Dit componentendiagram toont de backend van het Trip-top systeem, met de focus o
 ![classDiagramOnderzoek-0.svg](../Bartu/Onderzoek/classDiagramOnderzoek-0.svg)  
 <sub>Class diagram Bartu </sub>
 
-[//]: # (todo: Bartu - begeleidende tekst ontbreekt)
 
 
 ![dynamicDiagramOnderzoek-0.svg](../Bartu/Onderzoek/dynamicDiagramOnderzoek-0.svg)
@@ -279,14 +279,14 @@ We moeten een veilige en gebruiksvriendelijke betalingsmethode hebben waarmee ge
 
 
 | Kenmerk               | Adyen | Stripe | Mollie |
-|-----------------------|-------|--------|-------|
-| Aantal betaalmethodes | ++    | ++     | +     |
-| Integratiegemak       | +     | ++     | +     |
-| Gebruikersgemak       | +     | ++     | ++    |
-| Documentatie/API      | +     | ++     | +     |
-| Webhook ondersteuning | ++    | ++     | +     |
-| Kopersbescherming     | 0     | +      | ++    |
-| Transactiekosten      | -     | -      | +     |
+|-----------------------|-------|--------|--------|
+| Aantal betaalmethodes | ++    | ++     | +      |
+| Integratiegemak       | +     | ++     | +      |
+| Gebruikersgemak       | +     | ++     | ++     |
+| Documentatie/API      | +     | ++     | +      |
+| Webhook ondersteuning | ++    | ++     | +      |
+| Kopersbescherming     | 0     | +      | ++     |
+| Transactiekosten      | -     | -      | +      |
 
 ## Bronnen:
 - Aantal betaalmethodes Stripe: https://stripe.com/nl/guides/payment-methods-guide
