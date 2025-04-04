@@ -6,6 +6,7 @@ System(fe, Frontend)
 System_Boundary(be, Backend){
     Component(bc, BouwsteenController)
     Component(s, ServiceStrategy)
+    Component(bs, Bouwsteen)
     Component(bsr, BouwsteenRepo)
     Component(bsa, BouwsteenAdapter)
 }
@@ -14,6 +15,7 @@ Component_Ext(eapi, Externe API)
 
 Rel(fe, bc, Doet request)
 Rel(bc, s, Roept request-afhankelijke methode aan)
+Rel(bc, bs, Maakt bouwsteen aan bij aanroep endpoint)
 Rel(s, bsr, Roept methode aan)
 Rel(s, bsa, Roept externe API aan)
 Rel(bsa, eapi, Haalt externe gegevens op)
